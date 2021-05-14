@@ -1,13 +1,14 @@
 html, body {
-  text-align: center;
   margin: 0;
+  overflow: hidden;
   padding: 0;
+  text-align: center;
 }  
 
 :root {
   --primary-color: #3f28ee;
-  --background-color: #F5F1ED;
-  --accent-color: #AEA4BF;
+  --nav-background-color: #F5F1ED;
+  --main-background-color: #ffffff;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --toggle-color: #FFB11A;
@@ -15,50 +16,73 @@ html, body {
 }
 
 .DarkTheme {
-  --primary-color: #FFB11A;
-  --background-color: #0A0908;
-  --accent-color: #f7f7f7;
+  --primary-color: #32ffea;
+  --nav-background-color: #202020;
+  --main-background-color: #121212;
   --font-color: #F5F1ED;
   --font-color2: #0A0908;
-  --toggle-color: #3f28ee;
+  --toggle-color: #4d35ff;
   --toggle-color2: #0f0074;
 }
 
 body {
-  background: var(--background-color);
+  background: var(--main-background-color);
   color: var(--font-color);
 }
 
+
 nav {
- border: solid;
- font-family: 'Fira Code', monospace;
- height: 100%;
- min-width: 15vw;
- position: absolute;
- padding-right: 15px;
- text-align: right;
- width: 150px;
+  align-items: center;
+  background: var(--nav-background-color);
+  border-right: solid;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  font-family: 'Fira Code', monospace;
+  /* padding: 10px; */
+  position: absolute;
+  min-width: 15vw;
+  top: 0px;
+  text-align: right;
+  width: 150px;
 }
 
 nav > h1 {
+  /* border: dotted; */
+  width: 80%;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.ContactButton {
+.ActionButtonContainer {
+  /* border: dotted; */
+  width: 80%;
+}
+
+.ActionButton {
   background-color: var(--primary-color);
   border: none;
   border-radius: 10px;
   color: var(--font-color2);
   font-family: 'Fira Code', monospace;
   padding: 10px 15px 10px 15px;
-  width: 80%;
+  width: auto;
+}
+
+.ActionButton.Contact {
+  width: 100%;
+}
+
+.ActionButton:hover {
+  cursor: pointer;
 }
 
 .LinkContainer {
   display: flex;
+  /* border: dotted; */
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0px;
+  width: 80%;
 }
 
 .LinkButtonContainer {
@@ -78,6 +102,11 @@ nav > h1 {
 }
 
 /* Night Mode button */
+.NightModeButtonContainer {
+  /* border: dotted; */
+  width: 80%;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -137,7 +166,49 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.AppContent {
-  padding: 0px;
+main {
+  /* border: dotted; */
+  background: var(--main-background-color);
+  height: 100vh;
+  margin-left: max(15vw, 150px);
+  justify-self: center;
+  /* UPDATE HEIGHT --- DO NOT USE VH */
+}
+
+/* COMPONENTS */
+
+/* Home */
+.HomeContainer {
+  align-items: center;
+  /* border: 1px blue solid; */
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.HomeContent {  
+  /* border: dotted; */
+  text-align: left;
+  width: 80%;
+}
+
+.HomeContent > h1 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  /* border: dotted; */
   margin: 0px;
 }
+
+.HomeContent > p {
+  /* border: dotted; */
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 36px;
+  margin: 0px 0px 45px 0px;  
+}
+
+
+
+
