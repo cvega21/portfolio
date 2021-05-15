@@ -16,11 +16,11 @@ html, body {
 }
 
 .DarkTheme {
-  --primary-color: #32ffea;
+  --primary-color: #0084ff;
   --nav-background-color: #202020;
   --main-background-color: #121212;
   --font-color: #F5F1ED;
-  --font-color2: #0A0908;
+  --font-color2: #ffffff;
   --toggle-color: #4d35ff;
   --toggle-color2: #0f0074;
 }
@@ -48,13 +48,14 @@ nav {
 }
 
 nav > h1 {
-  /* border: dotted; */
+  border: dotted;
   width: 80%;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 28px;
 }
 
 .ActionButtonContainer {
-  /* border: dotted; */
+  border: dotted;
   width: 80%;
 }
 
@@ -78,7 +79,7 @@ nav > h1 {
 
 .LinkContainer {
   display: flex;
-  /* border: dotted; */
+  border: dotted;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0px;
@@ -103,7 +104,7 @@ nav > h1 {
 
 /* Night Mode button */
 .NightModeButtonContainer {
-  /* border: dotted; */
+  border: dotted;
   width: 80%;
 }
 
@@ -167,7 +168,7 @@ input:checked + .slider:before {
 }
 
 main {
-  /* border: dotted; */
+  border: dotted;
   background: var(--main-background-color);
   height: 100vh;
   margin-left: max(15vw, 150px);
@@ -180,7 +181,7 @@ main {
 /* Home */
 .HomeContainer {
   align-items: center;
-  /* border: 1px blue solid; */
+  border: 1px blue solid;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -188,7 +189,7 @@ main {
 }
 
 .HomeContent {  
-  /* border: dotted; */
+  border: dotted;
   text-align: left;
   width: 80%;
 }
@@ -197,12 +198,12 @@ main {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   font-size: 80px;
-  /* border: dotted; */
+  border: dotted;
   margin: 0px;
 }
 
 .HomeContent > p {
-  /* border: dotted; */
+  border: dotted;
   font-family: 'Fira Sans', sans-serif;
   font-weight: lighter;
   font-size: 36px;

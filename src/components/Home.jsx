@@ -8,7 +8,7 @@ const Home = () => {
       <div className="HomeContent">
         <h1>Hey there 👋</h1>
         <p>I’m Christian. Welcome to my portfolio website!</p>
-        <ActionButton text="About Me ->" link="about-me"/>
+        <ActionButton link="about-me"/>
       </div>
     </div>
   )

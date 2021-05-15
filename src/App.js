@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import ActionButton from './components/ActionButton';
+import NightModeButton from './components/NightModeButton';
 
 // next steps
 // learn css grid
@@ -11,9 +12,6 @@ import ActionButton from './components/ActionButton';
 // move nav bar to component
 
 function App() {
-  const changeTheme = e => {
-    document.body.classList.toggle("DarkTheme");
-  }
   
   return (
     <Router>
@@ -48,12 +46,7 @@ function App() {
                 </Link>
               </li>
             </ul>
-            <div className="NightModeButtonContainer">
-              <label className="switch">
-                <input type="checkbox" onClick={changeTheme}/>
-                <span className="slider round"></span>
-              </label>  
-            </div>
+            <NightModeButton/>
           </nav>      
         
         <main>
