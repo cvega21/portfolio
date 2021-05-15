@@ -3,9 +3,12 @@ import ActionButton from './ActionButton'
 
 const Articles = () => {
   return (
-    <div className="ActionButtonCluster">
-      <ActionButton link="projects" navigation="left"/>
-      <ActionButton link="cool-stuff" navigation="right"/>
+    <div className="GenericContainer">
+      <h1>Articles</h1>
+      <div className="ActionButtonCluster">
+        <ActionButton link="projects" navigation="left"/>
+        <ActionButton link="cool-stuff" navigation="right"/>
+      </div>
     </div>
   )
 }
