@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0;
   text-align: center;
 }  
@@ -36,11 +36,11 @@ nav {
   background: var(--nav-background-color);
   border-right: solid;
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   font-family: 'Fira Code', monospace;
   /* padding: 10px; */
-  position: absolute;
+  position: fixed;
   min-width: 15vw;
   top: 0px;
   text-align: right;
@@ -54,9 +54,13 @@ nav > h1 {
   font-size: 28px;
 }
 
+/* Action Button */
+
 .ActionButtonContainer {
   border: dotted;
+  display: block;
   width: 80%;
+  /* height: 50px; */
 }
 
 .ActionButton {
@@ -67,14 +71,25 @@ nav > h1 {
   font-family: 'Fira Code', monospace;
   padding: 10px 15px 10px 15px;
   width: auto;
+  width: 20%;
 }
 
 .ActionButton.Contact {
+  text-align: center;
   width: 100%;
 }
 
 .ActionButton:hover {
   cursor: pointer;
+}
+
+.ActionButtonCluster {
+  display: flex;
+  width: 40%;
+}
+
+.ActionButtonCluster > .ActionButtonContainer > .ActionButton {
+  width: 100%;
 }
 
 .LinkContainer {
@@ -168,9 +183,9 @@ input:checked + .slider:before {
 }
 
 main {
-  border: dotted;
+  /* border: dotted; */
   background: var(--main-background-color);
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: max(15vw, 150px);
   justify-self: center;
   /* UPDATE HEIGHT --- DO NOT USE VH */
@@ -181,17 +196,17 @@ main {
 /* Home */
 .HomeContainer {
   align-items: center;
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
 }
 
 .HomeContent {  
-  border: dotted;
-  text-align: left;
-  width: 80%;
+  /* border: dotted; */
 }
 
 .HomeContent > h1 {

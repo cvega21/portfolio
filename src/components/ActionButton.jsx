@@ -7,6 +7,7 @@ const ActionButton = (props) => {
   let action = 'action/link to take...';
   let computedClassName;
   let text = '';
+  let navigation = props.navigation;
 
   if (props.size === 'small') {
     // fill stuff here for sizing, add another size
@@ -22,12 +23,14 @@ const ActionButton = (props) => {
     textArray.forEach(word => {
       text += word.charAt(0).toUpperCase() + word.slice(1) + ' ';
     })
-    text += '->'
-    // textArray.forEach(word => {
-    //   text += word + ',';
-    // })
   }
-
+  
+  if (props.navigation === "right") {
+    text += '->'
+  } else if (props.navigation === "left") {
+    text += '<-'
+  } 
+  
   // ultimately end up with class denominations, with a base and continuation classes
   // e.g. ActionButton (defaults to small), ActionButton-Md, ActionButton-Lg
   // props.action will populate onClick
