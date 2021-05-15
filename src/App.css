@@ -57,7 +57,7 @@ nav > h1 {
 /* Action Button */
 
 .ActionButtonContainer {
-  border: dotted;
+  border: 2px dotted red;
   display: block;
   width: 80%;
   /* height: 50px; */
@@ -85,12 +85,23 @@ nav > h1 {
 
 .ActionButtonCluster {
   display: flex;
-  width: 40%;
+  border: 2px solid magenta;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.ActionButtonCluster > .ActionButtonContainer {
+  display: flex;
+  margin: 0px 75px 0px 75px;
+  width: 50%;
+  /* width: 80%; */
+  /* height: 50px; */
 }
 
 .ActionButtonCluster > .ActionButtonContainer > .ActionButton {
   width: 100%;
 }
+
 
 .LinkContainer {
   display: flex;

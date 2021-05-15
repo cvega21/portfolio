@@ -3,21 +3,17 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 const ActionButton = (props) => {
-  let selectedClass = 'classbasedOnProps...';
-  let action = 'action/link to take...';
   let computedClassName;
   let text = '';
-  let navigation = props.navigation;
 
   if (props.size === 'small') {
     // fill stuff here for sizing, add another size
   }
   
-  if (props.text === 'contact') {
+  if (props.link === 'contact') {
     computedClassName = 'ActionButton Contact';
     text = 'contact';
-    // fill stuff here for sizing, add another size
-  } else {
+  } else if (props.link) {
     computedClassName = 'ActionButton';
     let textArray = props.link.split('-');
     textArray.forEach(word => {
@@ -30,11 +26,6 @@ const ActionButton = (props) => {
   } else if (props.navigation === "left") {
     text += '<-'
   } 
-  
-  // ultimately end up with class denominations, with a base and continuation classes
-  // e.g. ActionButton (defaults to small), ActionButton-Md, ActionButton-Lg
-  // props.action will populate onClick
-  // text will be determined by props.text
 
   return (
   <Link to={props.link} className="ActionButtonContainer">

@@ -4,6 +4,9 @@ import Home from './components/Home';
 import ActionButton from './components/ActionButton';
 import NightModeButton from './components/NightModeButton';
 import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import Articles from './components/Articles';
+import CoolStuff from './components/CoolStuff';
 
 
 // next steps
@@ -20,7 +23,7 @@ function App() {
       <div className="App">
         <nav className="NavBar">
           <h1>CHRISTIAN VEGA</h1>
-          <ActionButton text="contact"/>
+          <ActionButton link="contact"/>
           <ul className="LinkContainer">
             <li className="LinkButtonContainer">
               <Link to="/home">
@@ -59,13 +62,13 @@ function App() {
               <AboutMe/>
             </Route>
             <Route path="/projects">
-              projects
+              <Projects/>
             </Route>
             <Route path="/articles">
-              articles
+              <Articles/>
             </Route>
             <Route path="/cool-stuff">
-              cool stuff
+              <CoolStuff/>
             </Route>
           </Switch>
         </main>
