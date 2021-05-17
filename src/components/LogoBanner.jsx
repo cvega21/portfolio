@@ -18,18 +18,48 @@ const LogoBanner = () => {
     <h1>Tech Stack Experience</h1>
     <p>work + personal projects</p>
     <div className="BannerRow1">
-      <img src={html5} alt="HTML5"></img>
-      <img src={css3} alt="CSS3"></img>
-      <img src={javascript} alt="JavaScript"></img>
-      <img src={bash} alt="Bash"></img>
-      <img src={mysql} alt="MySQL"></img>
+      <div className="BannerRowSegment">
+        <div>
+          <img src={html5} alt="HTML5"></img>
+        </div>
+        <div>
+          <img src={css3} alt="CSS3"></img>
+        </div>
+        <div>
+          <img src={javascript} alt="JavaScript"></img>
+        </div>
+        <div>
+          <img src={bash} alt="Bash"></img>
+        </div>
+        <div>
+          <img src={mysql} alt="MySQL"></img>
+        </div>
+      </div>
+      <div className="BannerRowSegment">
+        <div>
+          <img src={html5} alt="HTML5"></img>
+        </div>
+        <div>
+          <img src={css3} alt="CSS3"></img>
+        </div>
+        <div>
+          <img src={javascript} alt="JavaScript"></img>
+        </div>
+        <div>
+          <img src={bash} alt="Bash"></img>
+        </div>
+        <div>
+          <img src={mysql} alt="MySQL"></img>
+        </div>
+
+      </div>
     </div>
-    <div className="BannerRow2">
+    {/* <div className="BannerRow2">
       <img src={jira} alt="Jira"></img>
       <img src={jenkins} alt="Jenkins"></img>
       <img src={heroku} alt="Heroku"></img>
       <img src={rhel} alt="Red Hat Enterprise Linux"></img>
-    </div>
+    </div> */}
   </div>
   )
 }

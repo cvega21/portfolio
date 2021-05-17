@@ -2,6 +2,7 @@ import React from 'react';
 import ActionButton from './ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
 import LogoBanner from './LogoBanner'
+import LogosBannerNew from './LogosBannerNew'
 
 const AboutMe = () => {
   return (
@@ -20,7 +21,7 @@ const AboutMe = () => {
           </p>
         </div>
       </div>
-      <LogoBanner/>
+      <LogosBannerNew/>
       <div className="ActionButtonCluster">
         <ActionButton link="home" navigation="left"/>
         <ActionButton link="projects" navigation="right"/>

@@ -24,7 +24,7 @@ const ActionButton = (props) => {
   if (props.navigation === "right") {
     text += '->'
   } else if (props.navigation === "left") {
-    text += '<-'
+    text = '<- ' + text;
   } 
 
   return (
