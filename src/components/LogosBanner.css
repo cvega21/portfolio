@@ -12,7 +12,7 @@
   --image-size: 60px;
   padding: 20px;
   overflow: hidden;
-  max-width: 900px;
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -26,15 +26,16 @@
   position: absolute;
   z-index: 1;
   top: 0px;
+  /* background: cadetblue; */
 }
 
 .fade-background-left {
-  background-image: linear-gradient(to right, var(--secondary-color) 0%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, var(--main-background-color) 0%, rgba(255, 255, 255, 0));
   left: 0px;  
 }
 
 .fade-background-right {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--secondary-color) 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--main-background-color) 100%);
   right: 0px;  
 }
 
@@ -56,7 +57,7 @@
 .logo-slider > div > img {
   display: block;
   height: var(--image-size);
-  margin: 0 3vw;
+  margin: 0 2vw;
   filter: grayscale(100%);
   opacity: 60%;
   z-index: 1;

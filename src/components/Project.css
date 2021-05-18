@@ -1,0 +1,7 @@
+.ProjectContainer {
+  display: flex;
+  height: 250px;
+  width: 50px;
+  margin: 5px;
+  background: grey;
+}

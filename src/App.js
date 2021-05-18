@@ -4,11 +4,12 @@ import Home from './components/Home';
 // import ActionButton from './components/ActionButton';
 // import NightModeButton from './components/NightModeButton';
 import AboutMe from './components/AboutMe';
-import Projects from './components/Projects';
+import Projects from './components/ProjectsPage';
 import Articles from './components/Articles';
 import CoolStuff from './components/CoolStuff';
 import NavBar from './components/NavBar';
 import './components/LogosBanner.css';
+import './components/Project.css';
 
 
 // next steps
