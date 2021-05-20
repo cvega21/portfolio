@@ -1,6 +1,5 @@
 html, body {
   margin: 0;
-  /* overflow: hidden; */
   padding: 0;
   text-align: center;
 }  
@@ -17,9 +16,9 @@ html, body {
 
 .DarkTheme {
   --primary-color: rgb(0, 255, 170);
-  --nav-background-color: #202020;
-  --main-background-color: #121212;
-  --font-color: #f0eae5;
+  --nav-background-color: #272727;
+  --main-background-color: #202020;
+  --font-color: #f8f7f6;
   --font-color2: #000000;
   --toggle-color: #4d35ff;
   --toggle-color2: #0f0074;
@@ -31,6 +30,11 @@ body {
   font-family: 'Fira Sans', sans-serif
 }
 
+.App {
+  background-color: red;
+  display: grid;
+  grid-template-columns: minmax(225px, 0.10fr) 1fr;
+}
 
 nav {
   align-items: center;
@@ -40,16 +44,20 @@ nav {
   height: 100%;
   flex-direction: column;
   font-family: 'Fira Code', monospace;
-  /* padding: 10px; */
-  position: fixed;
-  min-width: 200px;
-  top: 0px;
+  /* Change post grid */
+  /* position: fixed; */
+  /* Change post grid */
+  max-width: 350px;
+  /* Change post grid */
+  /* top: 0px; */
+  /* Change post grid */
   text-align: right;
-  width: 10vw;
+  /* Change post grid */
+  /* width: 10vw; */
+  /* Change post grid */
 }
 
 nav > h1 {
-  /* border: dotted; */
   width: 80%;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 28px;
@@ -58,11 +66,9 @@ nav > h1 {
 /* Action Button */
 
 .ActionButtonContainer {
-  /* border: 2px dotted red; */
   display: block;
   width: 80%;
   text-decoration: none;
-  /* height: 50px; */
 }
 
 .ActionButton {
@@ -201,7 +207,6 @@ main {
   /* border: dotted; */
   background: var(--main-background-color);
   /* height: 100vh; */
-  margin-left: max(15vw, 150px);
   justify-self: center;
   /* UPDATE HEIGHT --- DO NOT USE VH */
 }
@@ -210,7 +215,6 @@ main {
 
 .GenericContainer {
   align-items: center;
-  /* border: 1px blue solid; */
   display: flex;
   min-height: 100vh;
   height: 100%;
@@ -222,7 +226,6 @@ main {
 /* Home */
 .HomeContainer {
   align-items: center;
-  /* border: 1px blue solid; */
   display: flex;
   min-height: 100vh;
   height: 100%;
