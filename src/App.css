@@ -11,7 +11,7 @@ html, body {
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --toggle-color: #FFB11A;
-  --toggle-color2: #ffd500;
+  --toggle-color2: #474747;
 }
 
 .DarkTheme {
@@ -21,7 +21,7 @@ html, body {
   --font-color: #f8f7f6;
   --font-color2: #000000;
   --toggle-color: #4d35ff;
-  --toggle-color2: #0f0074;
+  --toggle-color2: #b8b8b8;
 }
 
 body {
@@ -31,7 +31,6 @@ body {
 }
 
 .App {
-  background-color: red;
   display: grid;
   grid-template-columns: minmax(225px, 0.10fr) 1fr;
 }
@@ -44,24 +43,48 @@ nav {
   height: 100%;
   flex-direction: column;
   font-family: 'Fira Code', monospace;
-  /* Change post grid */
-  /* position: fixed; */
-  /* Change post grid */
   max-width: 350px;
-  /* Change post grid */
-  /* top: 0px; */
-  /* Change post grid */
+  justify-content: space-between;
   text-align: right;
-  /* Change post grid */
-  /* width: 10vw; */
-  /* Change post grid */
 }
 
-nav > h1 {
+nav h1 {
   width: 80%;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 28px;
 }
+
+.NavBarTop, .NavBarBottom {
+  /* border: dotted; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+
+
+
+.NavBarBottom {
+  margin: 0px 40px 0px 0px;
+  padding: 35px;
+  align-items: flex-end;
+}
+
+.SocialIcons {
+  display: flex;
+  margin-top: 25px;
+}
+
+.SocialIcons > * {
+  margin: 0px 10px 0px 10px;
+}
+
+.SocialIcons > *:hover {
+  cursor: pointer;
+  color: var(--toggle-color2);
+}
+
 
 /* Action Button */
 
@@ -140,7 +163,8 @@ nav > h1 {
 /* Night Mode button */
 .NightModeButtonContainer {
   /* border: dotted; */
-  width: 80%;
+  /* width: 80%; */
+  margin-left: 100px;
 }
 
 .switch {
