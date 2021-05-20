@@ -42,10 +42,10 @@ nav {
   font-family: 'Fira Code', monospace;
   /* padding: 10px; */
   position: fixed;
-  min-width: 15vw;
+  min-width: 200px;
   top: 0px;
   text-align: right;
-  width: 150px;
+  width: 10vw;
 }
 
 nav > h1 {

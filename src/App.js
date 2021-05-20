@@ -1,15 +1,13 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Home from './components/Home';
-// import ActionButton from './components/ActionButton';
-// import NightModeButton from './components/NightModeButton';
 import AboutMe from './components/AboutMe';
 import Projects from './components/ProjectsPage';
 import Articles from './components/Articles';
 import CoolStuff from './components/CoolStuff';
 import NavBar from './components/NavBar';
-import './components/LogosBanner.css';
-import './components/Project.css';
+import './styles/LogosBanner.css';
+import './styles/Project.css';
 
 
 // next steps
@@ -23,6 +21,9 @@ function App() {
         <NavBar/>     
         <main>
           <Switch>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
             <Route path="/home">
               <Home/>
             </Route>

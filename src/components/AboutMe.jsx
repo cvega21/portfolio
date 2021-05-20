@@ -14,7 +14,7 @@ const AboutMe = () => {
           <p>23 year old that loves learning new things. Studied Finance @ UT Austin, interned at some of the world’s largest pension funds and investment banks, then decided to pursue a lifelong interest in technology and embarked upon an exciting new learning journey.
           </p>
           <p>
-          Currently working in Operations + Infrastructure (Product Reliability Engineering) at Visa and tinkering with web development on the side.
+          Currently working in Operations + Infrastructure (Product Reliability Engineering) at Visa and tinkering with web development on the side. Passionate about making the financial world more accessible to all.
           </p>
           <p>
           📍 Austin, Texas.
