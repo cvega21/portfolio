@@ -6,17 +6,17 @@ html, body {
 
 :root {
   --primary-color: #3f28ee;
-  --nav-background-color: #F5F1ED;
+  --nav-background-color: #ebe6e1;
   --main-background-color: #ffffff;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --toggle-color: #FFB11A;
-  --toggle-color2: #474747;
+  --toggle-color2: #585858;
 }
 
 .DarkTheme {
   --primary-color: rgb(0, 255, 170);
-  --nav-background-color: #272727;
+  --nav-background-color: #363636;
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
@@ -32,7 +32,9 @@ body {
 
 .App {
   display: grid;
-  grid-template-columns: minmax(225px, 0.10fr) 1fr;
+  grid-template-columns: minmax(225px, 15vw) 1fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: "navbar mainContent";
 }
 
 nav {
@@ -43,9 +45,19 @@ nav {
   height: 100%;
   flex-direction: column;
   font-family: 'Fira Code', monospace;
-  max-width: 350px;
+  font-size: large;
+  max-width: 325px;
+  min-width: 225px;
+  width: 10vw;
   justify-content: space-between;
   text-align: right;
+  position: fixed;
+  grid-area: 'navbar';
+}
+
+nav button {
+  font-size: large;
+  margin: 7px 0px 7px 0px;
 }
 
 nav h1 {
@@ -66,7 +78,7 @@ nav h1 {
 
 
 .NavBarBottom {
-  margin: 0px 40px 0px 0px;
+  margin: 0px 35px 0px 0px;
   padding: 35px;
   align-items: flex-end;
 }
@@ -101,6 +113,7 @@ nav h1 {
   box-shadow: 0px 2px 7px -2px black;
   color: var(--font-color2);
   font-family: 'Fira Code', monospace;
+  font-size: medium;
   padding: 10px 15px 10px 15px;
   width: 20%;
 }
@@ -232,6 +245,9 @@ main {
   background: var(--main-background-color);
   /* height: 100vh; */
   justify-self: center;
+  grid-area: mainContent;
+  width: 100%;
+  /* overflow: auto; */
   /* UPDATE HEIGHT --- DO NOT USE VH */
 }
 
@@ -240,11 +256,10 @@ main {
 .GenericContainer {
   align-items: center;
   display: flex;
-  min-height: 100vh;
-  height: 100%;
+  /* min-height: 100vh; */
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
 }
 
 /* Home */

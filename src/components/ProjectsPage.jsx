@@ -6,10 +6,13 @@ const Projects = () => {
   return (
     <div className="GenericContainer">
       <h1>Projects</h1>
-      <div>
-        <Project/>
-        <Project/>
-        <Project/>
+      <div className="ProjectsGrid">
+        <Project title="HELLO WORLD"/>
+        <Project title="HELLO WORLD"/>
+        <Project title="HELLO WORLD"/>
+        <Project title="HELLO WORLD"/>
+        <Project title="HELLO WORLD"/>
+        <Project title="HELLO WORLD"/>
       </div>
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left"/>

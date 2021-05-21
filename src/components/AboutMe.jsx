@@ -11,7 +11,7 @@ const AboutMe = () => {
       <div className="ProfileContainer">
         <img src={profilePicture} alt="Profile" loading="lazy"></img>
         <div className="ProfileTextContainer">
-          <p>23 year old that loves learning new things. Studied Finance @ UT Austin, interned at some of the world’s largest pension funds and investment banks, then decided to pursue a lifelong interest in technology and embarked upon an exciting new learning journey.
+          <p>23 year old that loves learning new things. Studied Finance @ UT Austin, interned at some of the world’s largest pension funds and investment banks, then decided to pursue a lifelong interest in software and immersed myself in a new learning journey on the technical side.
           </p>
           <p>
           Currently working in Operations + Infrastructure (Product Reliability Engineering) at Visa and tinkering with web development on the side. Passionate about making the financial world more accessible to all.
