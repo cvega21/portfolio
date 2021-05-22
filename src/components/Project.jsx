@@ -14,7 +14,7 @@ const Project = (props) => {
       <img src={portfolio} alt='portfolio'></img>
       <div className="ProjectTextContainer">
         <h1>{props.title}</h1>
-        <p>Description. Lorem ipsum, hello world, hai how r u and such other things of that nature</p>
+        <p className="ProjectTextDescription">{props.description}</p>
         <div className="StackContainer">
           <p>⚛️</p>
           <p>💻</p>

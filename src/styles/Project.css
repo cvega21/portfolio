@@ -10,7 +10,7 @@
 .ProjectContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: space-around; */
   font-family: 'Fira Code', monospace;
   text-align: left;
   max-width: 100%;
@@ -20,17 +20,23 @@
 
 .ProjectTextContainer {
   padding: 0px 15px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .ProjectContainer img {
   width: 100%;
 }
 
-.ProjectContainer p {
+.ProjectTextDescription {
+  flex-grow: 1;
+  margin-bottom: auto;
 }
 
 .ProjectContainer h1 {
   font-weight: bold;
+  font-size: 24px;
 }
 
 .StackContainer {
@@ -45,4 +51,5 @@
   margin: 15px 0px 15px 0px;
   padding-top: 10px;
   border-top: solid 2px rgb(58, 58, 58);
+  justify-self: flex-end;
 }
