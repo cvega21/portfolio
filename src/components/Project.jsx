@@ -13,14 +13,18 @@ const Project = (props) => {
     <div className="ProjectContainer">
       <img src={portfolio} alt='portfolio'></img>
       <div className="ProjectTextContainer">
-        <h1>{props.title}</h1>
-        <p className="ProjectTextDescription">{props.description}</p>
-        <div className="StackContainer">
-          <p>⚛️</p>
-          <p>💻</p>
-          <p>📙</p>
+        <div className="ProjectText">
+          <h1>{props.title}</h1>
+          <p className="ProjectTextDescription">{props.description}</p>
         </div>
-        <p className="ProjectTime">🕒 69 hours</p>
+        <div className="StackAndTimeContainer">
+          <div className="StackContainer">
+            <p>⚛️</p>
+            <p>💻</p>
+            <p>📙</p>
+          </div>
+          <p className="ProjectTime">🕒 69 hours</p>
+        </div>
       </div>
     </div>
   )
