@@ -1,6 +1,12 @@
 import React from 'react';
 import ActionButton from './ActionButton'
 import Project from './Project'
+import calculator from '../assets/calculator.gif';
+import calculatorStatic from '../assets/calculatorStatic.jpg';
+import quoteGenerator from '../assets/quoteGenerator.gif';
+import quoteGeneratorStatic from '../assets/quoteGeneratorStatic.jpg';
+import fitness from '../assets/fitness.gif';
+import fitnessStatic from '../assets/fitnessStatic.jpg';
 
 const Projects = () => {
   
@@ -16,12 +22,12 @@ const Projects = () => {
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="ProjectsGrid">
-        <Project title="PORTFOLIO" description="a portfolio website within a portfolio website. #recursion"/>
-        <Project title="FITNESS TRACKING" description='A small, responsive full-stack app to keep track of your workouts.'/>
-        <Project title="RANDOM QUOTE GENERATOR" description='An iOS-inspired random quote generator.'/>
-        <Project title="HELLO WORLD"/>
-        <Project title="HELLO WORLD"/>
-        <Project title="HELLO WORLD"/>
+        <Project title="PORTFOLIO" description="a portfolio website within a portfolio website. #recursion" gif={[calculator,calculatorStatic]}/>
+        <Project title="FITNESS TRACKING" description='A small, responsive full-stack app to keep track of your workouts.' gif={[fitness,fitnessStatic]}/>
+        <Project title="RANDOM QUOTE GENERATOR" description='An iOS-inspired random quote generator.' gif={[quoteGenerator, quoteGeneratorStatic]}/>
+        <Project title="HELLO WORLD" gif={[quoteGenerator, quoteGenerator]}/>
+        <Project title="HELLO WORLD" gif={[quoteGenerator, quoteGenerator]}/>
+        <Project title="HELLO WORLD" gif={[quoteGenerator, quoteGenerator]}/>
       </div>
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left"/>

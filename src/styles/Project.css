@@ -15,7 +15,8 @@
   text-align: left;
   max-width: 100%;
   background: var(--nav-background-color);
-  box-shadow: 0px 7px 10px -4px black;
+  box-shadow: 0px 7px 7px -4px black;
+  position: relative;
 }
 
 .ProjectTextContainer {
@@ -29,9 +30,34 @@
   margin-bottom: auto;
 }
 
-.ProjectContainer img {
+#GifCover {
+  position: absolute;
+  left: 0px;
+  /* filter: grayscale(100%); */
+}
+
+#GifCover:hover {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+
+.ProjectContainer img, #GifCover {
   width: 100%;
 }
+
+.ProjectImageContainer {
+  position: relative;
+}
+
+/* .ProjectImageContainer :nth-child(2) {
+  position: absolute;
+  left: 0px;
+} */
 
 .ProjectTextDescription {
   margin:0px;

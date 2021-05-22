@@ -1,5 +1,4 @@
 import React from 'react'
-import portfolio from '../assets/portfolio-image.png';
 
 const Project = (props) => {
   //props:
@@ -11,7 +10,10 @@ const Project = (props) => {
   
   return (
     <div className="ProjectContainer">
-      <img src={portfolio} alt='portfolio'></img>
+      <img src={props.gif[0]} alt='portfolio'></img>
+      <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
+      <div className="ProjectImageContainer">
+      </div>
       <div className="ProjectTextContainer">
         <div className="ProjectText">
           <h1>{props.title}</h1>
