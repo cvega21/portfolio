@@ -9,6 +9,10 @@ import fitness from '../assets/fitness.gif';
 import fitnessStatic from '../assets/fitnessStatic.jpg';
 import timer from '../assets/timer.gif';
 import timerStatic from '../assets/timerStatic.jpg';
+import soundboard from '../assets/soundboard.gif';
+import soundboardStatic from '../assets/soundboardStatic.jpg';
+import portfolioStatic from '../assets/portfolioStatic.png';
+
 
 const Projects = () => {
   
@@ -24,12 +28,12 @@ const Projects = () => {
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="ProjectsGrid">
-        <Project title="CALCULATOR" description="a nice looking, fully functioning calculator built on react." gif={[calculator,calculatorStatic]}/>
-        <Project title="FITNESS TRACKING" description='a small, responsive full-stack app to keep track of your workouts.' gif={[fitness,fitnessStatic]}/>
-        <Project title="RANDOM QUOTE GENERATOR" description='an iOS-inspired random quote generator.' gif={[quoteGenerator, quoteGeneratorStatic]}/>
-        <Project title="HELLO WORLD" description='a simple time management tool built on React.' gif={[timer, timerStatic]}/>
-        <Project title="POMODORO TIMER" gif={[quoteGenerator, quoteGenerator]}/>
-        <Project title="HELLO WORLD" gif={[quoteGenerator, quoteGenerator]}/>
+        <Project title="PORTFOLIO WEBSITE" description='a portfolio website in a portfolio website. #recursion' gif={[portfolioStatic, portfolioStatic]} link='https://christianvega.me'/>
+        <Project title="CALCULATOR" description="a nice looking, fully functioning calculator built on react." gif={[calculator,calculatorStatic]} link='https://github.com/cvega21/calculator-js'/>
+        <Project title="FITNESS TRACKING" description='a small, responsive full-stack app to keep track of your workouts.' gif={[fitness,fitnessStatic]} link='https://github.com/cvega21/fitness-tracking'/>
+        <Project title="RANDOM QUOTE GENERATOR" description='an iOS-inspired random quote generator.' gif={[quoteGenerator, quoteGeneratorStatic]} link='https://github.com/cvega21/random-quote-generator'/>
+        <Project title="POMODORO TIMER" description='a simple time management tool built on React.' gif={[timer, timerStatic]} link='https://github.com/cvega21/pomodoro-timer'/>
+        <Project title="EDM SOUNDBOARD" description='an electronic dance music (EDM) inspired piano and soundboard.' gif={[soundboard, soundboardStatic]} link='https://github.com/cvega21/edm-soundboard'/>
       </div>
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left"/>

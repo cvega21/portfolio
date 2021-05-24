@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Project = (props) => {
   //props:
@@ -10,10 +12,12 @@ const Project = (props) => {
   
   return (
     <div className="ProjectContainer">
-      <img src={props.gif[0]} alt='portfolio'></img>
-      <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
-      <div className="ProjectImageContainer">
+      <div className="ImageContainer">
       </div>
+      <a href={props.link}><div className="ProjectImageContainer">
+        <img src={props.gif[0]} alt='portfolio'></img>
+        <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
+      </div></a>
       <div className="ProjectTextContainer">
         <div className="ProjectText">
           <h1>{props.title}</h1>
@@ -25,7 +29,9 @@ const Project = (props) => {
             <p>💻</p>
             <p>📙</p>
           </div>
-          <p className="ProjectTime">🕒 69 hours</p>
+          <div className="TimeContainer">
+            <p className="ProjectTime">🕒 69 hours</p>
+          </div>
         </div>
       </div>
     </div>

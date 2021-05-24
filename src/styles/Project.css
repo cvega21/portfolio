@@ -5,6 +5,7 @@
   column-gap: 125px;
   row-gap: 100px;
   grid-template-columns: 1fr 1fr 1fr;
+  font-weight: 300;
 }
 
 .ProjectContainer {
@@ -81,9 +82,7 @@
 }
 
 .ProjectTime {
-  margin: 10px 0px 10px 0px;
-  padding-top: 10px;
-  border-top: solid 2px rgb(58, 58, 58);
+  margin: 0px;
 }
 
 .StackAndTimeContainer {
@@ -91,4 +90,14 @@
   flex-direction: column;
   height: auto;
   margin: 10px 0px 0px 0px;
+}
+
+.TimeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  padding-top: 10px;
+  border-top: solid 2px rgb(58, 58, 58);
 }
