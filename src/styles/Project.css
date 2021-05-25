@@ -45,9 +45,7 @@
   transition: 0.3s;
 }
 
-
-
-.ProjectContainer img, #GifCover {
+.ProjectImageContainer img, #GifCover {
   width: 100%;
 }
 
@@ -73,12 +71,31 @@
 
 .StackContainer {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin: 0px;
   padding: 0px;
 }
 
 .StackContainer * {
   margin: 0px;
+  width: 50px;
+}
+
+.techStackImage, .techStackFa {
+  /* border: dotted; */
+  width: auto;
+  height: 30px;
+  /* margin: 0px 0px 0px 0px; */
+  padding: 6px;
+}
+
+.techStackImage {
+  /* filter: brightness(80%) grayscale(100%); */
+}
+
+.techStackFa {
+  /* padding: 6px; */
 }
 
 .ProjectTime {

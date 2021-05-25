@@ -1,6 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faReact, faNodeJs, faSass } from '@fortawesome/free-brands-svg-icons';
+import mongo from '../assets/mongodb.png';
+// import mongo from '../assets/mongo.svg';
+import firebase from '../assets/firebase.png';
+import react from '../assets/react.png';
+import node from '../assets/node.png';
+import sass from '../assets/sass.png';
+
 
 const Project = (props) => {
   //props:
@@ -9,11 +16,21 @@ const Project = (props) => {
   // stack
   // hours
   // image
+
+  const techStackIcons = {
+    'react': react,
+    'node': node,
+    'mongo': mongo,
+    'sass': sass,
+    'firebase': firebase
+  }
+
+  const currentTechStack = props.stack.map((item) => {
+    return <img src={techStackIcons[item]} alt={item} title={item} className="techStackImage"></img>
+  })
   
   return (
     <div className="ProjectContainer">
-      <div className="ImageContainer">
-      </div>
       <a href={props.link}><div className="ProjectImageContainer">
         <img src={props.gif[0]} alt='portfolio'></img>
         <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
@@ -25,9 +42,7 @@ const Project = (props) => {
         </div>
         <div className="StackAndTimeContainer">
           <div className="StackContainer">
-            <p>⚛️</p>
-            <p>💻</p>
-            <p>📙</p>
+            {currentTechStack}
           </div>
           <div className="TimeContainer">
             <p className="ProjectTime">🕒 69 hours</p>

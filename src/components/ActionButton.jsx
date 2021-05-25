@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 const ActionButton = (props) => {
+  let computedContainerClassName;
   let computedClassName;
   let text = '';
 
@@ -11,9 +12,11 @@ const ActionButton = (props) => {
   }
   
   if (props.link === 'contact') {
+    computedContainerClassName = 'ActionButtonContactContainer';
     computedClassName = 'ActionButton Contact';
     text = 'contact';
   } else if (props.link) {
+    computedContainerClassName = 'ActionButtonContainer';
     computedClassName = 'ActionButton';
     let textArray = props.link.split('-');
     textArray.forEach(word => {
@@ -28,7 +31,7 @@ const ActionButton = (props) => {
   } 
 
   return (
-  <Link to={props.link} className="ActionButtonContainer">
+  <Link to={props.link} className={computedContainerClassName}>
     <button className={computedClassName}>{text}</button>
   </Link>
   )
