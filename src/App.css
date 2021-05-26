@@ -13,6 +13,7 @@ html, body {
   --font-color2: #F5F1ED;
   --toggle-color: #FFB11A;
   --toggle-color2: #f3a200;
+  --socials-hover: #383838;
 }
 
 .DarkTheme {
@@ -24,6 +25,7 @@ html, body {
   --font-color2: #000000;
   --toggle-color: #4d35ff;
   --toggle-color2: rgb(0, 223, 148);
+  --socials-hover: #b1b1b1;
 }
 
 body {
@@ -95,8 +97,7 @@ nav h1 {
 
 .SocialIcons > *:hover {
   cursor: pointer;
-  color: var(--toggle-color2);
-  transition: 0.2s;
+  color: var(--socials-hover);
 }
 
 
@@ -284,7 +285,7 @@ main {
 }
 
 .HomeContent {  
-  margin: 0px 0px 0px 100px;
+  margin: 0px 0px 200px 100px;
 }
 
 .HomeContent > h1, .GenericContainer > h1 {
@@ -296,14 +297,14 @@ main {
 }
 
 .HomeContent > h1 {
-  font-size: 150px;
+  font-size: 125px;
 }
 
 .HomeContent > p {
   /* border: dotted; */
   font-family: 'Fira Sans', sans-serif;
   font-weight: lighter;
-  font-size: 64px;
+  font-size: 50px;
   margin: 0px 0px 90px 0px;  
 }
 
