@@ -8,6 +8,7 @@ import CoolStuff from './components/CoolStuff';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.css';
 import './styles/Project.css';
+import './styles/Articles.css';
 
 
 // next steps

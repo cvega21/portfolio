@@ -1,0 +1,19 @@
+.ArticlesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Article {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  border: solid;
+  height: 100px;
+  margin: 30px 0px 30px 0px;
+}
+
+.Article img {
+  width: 100px;
+  height: 100px;
+}

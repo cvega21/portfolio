@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import ActionButton from './ActionButton'
+import Article from './Article'
 
 const Articles = () => {
-  const [articles, setArticles] = useState('');
+  const [articles, setArticles] = useState([]);
   const [mediumData, setMediumData] = useState('');
   
   useEffect(() => {
     const getArticles = async () => {
       let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
       let responseJSON = await response.json();
-      setMediumData(responseJSON['feed']['title']);
-      // responseJSON.map(())
-      responseJSON['items'].map((article) => {
-        console.log(article['title'],article['pubDate']);  
-      })
+      setArticles(responseJSON['items'])
+      // return responseJSON['items']
     }
     
     
-    if (!articles) {
+    if (!articles.length) {
       getArticles();
     }
-  })
+  }, [articles])
 
   // const renderArticles = (mediumPosts) => {
   //   console.log(mediumPosts);
@@ -32,7 +30,11 @@ const Articles = () => {
   return (
     <div className="GenericContainer">
       <h1>Articles</h1>
-      <p>wassup boy this a test. {mediumData}</p>
+      <div className="ArticlesContainer">
+        {articles.map((item) => {
+        return <Article title={item.title} date={item.pubDate} image={item.thumbnail} key={item.pubDate}/>
+        })}        
+      </div>
       <div className="ActionButtonCluster">
         <ActionButton link="projects" navigation="left"/>
         <ActionButton link="cool-stuff" navigation="right"/>
