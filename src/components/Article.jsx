@@ -4,12 +4,14 @@ const Article = (props) => {
     // props.title
     // props.date
     // props.link
-    console.log(props);
+    let formattedDate = new Date(props.date).toDateString().slice(3);
     
     return (
         <div className="Article">
-          <h1>{props.title}</h1>
-          <h2>{props.date}</h2>
+          <div className="ArticleTitleAndDate">
+            <a href="www.povertygang.com">{props.title}</a>
+            <h2>{formattedDate}</h2>
+          </div>
           <img src={props.image} alt={props.title}/>
         </div>
     )

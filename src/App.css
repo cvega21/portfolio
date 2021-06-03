@@ -5,7 +5,7 @@ html, body {
 }  
 
 :root {
-  --primary-color: #3f28ee;
+  --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
   --nav-background-color: #ebe6e1;
   --main-background-color: #ffffff;
@@ -143,7 +143,8 @@ nav h1 {
   /* border: 2px solid magenta; */
   justify-content: space-around;
   width: 60%;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin: 40px 0px 40px 0px;
 }
 
 .ActionButtonCluster > .ActionButtonContainer {
@@ -285,7 +286,7 @@ main {
 }
 
 .HomeContent {  
-  margin: 0px 0px 200px 100px;
+  margin: 0px 0px 0px 100px;
 }
 
 .HomeContent > h1, .GenericContainer > h1 {
