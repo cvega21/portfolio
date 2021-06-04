@@ -8,6 +8,7 @@ html, body {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
   --nav-background-color: #ebe6e1;
+  --nav-background-color2: #767aa5;
   --main-background-color: #ffffff;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
@@ -20,6 +21,7 @@ html, body {
   --primary-color: rgb(0, 255, 170);
   --primary-color-dark: rgb(0, 223, 148);
   --nav-background-color: #363636;
+  --nav-background-color2: #646464;
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
@@ -165,19 +167,32 @@ nav h1 {
   /* border: dotted; */
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0px;
-  width: 80%;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
 }
 
-.LinkButtonContainer {
+.LinkButtonContainer, .activeLinkButtonContainer {
   list-style: none;
 }
 
-.LinkButton {
+.activeLinkButtonContainer {
+  background-color: var(--nav-background-color2);
+}
+
+.activeLinkButtonContainer button {
+  color: var(--toggle-color2);
+}
+
+
+.LinkButton, .trueLinkButton {
+  padding: 0px 20px 0px 0px;
   background-color: transparent;
   border: none;
   color: var(--font-color); 
   font-family: 'Fira Code', monospace;
+}
+
+.trueLinkButton {
 }
 
 .LinkButton:hover {

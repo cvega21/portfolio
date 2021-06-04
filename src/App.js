@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
 import Projects from './components/ProjectsPage';
@@ -15,7 +16,9 @@ import './styles/Articles.css';
 // add social media icons to nav
 
 function App() {
+  const [activeNavPage, setActiveNavPage] = useState('home');
   
+
   return (
     <Router>
       <div className="App">

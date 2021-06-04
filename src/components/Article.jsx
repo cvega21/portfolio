@@ -8,7 +8,7 @@ const Article = (props) => {
     
     return (
         <div className="Article">
-          <div className="ArticleTitleAndDate">
+          <div className="ArticleTitleAndDate" href="www.povertygang.com">
             <a href="www.povertygang.com">{props.title}</a>
             <h2>{formattedDate}</h2>
           </div>
