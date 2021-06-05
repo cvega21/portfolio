@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ActionButton from './ActionButton'
 import Article from './Article'
 
-const Articles = () => {
+const Articles = (props) => {
   const [articles, setArticles] = useState([]);
   const [mediumData, setMediumData] = useState('');
   
@@ -36,8 +36,8 @@ const Articles = () => {
         })}        
       </div>
       <div className="ActionButtonCluster">
-        <ActionButton link="projects" navigation="left"/>
-        <ActionButton link="cool-stuff" navigation="right"/>
+        <ActionButton link="projects" navigation="left" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="cool-stuff" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
     </div>
   )

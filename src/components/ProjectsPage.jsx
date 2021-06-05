@@ -14,7 +14,7 @@ import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolioStatic from '../assets/portfolioStatic.png';
 
 
-const Projects = () => {
+const Projects = (props) => {
   
   
   let portfolioProps = {
@@ -73,8 +73,8 @@ const Projects = () => {
         />
       </div>
       <div className="ActionButtonCluster">
-        <ActionButton link="about-me" navigation="left"/>
-        <ActionButton link="articles" navigation="right"/>
+        <ActionButton link="about-me" navigation="left" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="articles" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
     </div>
   )

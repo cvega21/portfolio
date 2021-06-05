@@ -6,6 +6,8 @@ const ActionButton = (props) => {
   let computedContainerClassName;
   let computedClassName;
   let text = '';
+  let linkTo = '/'.concat(props.link);
+  console.log(`${typeof(props.onChangeNav)}'inside action button!'${props.link}`)
 
   if (props.size === 'small') {
     // fill stuff here for sizing, add another size
@@ -31,8 +33,8 @@ const ActionButton = (props) => {
   } 
 
   return (
-  <Link to={props.link} className={computedContainerClassName}>
-    <button className={computedClassName}>{text}</button>
+  <Link to={linkTo} className={computedContainerClassName}>
+    <button className={computedClassName} onClick={() => props.onChangeNav(linkTo)}>{text}</button>
   </Link>
   )
 }

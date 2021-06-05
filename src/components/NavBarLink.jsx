@@ -11,9 +11,11 @@ const NavBarLink = (props) => {
   const [isActive, setIsActive] = useState('');
 
   useEffect(() => {
-    if (window.location.pathname === linkTo) {
-      console.log(`${linkTo} is active !!!!`)
+    if (props.active === linkTo) {
+      console.log(`Inside NavBarLink: ${linkTo} is active !!!!. ${props.onChangeNav}`)
       setIsActive('active');
+    } else {
+      setIsActive('');
     }
 
     return () => {
@@ -23,7 +25,7 @@ const NavBarLink = (props) => {
   return (
   <li className={isActive + "LinkButtonContainer"}>
     <Link to={linkTo}>
-      <button className={"LinkButton"}>{text}</button>
+      <button className={"LinkButton"} onClick={() => props.onChangeNav(linkTo)}>{text}</button>
     </Link>
   </li>
   )

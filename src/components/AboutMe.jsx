@@ -4,7 +4,7 @@ import profilePicture from '../assets/IMG_8318.jpeg';
 import LogoBanner from './LogoBanner'
 import LogosBannerNew from './LogosBannerNew'
 
-const AboutMe = () => {
+const AboutMe = (props) => {
   return (
     <div className="GenericContainer">
       <h1>About Me</h1>
@@ -23,8 +23,8 @@ const AboutMe = () => {
       </div>
       <LogosBannerNew/>
       <div className="ActionButtonCluster">
-        <ActionButton link="home" navigation="left"/>
-        <ActionButton link="projects" navigation="right"/>
+        <ActionButton link="home" navigation="left" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="projects" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
     </div>
   )

@@ -6,22 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithubSquare, faTwitterSquare, faLess } from '@fortawesome/free-brands-svg-icons';
 
-const NavBar = () => {
-  const [activeRoute,setActiveRoute] = useState({
-    'home': 0,
-    'about-me': 0,
-    'projects': 0,
-    'articles': 0,
-    'cool-stuff': 0
-  });  
-
-  useEffect(() => {
-    
-
-    return () => {
-      
-    }
-  }, [])
+const NavBar = (props) => {
+  console.log(`${props.active} is active ! ! !`);
 
   return (
       <nav className="NavBar">
@@ -30,12 +16,13 @@ const NavBar = () => {
           <h1>CHRISTIAN VEGA</h1>
           <ActionButton link="contact"/>
           <ul className="LinkContainer">
-            <NavBarLink to='home' active={activeRoute[0]}/>
-            <NavBarLink to='about-me' active={activeRoute[1]}/>
-            <NavBarLink to='projects' active={activeRoute[2]}/>
-            <NavBarLink to='articles' active={activeRoute[3]}/>
-            <NavBarLink to='cool-stuff' active={activeRoute[4]}/>
+            <NavBarLink to='home' active={props.active} onChangeNav={props.onChangeNav}/>
+            <NavBarLink to='about-me' active={props.active} onChangeNav={props.onChangeNav}/>
+            <NavBarLink to='projects' active={props.active} onChangeNav={props.onChangeNav}/>
+            <NavBarLink to='articles' active={props.active} onChangeNav={props.onChangeNav}/>
+            <NavBarLink to='cool-stuff' active={props.active} onChangeNav={props.onChangeNav}/>
           </ul>
+          {/* <NavBarLinkContainer paths={['home', 'about-me', 'projects','articles','cool-stuff']} onChangeNav={props.onChangeNav}/> */}
         </div>
         <div className="NavBarBottom">
           <NightModeButton/>

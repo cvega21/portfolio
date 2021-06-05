@@ -16,32 +16,38 @@ import './styles/Articles.css';
 // add social media icons to nav
 
 function App() {
-  const [activeNavPage, setActiveNavPage] = useState('home');
-  
+  const [activeNavPage, setActiveNavPage] = useState('');
+
+  useEffect(() => {
+    setActiveNavPage(window.location.pathname);
+    
+    return () => {
+    }
+  }, [])
 
   return (
     <Router>
       <div className="App">
-        <NavBar/>     
+        <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/>     
         <main>
           <Switch>
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
             <Route path="/home">
-              <Home/>
+              <Home onChangeNav={setActiveNavPage}/>
             </Route>
             <Route path="/about-me">
-              <AboutMe/>
-            </Route>
+              <AboutMe onChangeNav={setActiveNavPage}/>
+            </Route >
             <Route path="/projects">
-              <Projects/>
+              <Projects onChangeNav={setActiveNavPage}/>
             </Route>
             <Route path="/articles">
-              <Articles/>
+              <Articles onChangeNav={setActiveNavPage}/>
             </Route>
             <Route path="/cool-stuff">
-              <CoolStuff/>
+              <CoolStuff onChangeNav={setActiveNavPage}/>
             </Route>
           </Switch>
         </main>

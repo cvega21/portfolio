@@ -8,12 +8,12 @@ html, body {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
   --nav-background-color: #ebe6e1;
-  --nav-background-color2: #767aa5;
+  --nav-background-color2: #676ec0c7;
   --main-background-color: #ffffff;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --toggle-color: #FFB11A;
-  --toggle-color2: #f3a200;
+  --toggle-color2: #f3cf00;
   --socials-hover: #383838;
 }
 
@@ -171,8 +171,20 @@ nav h1 {
   padding: 0px 0px 0px 0px;
 }
 
+.LinkButtonContainer:hover {
+  background-color: var(--nav-background-color2);
+  transition: .3s;
+  color: var(--toggle-color2);
+}
+
 .LinkButtonContainer, .activeLinkButtonContainer {
   list-style: none;
+  /* text-decoration: none; */
+  /* text-decoration-style: double; */
+}
+
+.LinkButtonContainer a, .activeLinkButtonContainer a {
+  text-decoration: none;
 }
 
 .activeLinkButtonContainer {
@@ -183,11 +195,16 @@ nav h1 {
   color: var(--toggle-color2);
 }
 
-
 .LinkButton, .trueLinkButton {
-  padding: 0px 20px 0px 0px;
+  padding: 0px 20px 5px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
   background-color: transparent;
   border: none;
+  width: 100%;
+  height: 100%;
   color: var(--font-color); 
   font-family: 'Fira Code', monospace;
 }
