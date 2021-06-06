@@ -1,2 +1,0 @@
-curl -v -u 07677d9a20a59edd57848c9d0574fdf0:api_token \
-	-X GET https://api.track.toggl.com/api/v8/me
