@@ -75,27 +75,13 @@ exports.getReportsData = functions.https.onRequest(async (request, response) => 
         
         finalData.forEach((record) => {
             if (projectsTime.hasOwnProperty(record.description)) {
-                // console.log(`${record.description} is present in the response!`)
-                projectsTime[record.description] = projectsTime[record.description] + parseFloat((record.dur/3600000).toFixed(2))
-                // console.log(projectsTime[record.description]);
+                // Adds hours tracked to 2 decimal points
+                projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000).toFixed(1))
+                projectsTime[record.description] = projectsTime[record.description].toFixed(1);
             } else {
-                // console.log(`${record['description']} is probably undefined`)
-                // console.log(Object.keys(projectsTime))
-                // console.log(projectsTime[record.description])
+                console.log(`${record['description']} is probably undefined`)
+                console.log(projectsTime[record])
             }
-        
-
-            // if (i < 4) {
-            //     // Seconds
-            //     // console.log(record)
-            //     console.log(`seconds = ${record.dur/1000}`)
-            //     // Minutes
-            //     console.log(`minutes = ${record.dur/60000}`)
-            //     // Hours
-            //     console.log(`hours = ${(record.dur/3600000).toFixed(2)}`)
-            //     console.log()
-            // }
-
         })
 
         console.log(`totalPages = ${totalPages}`)
