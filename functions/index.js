@@ -58,20 +58,51 @@ exports.getReportsData = functions.https.onRequest(async (request, response) => 
         let totalData = []
         
         for (let i = 1; i <= totalPages; i++) {
-            const page = getPage(i);
-            totalData.push(page);
+            const page = await getPage(i);
+            totalData.push(page.data);
         }
 
         let finalData = await Promise.all(totalData);
         finalData = finalData.flat();
+
+        let projectsTime = {
+            "Build Portfolio Website": 0,
+            "Fitness Tracker App": 0,
+            "EDM Machine": 0,
+            "Calculator Project": 0,
+            "Pomodoro Timer Project": 0
+        }
         
-        console.log(`totalPages = ${totalData}`)
+        finalData.forEach((record) => {
+            if (projectsTime.hasOwnProperty(record.description)) {
+                // console.log(`${record.description} is present in the response!`)
+                projectsTime[record.description] = projectsTime[record.description] + parseFloat((record.dur/3600000).toFixed(2))
+                // console.log(projectsTime[record.description]);
+            } else {
+                // console.log(`${record['description']} is probably undefined`)
+                // console.log(Object.keys(projectsTime))
+                // console.log(projectsTime[record.description])
+            }
+        
+
+            // if (i < 4) {
+            //     // Seconds
+            //     // console.log(record)
+            //     console.log(`seconds = ${record.dur/1000}`)
+            //     // Minutes
+            //     console.log(`minutes = ${record.dur/60000}`)
+            //     // Hours
+            //     console.log(`hours = ${(record.dur/3600000).toFixed(2)}`)
+            //     console.log()
+            // }
+
+        })
+
         console.log(`totalPages = ${totalPages}`)
         console.log(`totalData length = ${totalData.length}`)
         console.log(finalData.length);
-        console.log(finalData[0].data[49]);
-
-        response.send(finalData);
+        console.log(projectsTime)
+        response.send(projectsTime);
     } catch (err) {
         console.error(err);
     }
