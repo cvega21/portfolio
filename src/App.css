@@ -12,6 +12,7 @@ html, body {
   --main-background-color: #ffffff;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
+  --link-color: rgb(0, 81, 255);
   --toggle-color: #FFB11A;
   --toggle-color2: #f3cf00;
   --socials-hover: #383838;
@@ -25,6 +26,7 @@ html, body {
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
+  --link-color: rgb(0, 255, 13);
   --toggle-color: #4d35ff;
   --toggle-color2: rgb(0, 223, 148);
   --socials-hover: #b1b1b1;

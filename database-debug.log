@@ -1,3 +1,2 @@
-The operation couldn’t be completed. Unable to locate a Java Runtime.
-Please visit http://www.java.com for information on installing Java.
-
+19:34:03.212 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+19:34:03.370 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000

@@ -29,6 +29,14 @@ const Project = (props) => {
     return <img src={techStackIcons[item]} alt={item} title={item} className="techStackImage"></img>
   })
   
+  const hoursToDisplay = () => {
+    if (parseInt(props.time)) {
+      return `${Math.round(props.time)} hours`
+    } else {
+      return 'untracked'
+    }
+  }
+
   return (
     <div className="ProjectContainer">
       <a href={props.link}><div className="ProjectImageContainer">
@@ -45,7 +53,7 @@ const Project = (props) => {
             {currentTechStack}
           </div>
           <div className="TimeContainer">
-            <p className="ProjectTime">🕒 69 hours</p>
+            <p className="ProjectTime">⏳ {hoursToDisplay()}</p>
           </div>
         </div>
       </div>

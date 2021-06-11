@@ -31,6 +31,20 @@
   margin-bottom: auto;
 }
 
+.togglBanner {
+  background-color: var(--toggle-color);
+  color: var(--font-color);
+  border-radius: 15px;
+  padding: 7px;
+  box-shadow: 0px 2px 6px -2px black;
+}
+
+.togglBanner a {
+  /* color: rgb(0, 81, 255); */
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 #GifCover {
   position: absolute;
   left: 0px;

@@ -34,7 +34,7 @@ exports.getWorkspaceTags = functions.https.onRequest(async (request, response) =
 
 // #100DaysOfCode tag_id = 9306704
 
-exports.getReportsData = functions.https.onRequest(async (request, response) => {
+exports.getProjectsData = functions.https.onRequest(async (request, response) => {
     try {
         //then, for each key in all records object, match the 'descriptions' to the projects (pass the project descriptions as an args array, 
         //      e.g. ['Building Portfolio Website']) and add the 'dur' to the value of projectTimes' key
@@ -75,19 +75,23 @@ exports.getReportsData = functions.https.onRequest(async (request, response) => 
         
         finalData.forEach((record) => {
             if (projectsTime.hasOwnProperty(record.description)) {
+                if (record.description === 'Calculator Project') {
+                    console.log(`calculator project. duration in ms = ${record.dur}. duration in calculated hours (?) = ${record.dur/3600000}`)
+                }
                 // Adds hours tracked to 2 decimal points
-                projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000).toFixed(1))
+                projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000))
                 projectsTime[record.description] = projectsTime[record.description].toFixed(1);
             } else {
-                console.log(`${record['description']} is probably undefined`)
-                console.log(projectsTime[record])
+                // console.log(`${record['description']} is not being tracked`)
+                // console.log(projectsTime[record])
             }
         })
 
         console.log(`totalPages = ${totalPages}`)
         console.log(`totalData length = ${totalData.length}`)
         console.log(finalData.length);
-        console.log(projectsTime)
+        console.log(projectsTime);
+        response.set('Access-Control-Allow-Origin', '*');
         response.send(projectsTime);
     } catch (err) {
         console.error(err);
