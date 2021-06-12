@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  text-align: center;
+  text-align: left;
 }  
 
 :root {
@@ -97,13 +97,24 @@ nav h1 {
 
 .SocialIcons > * {
   margin: 0px 10px 0px 10px;
+  transition: transform .5s ease-out;
 }
 
 .SocialIcons > *:hover {
   cursor: pointer;
   color: var(--socials-hover);
+  /* transform: rotate(30deg); */
+  animation-name: dance;
+  animation-duration: 0.3s;
 }
 
+@keyframes dance {
+  /* 0% {} */
+  30% {transform: rotate(15deg)}
+  60% {transform: rotate(-15deg)}
+  90% {transform: rotate(5deg)}
+  100% {transform: rotate(0deg)}
+}
 
 /* Action Button */
 

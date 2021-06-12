@@ -36,10 +36,6 @@ exports.getWorkspaceTags = functions.https.onRequest(async (request, response) =
 
 exports.getProjectsData = functions.https.onRequest(async (request, response) => {
     try {
-        //then, for each key in all records object, match the 'descriptions' to the projects (pass the project descriptions as an args array, 
-        //      e.g. ['Building Portfolio Website']) and add the 'dur' to the value of projectTimes' key
-        //finally, send projectTimes as response     
-        
         const getPage = async (pageNum = 1) => {
             const reportData = await axiosClient.get(`/reports/api/v2/details`, {
                 params: {
@@ -97,3 +93,11 @@ exports.getProjectsData = functions.https.onRequest(async (request, response) =>
         console.error(err);
     }
 })
+
+exports.makeUppercase = functions.database.ref('/messages/{pushId}/original')
+.onCreate((snapshot, context) => {
+  const original = snapshot.val();
+  console.log('Uppercasing', context.params.pushId, original);
+  const uppercase = original.toUpperCase();
+  return snapshot.ref.parent.child('uppercase').set(uppercase);
+});
