@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithubSquare, faTwitterSquare, faLess } from '@fortawesome/free-brands-svg-icons';
 
 const NavBar = (props) => {
-  console.log(`${props.active} is active ! ! !`);
+  // console.log(`${props.active} is active ! ! !`);
 
   return (
       <nav className="NavBar">

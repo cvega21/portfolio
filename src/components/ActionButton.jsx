@@ -7,7 +7,7 @@ const ActionButton = (props) => {
   let computedClassName;
   let text = '';
   let linkTo = '/'.concat(props.link);
-  console.log(`${typeof(props.onChangeNav)}'inside action button!'${props.link}`)
+  // console.log(`${typeof(props.onChangeNav)}'inside action button!'${props.link}`)
 
   if (props.size === 'small') {
     // fill stuff here for sizing, add another size

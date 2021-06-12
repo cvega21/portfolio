@@ -11,19 +11,40 @@ import './styles/LogosBanner.css';
 import './styles/Project.css';
 import './styles/Articles.css';
 
-
-// next steps
-// add social media icons to nav
-
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
+  const [projectsData, setProjectsData] = useState(false);
+  const [articles, setArticles] = useState([]);
 
+  // changes active window in nav bar
   useEffect(() => {
     setActiveNavPage(window.location.pathname);
-    
     return () => {
     }
   }, [])
+  
+  // get projects data and articles on website load
+  useEffect(() => {
+    const getProjects = async () => {
+      let response = await fetch('http://localhost:5001/portfolio-75ffa/us-central1/getProjectsData');
+      let responseJSON = await response.json();
+      setProjectsData(responseJSON);
+    }
+    if (!projectsData) {
+      getProjects();
+    }
+  }, [projectsData])
+
+  useEffect(() => {
+    const getArticles = async () => {
+      let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
+      let responseJSON = await response.json();
+      setArticles(responseJSON['items'])
+    }
+    if (!articles.length) {
+      getArticles();
+    }
+  }, [articles])
 
   return (
     <Router>
@@ -41,10 +62,10 @@ function App() {
               <AboutMe onChangeNav={setActiveNavPage}/>
             </Route >
             <Route path="/projects">
-              <Projects onChangeNav={setActiveNavPage}/>
+              <Projects onChangeNav={setActiveNavPage} projectsData={projectsData}/>
             </Route>
             <Route path="/articles">
-              <Articles onChangeNav={setActiveNavPage}/>
+              <Articles onChangeNav={setActiveNavPage} articles={articles}/>
             </Route>
             <Route path="/cool-stuff">
               <CoolStuff onChangeNav={setActiveNavPage}/>

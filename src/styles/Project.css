@@ -11,13 +11,35 @@
 .ProjectContainer {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   font-family: 'Fira Code', monospace;
   text-align: left;
   max-width: 100%;
   background: var(--nav-background-color);
   box-shadow: 0px 7px 7px -4px black;
   position: relative;
+}
+
+.ProjectContainer a {
+  height: 100%;
+  text-decoration: none;
+  margin-bottom: auto;
+  display: flex;
+}
+
+.ProjectContainer * {
+  /* --gifOpacity: 100; */
+}
+
+.ProjectContainer:hover {
+  --gifOpacity: 0;
+}
+
+.ProjectsTextContainer:hover {
+  --gifOpacity: 0;
+}
+
+.StackContainer:hover {
+  --gifOpacity: 0;
 }
 
 .ProjectTextContainer {
@@ -48,13 +70,15 @@
 #GifCover {
   position: absolute;
   left: 0px;
+  opacity: var(--gifOpacity);
   /* filter: grayscale(100%); */
 }
 
 #GifCover:hover {
   position: absolute;
   left: 0px;
-  opacity: 0;
+  opacity: var(--gifOpacity);
+  --gifOpacity: 0;
   cursor: pointer;
   transition: 0.3s;
 }

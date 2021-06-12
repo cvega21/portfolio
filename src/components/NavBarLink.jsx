@@ -12,7 +12,7 @@ const NavBarLink = (props) => {
 
   useEffect(() => {
     if (props.active === linkTo) {
-      console.log(`Inside NavBarLink: ${linkTo} is active !!!!. ${props.onChangeNav}`)
+      // console.log(`Inside NavBarLink: ${linkTo} is active !!!!. ${props.onChangeNav}`)
       setIsActive('active');
     } else {
       setIsActive('');
