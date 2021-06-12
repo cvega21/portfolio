@@ -34,6 +34,8 @@ exports.getWorkspaceTags = functions.https.onRequest(async (request, response) =
 
 // #100DaysOfCode tag_id = 9306704
 
+// Next steps: make one data loader function (e.g. load in bulk from 1 year back) that loads into DB then cloud scheduler function will only pick up records after a certain point and add them to whatever's already there
+
 exports.getProjectsData = functions.https.onRequest(async (request, response) => {
     try {
         const getPage = async (pageNum = 1) => {

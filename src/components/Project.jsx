@@ -5,7 +5,7 @@ import mongo from '../assets/mongodb.png';
 // import mongo from '../assets/mongo.svg';
 import firebase from '../assets/firebase.png';
 import react from '../assets/react.png';
-import node from '../assets/node.png';
+import nodeJS from '../assets/node.png';
 import sass from '../assets/sass.png';
 
 
@@ -19,7 +19,7 @@ const Project = (props) => {
 
   const techStackIcons = {
     'react': react,
-    'node': node,
+    'nodeJS': nodeJS,
     'mongo': mongo,
     'sass': sass,
     'firebase': firebase
@@ -38,13 +38,14 @@ const Project = (props) => {
   }
 
   return (
-    <div className="ProjectContainer" href={props.link}>
-      <a href={props.link}>
+    <div className="ProjectContainer">
+      <a href={props.link} className="ProjectImageLink">
         <div className="ProjectImageContainer">
           <img src={props.gif[0]} alt='portfolio'></img>
           <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
         </div>
       </a>
+      <a href={props.link} className="ProjectTextLink">
       <div className="ProjectTextContainer">
         <div className="ProjectText">
           <h1>{props.title}</h1>
@@ -59,6 +60,7 @@ const Project = (props) => {
           </div>
         </div>
       </div>
+      </a>
     </div>
   )
 }

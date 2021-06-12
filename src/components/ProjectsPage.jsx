@@ -57,7 +57,7 @@ const Projects = (props) => {
           description='a small, responsive full-stack app to keep track of your workouts.' 
           gif={[fitness,fitnessStatic]} 
           link='https://github.com/cvega21/fitness-tracking'
-          stack={['react', 'node', 'mongo']}
+          stack={['react', 'nodeJS', 'mongo']}
           time={props.projectsData['Fitness Tracker App']}
           />
         <Project

@@ -20,10 +20,18 @@
 }
 
 .ProjectContainer a {
+  /* height: auto; */
+}
+
+.ProjectImageLink {
+  height: auto;
+}
+
+.ProjectTextLink, .ProjectTextLink:visited {
   height: 100%;
   text-decoration: none;
-  margin-bottom: auto;
-  display: flex;
+  margin-bottom: 0;
+  color: var(--font-color);
 }
 
 .ProjectContainer * {
@@ -71,7 +79,6 @@
   position: absolute;
   left: 0px;
   opacity: var(--gifOpacity);
-  /* filter: grayscale(100%); */
 }
 
 #GifCover:hover {
@@ -89,16 +96,11 @@
 
 .ProjectImageContainer {
   position: relative;
+  height: auto;
 }
-
-/* .ProjectImageContainer :nth-child(2) {
-  position: absolute;
-  left: 0px;
-} */
 
 .ProjectTextDescription {
   margin:0px;
-  /* margin-bottom: auto; */
 }
 
 .ProjectContainer h1 {
@@ -121,19 +123,9 @@
 }
 
 .techStackImage, .techStackFa {
-  /* border: dotted; */
   width: auto;
   height: 25px;
-  /* margin: 0px 0px 0px 0px; */
   padding: 6px;
-}
-
-.techStackImage {
-  /* filter: brightness(80%) grayscale(100%); */
-}
-
-.techStackFa {
-  /* padding: 6px; */
 }
 
 .ProjectTime {
