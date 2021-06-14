@@ -8,9 +8,14 @@ const Articles = (props) => {
     <div className = "GenericContainer">
       <h1>Articles</h1>
       <div className = "ArticlesContainer">
-        {props.articles.map((item) => {
-        return <Article title={item.title} date={item.pubDate} image={item.thumbnail} key={item.pubDate}/>
-        })}        
+        {props.articles.map((item) => { 
+            return <Article 
+                    title={item.title} 
+                    date={item.pubDate}
+                    image={item.thumbnail}
+                    key={item.pubDate}
+                    link={item.link}/> 
+        })}
       </div>
       <div className="ActionButtonCluster">
         <ActionButton link="projects" navigation="left" onChangeNav={props.onChangeNav}/>

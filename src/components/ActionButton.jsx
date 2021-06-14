@@ -1,23 +1,19 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const ActionButton = (props) => {
   let computedContainerClassName;
   let computedClassName;
   let text = '';
   let linkTo = '/'.concat(props.link);
-  // console.log(`${typeof(props.onChangeNav)}'inside action button!'${props.link}`)
 
-  if (props.size === 'small') {
-    // fill stuff here for sizing, add another size
-  }
-  
   if (props.link === 'contact') {
+    // contact button is smaller and container width is a different %
     computedContainerClassName = 'ActionButtonContactContainer';
     computedClassName = 'ActionButton Contact';
     text = 'contact';
   } else if (props.link) {
+    // all other buttons are for navigation, have arrows, and are bigger
     computedContainerClassName = 'ActionButtonContainer';
     computedClassName = 'ActionButton';
     let textArray = props.link.split('-');

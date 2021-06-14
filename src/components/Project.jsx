@@ -1,8 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faReact, faNodeJs, faSass } from '@fortawesome/free-brands-svg-icons';
 import mongo from '../assets/mongodb.png';
-// import mongo from '../assets/mongo.svg';
 import firebase from '../assets/firebase.png';
 import react from '../assets/react.png';
 import nodeJS from '../assets/node.png';
@@ -10,12 +7,6 @@ import sass from '../assets/sass.png';
 
 
 const Project = (props) => {
-  //props:
-  // title
-  // description
-  // stack
-  // hours
-  // image
 
   const techStackIcons = {
     'react': react,

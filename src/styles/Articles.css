@@ -9,17 +9,27 @@
   justify-content: space-between;
   width: 50%;
   min-width: 700px;
-  /* border: dotted; */
   height: 160px;
   margin: 30px 0px 30px 0px;
 }
 
+.ArticleLink {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  min-width: 700px;
+  height: 160px;
+  margin: 30px 0px 30px 0px;
+  text-decoration: none;
+}
+
+.ArticleLink:hover {
+  --primary-color: var(--primary-color-dark);
+}
+
 .Article img {
   width: 200px;
-  height: auto;
-  /* border: 1px solid; */
   object-fit: cover;
-  /* box-shadow: 0px 2px 7px -2px black; */
 }
 
 .ArticleTitleAndDate {
@@ -27,24 +37,18 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  /* border: solid; */
   height: 100%;
   width: 80%;
   margin: 0px 0px 0px 0px;
 }
 
-.ArticleTitleAndDate h1, .ArticleTitleAndDate h2 {
-  /* border: 2px solid red; */
-}
-
-.ArticleTitleAndDate a {
+.ArticleTitleAndDate p {
   margin: 0px;
   font-size: 34px;
   font-weight: bold;
   color: var(--primary-color);
   text-decoration: none;
 }
-
 
 
 .ArticleTitleAndDate h2 {
