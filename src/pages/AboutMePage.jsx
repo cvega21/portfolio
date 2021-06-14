@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
-import LogosBannerNew from '../components/LogosBannerNew'
+import LogosBannerNew from '../components/LogosBannerNew';
 
 const AboutMe = (props) => {
+
+
   return (
     <div className="GenericContainer">
       <h1>About Me</h1>

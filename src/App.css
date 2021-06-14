@@ -310,22 +310,30 @@ main {
   margin: 0px 0px 0px 100px;
 }
 
-.HomeContent > h1, .GenericContainer > h1 {
+.HomeContent h1, .GenericContainer h1 {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   font-size: 80px;
   margin: 50px 0px 30px 0px;
 }
 
-.HomeContent > h1 {
+.HomeContent div {
+  margin: 0px 0px 90px 0px;
+}
+
+.HomeContent h1 {
   font-size: 125px;
 }
 
-.HomeContent > p {
+.HomeContent span {
   font-family: 'Fira Sans', sans-serif;
   font-weight: lighter;
   font-size: 50px;
   margin: 0px 0px 90px 0px;  
+}
+
+.typed-cursor.typed-cursor--blink {
+  color: var(--primary-color)
 }
 
 /* About Me */
