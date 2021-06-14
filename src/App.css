@@ -75,7 +75,6 @@ nav h1 {
 }
 
 .NavBarTop, .NavBarBottom {
-  /* border: dotted; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,13 +102,11 @@ nav h1 {
 .SocialIcons > *:hover {
   cursor: pointer;
   color: var(--socials-hover);
-  /* transform: rotate(30deg); */
   animation-name: dance;
   animation-duration: 0.3s;
 }
 
 @keyframes dance {
-  /* 0% {} */
   30% {transform: rotate(15deg)}
   60% {transform: rotate(-15deg)}
   90% {transform: rotate(5deg)}
@@ -155,10 +152,8 @@ nav h1 {
 
 .ActionButtonCluster {
   display: flex;
-  /* border: 2px solid magenta; */
   justify-content: space-around;
   width: 60%;
-  /* margin-bottom: 40px; */
   margin: 40px 0px 40px 0px;
 }
 
@@ -166,8 +161,6 @@ nav h1 {
   display: flex;
   margin: 0px 75px 0px 75px;
   width: 50%;
-  /* width: 80%; */
-  /* height: 50px; */
 }
 
 .ActionButtonCluster > .ActionButtonContainer > .ActionButton {
@@ -177,7 +170,6 @@ nav h1 {
 
 .LinkContainer {
   display: flex;
-  /* border: dotted; */
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
@@ -192,8 +184,6 @@ nav h1 {
 
 .LinkButtonContainer, .activeLinkButtonContainer {
   list-style: none;
-  /* text-decoration: none; */
-  /* text-decoration-style: double; */
 }
 
 .LinkButtonContainer a, .activeLinkButtonContainer a {
@@ -222,9 +212,6 @@ nav h1 {
   font-family: 'Fira Code', monospace;
 }
 
-.trueLinkButton {
-}
-
 .LinkButton:hover {
   color: var(--toggle-color2);
   cursor: pointer;
@@ -232,8 +219,6 @@ nav h1 {
 
 /* Night Mode button */
 .NightModeButtonContainer {
-  /* border: dotted; */
-  /* width: 80%; */
   margin-left: 100px;
 }
 
@@ -279,10 +264,6 @@ input:checked + .slider {
   background-color: var(--toggle-color);
 }
 
-input:focus + .slider {
-  /* box-shadow: 0 0 5px var(--accent-color); */
-}
-
 input:checked + .slider:before {
   -webkit-transform: translateX(41px);
   -ms-transform: translateX(41px);
@@ -298,14 +279,10 @@ input:checked + .slider:before {
 }
 
 main {
-  /* border: dotted; */
   background: var(--main-background-color);
-  /* height: 100vh; */
   justify-self: center;
   grid-area: mainContent;
   width: 100%;
-  /* overflow: auto; */
-  /* UPDATE HEIGHT --- DO NOT USE VH */
 }
 
 /* COMPONENTS */
@@ -313,7 +290,6 @@ main {
 .GenericContainer {
   align-items: center;
   display: flex;
-  /* min-height: 100vh; */
   width: 100%;
   flex-direction: column;
   justify-content: center;
@@ -338,7 +314,6 @@ main {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   font-size: 80px;
-  /* border: dotted; */
   margin: 50px 0px 30px 0px;
 }
 
@@ -347,7 +322,6 @@ main {
 }
 
 .HomeContent > p {
-  /* border: dotted; */
   font-family: 'Fira Sans', sans-serif;
   font-weight: lighter;
   font-size: 50px;
@@ -357,7 +331,6 @@ main {
 /* About Me */
 
 .ProfileContainer {
-  /* border: dotted; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -372,7 +345,6 @@ main {
 }
 
 .ProfileTextContainer {
-  /* border: 2px solid green; */
   width: 50%;
 }
 

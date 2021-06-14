@@ -3,11 +3,6 @@
   margin: 30px 0px 50px 0px;
 }
 
-.logo-slider-container {
-  /* box-shadow: 0px 0px 50px -22px var(--primary-color); */
-  /* background: var(--accent-color); */
-}
-
 .logo-slider {
   --image-size: 60px;
   padding: 20px;
@@ -26,7 +21,6 @@
   position: absolute;
   z-index: 1;
   top: 0px;
-  /* background: cadetblue; */
 }
 
 .fade-background-left {
@@ -65,13 +59,11 @@
 
 
 .logo-slider > div > img:hover {
-  /* filter: grayscale(20%); */
   transition: all 0.3s ease-out;
 }
 
 .logo-slider:after {
   content: "";
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   left: 0;

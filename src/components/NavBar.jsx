@@ -22,7 +22,6 @@ const NavBar = (props) => {
             <NavBarLink to='articles' active={props.active} onChangeNav={props.onChangeNav}/>
             <NavBarLink to='cool-stuff' active={props.active} onChangeNav={props.onChangeNav}/>
           </ul>
-          {/* <NavBarLinkContainer paths={['home', 'about-me', 'projects','articles','cool-stuff']} onChangeNav={props.onChangeNav}/> */}
         </div>
         <div className="NavBarBottom">
           <NightModeButton/>

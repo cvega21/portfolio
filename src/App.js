@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
-import Home from './components/Home';
-import AboutMe from './components/AboutMePage';
-import Projects from './components/ProjectsPage';
-import Articles from './components/ArticlesPage';
-import CoolStuff from './components/CoolStuff';
+import Home from './pages/HomePage';
+import AboutMe from './pages/AboutMePage';
+import Projects from './pages/ProjectsPage';
+import Articles from './pages/ArticlesPage';
+import CoolStuff from './pages/CoolStuffPage';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.css';
 import './styles/Project.css';

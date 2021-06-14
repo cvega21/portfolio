@@ -1,6 +1,6 @@
 import React from 'react'
-import ActionButton from './ActionButton'
-import Article from './Article'
+import ActionButton from '../components/ActionButton'
+import Article from '../components/Article'
 
 const Articles = (props) => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import ActionButton from './ActionButton'
+import ActionButton from '../components/ActionButton'
 
 const CoolStuff = (props) => {
   const testTogglCall = async () => {

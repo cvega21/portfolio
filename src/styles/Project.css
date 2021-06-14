@@ -19,10 +19,6 @@
   position: relative;
 }
 
-.ProjectContainer a {
-  /* height: auto; */
-}
-
 .ProjectImageLink {
   height: auto;
 }
@@ -34,19 +30,7 @@
   color: var(--font-color);
 }
 
-.ProjectContainer * {
-  /* --gifOpacity: 100; */
-}
-
-.ProjectContainer:hover {
-  --gifOpacity: 0;
-}
-
-.ProjectsTextContainer:hover {
-  --gifOpacity: 0;
-}
-
-.StackContainer:hover {
+.ProjectContainer:hover, .ProjectsTextContainer:hover, .StackContainer:hover {
   --gifOpacity: 0;
 }
 
@@ -70,7 +54,6 @@
 }
 
 .togglBanner a {
-  /* color: rgb(0, 81, 255); */
   color: var(--link-color);
   text-decoration: none;
 }

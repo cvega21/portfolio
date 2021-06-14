@@ -1,7 +1,7 @@
 import React from 'react';
-import ActionButton from './ActionButton';
+import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
-import LogosBannerNew from './LogosBannerNew'
+import LogosBannerNew from '../components/LogosBannerNew'
 
 const AboutMe = (props) => {
   return (

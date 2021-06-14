@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ActionButton from './ActionButton'
-import Project from './Project'
+import ActionButton from '../components/ActionButton'
+import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
 import calculatorStatic from '../assets/calculatorStatic.jpg';
 import quoteGenerator from '../assets/quoteGenerator.gif';

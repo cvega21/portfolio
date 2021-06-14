@@ -20,7 +20,7 @@ const NavBarLink = (props) => {
 
     return () => {
     }
-  })
+  },[isActive, linkTo, props.active])
   
   return (
   <li className={isActive + "LinkButtonContainer"}>
