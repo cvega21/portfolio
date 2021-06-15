@@ -8,8 +8,8 @@ const Home = (props) => {
   
   useEffect(() => {
     const options = {
-      strings: [`I'm Christian.^550 Welcome to my portfolio website!`],
-      typeSpeed: 22,
+      strings: [`I'm Christian.^650 Welcome to my portfolio website!`],
+      typeSpeed: 17,
       backSpeed: 50
     };
 

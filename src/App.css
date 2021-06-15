@@ -310,7 +310,7 @@ main {
   margin: 0px 0px 0px 100px;
 }
 
-.HomeContent h1, .GenericContainer h1 {
+.HomeContent h1, .GenericContainer > h1 {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   font-size: 80px;

@@ -39,9 +39,9 @@ const Projects = (props) => {
   return (
     <div className="GenericContainer">
       <h1>Projects</h1>
-      <div>
-        <p className='togglBanner'>⏳ = hours tracked on <a href="https://www.toggl.com">toggl.com</a></p>
-        {/* <p>read more</p> */}
+      <div className="togglBannerContainer">
+        <p className='togglBanner'>⏳ = hours tracked</p>
+        <a href="https://www.toggl.com">learn more</a>
       </div>
       <div className="ProjectsGrid">
         <Project 
