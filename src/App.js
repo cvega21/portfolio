@@ -6,6 +6,7 @@ import AboutMe from './pages/AboutMePage';
 import Projects from './pages/ProjectsPage';
 import Articles from './pages/ArticlesPage';
 import CoolStuff from './pages/CoolStuffPage';
+import Contact from './pages/ContactPage';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.css';
 import './styles/Project.css';
@@ -15,13 +16,22 @@ function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
   const [projectsData, setProjectsData] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [showNavBar, setShowNavBar] = useState(false); 
 
   // changes active window in nav bar
   useEffect(() => {
     setActiveNavPage(window.location.pathname);
+    console.log(window.location.pathname)
+    if (!showNavBar && window.location.pathname !== '/home') {
+      setShowNavBar(true); 
+    }
+
+    // setActiveNavPage(window.location.pathname);
+    
     return () => {
     }
-  }, [])
+
+  }, [showNavBar, activeNavPage])
   
   // get projects data and articles on website load
   useEffect(() => {
@@ -48,12 +58,15 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/>     
+      <div className={showNavBar ? 'App' : 'AppNoNav'} >
+        {showNavBar ? <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/> : void(0) }     
         <main>
           <Switch>
             <Route exact path="/">
               <Redirect to="/home" />
+            </Route>
+            <Route path="/contact">
+              <Contact onChangeNav={setActiveNavPage}/>
             </Route>
             <Route path="/home">
               <Home onChangeNav={setActiveNavPage}/>
@@ -67,9 +80,9 @@ function App() {
             <Route path="/articles">
               <Articles onChangeNav={setActiveNavPage} articles={articles}/>
             </Route>
-            <Route path="/cool-stuff">
+            {/* <Route path="/cool-stuff">
               <CoolStuff onChangeNav={setActiveNavPage}/>
-            </Route>
+            </Route> */}
           </Switch>
         </main>
       </div>

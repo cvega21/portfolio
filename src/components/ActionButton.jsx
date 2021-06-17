@@ -11,7 +11,7 @@ const ActionButton = (props) => {
     // contact button is smaller and container width is a different %
     computedContainerClassName = 'ActionButtonContactContainer';
     computedClassName = 'ActionButton Contact';
-    text = 'contact';
+    text = 'contact me';
   } else if (props.link) {
     // all other buttons are for navigation, have arrows, and are bigger
     computedContainerClassName = 'ActionButtonContainer';

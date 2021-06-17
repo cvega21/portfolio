@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faCode, faSignature } from '@fortawesome/free-solid-svg-icons';
+
 
 const NavBarLink = (props) => {
   let text = '';
@@ -11,21 +14,26 @@ const NavBarLink = (props) => {
   const [isActive, setIsActive] = useState('');
 
   useEffect(() => {
-    if (props.active === linkTo) {
-      // console.log(`Inside NavBarLink: ${linkTo} is active !!!!. ${props.onChangeNav}`)
-      setIsActive('active');
-    } else {
-      setIsActive('');
-    }
+    props.active === linkTo ? setIsActive('active') : setIsActive('');
 
     return () => {
     }
   },[isActive, linkTo, props.active])
   
+  const iconMapping = {
+    'home': faHome,
+    'about-me': faUser,
+    'projects': faCode,
+    'articles': faSignature
+  }
+
   return (
   <li className={isActive + "LinkButtonContainer"}>
-    <Link to={linkTo}>
-      <button className={"LinkButton"} onClick={() => props.onChangeNav(linkTo)}>{text}</button>
+    <Link to={linkTo} className='LinkButtonTextAndIcon' onClick={() => props.onChangeNav(linkTo)}>
+        <div className="NavIcon">
+          <FontAwesomeIcon icon={iconMapping[props.to]}/>
+        </div>
+        <p>{text}</p>
     </Link>
   </li>
   )
