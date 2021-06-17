@@ -40,8 +40,9 @@ const Projects = (props) => {
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="togglBannerContainer">
-        <p className='togglBanner'>⏳ = hours tracked</p>
-        <a href="https://www.toggl.com">learn more</a>
+        <p className='togglBanner'><b>⏳ = hours tracked</b></p>
+        {/* <a href="https://www.toggl.com">refreshed daily using toggl's API</a> */}
+        {/* <a href="https://www.toggl.com">last update: today</a> */}
       </div>
       <div className="ProjectsGrid">
         <Project 
