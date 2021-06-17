@@ -8,7 +8,7 @@ const Home = (props) => {
   
   useEffect(() => {
     const options = {
-      strings: [`^250I'm Christian.^850 Welcome to my portfolio website!`],
+      strings: [`^800I'm Christian.^800 Welcome to my portfolio website!`],
       typeSpeed: 17,
       backSpeed: 50
     };
@@ -23,10 +23,10 @@ const Home = (props) => {
   return (
     <div className="HomeContainer">
       <div className="HomeContent">
-        <div>
-          <h1>Hey there 👋</h1> 
-          <span ref={typedElement}></span>
-        </div>
+          <h1>Hey there 👋</h1>
+          <div className="TypingContainer">
+            <span ref={typedElement}></span>
+          </div>
         <ActionButton link="about-me" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
     </div>
