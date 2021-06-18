@@ -38,26 +38,28 @@ exports.getWorkspaceTags = functions.https.onRequest(async (request, response) =
 // #100DaysOfCode tag_id = 9306704
 
 exports.getProjectsData = functions.https.onRequest(async (request, response) => {    
-    
+
+    // as Toggl's API has a per-call limit of 50 records, we have to loop through this function for however many total records we have
     const getPage = async (pageNum = 1) => {
-        // as Toggl's API has a per-call limit of 50 records, we have to loop through this function for however many total records we have
         const reportData = await axiosClient.get(`/reports/api/v2/details`, {
             params: {
                 'user_agent': process.env.USER_AGENT,
                 'workspace_id': process.env.WORKSPACE_ID,
                 'tag_ids': 9306704,
-                'since': '2021-01-01',
+                'since': dataSince,
+                'until': dataUntil,
                 'page': pageNum
             }})
         return reportData.data
     }
     
+    // sets project hours in firebase DB after they've been called from Toggl API and sanitized by cloud function
     const setProjectData = (project) => {
-        // sets project hours in firebase DB after they've been called from Toggl API and sanitized by cloud function
         const keyToUpdate = admin.database().ref(`/projects/${project}`);
         return keyToUpdate.set(projectsTime[project])
     }
 
+    // this is what's returned to the UI when it calls the cloud function
     let projectsTime = {
         "Build Portfolio Website": 0,
         "Fitness Tracker App": 0,
@@ -65,12 +67,18 @@ exports.getProjectsData = functions.https.onRequest(async (request, response) =>
         "Calculator Project": 0,
         "Pomodoro Timer Project": 0
     }
-
+    
+    // temp holder for all the data from API
     let totalData = [];
+    
+    // parameters for the toggl API call, must be in YYYY-MM-DD format
+    let dataSince = '2021-01-01';
+    let dataUntil = '2021-06-18';
+
     
     try {        
         const totalPages = Math.ceil((await getPage(1)).total_count/50);  
-          
+
         for (let i = 1; i <= totalPages; i++) {
             const page = await getPage(i);
             totalData.push(page.data);
@@ -92,6 +100,9 @@ exports.getProjectsData = functions.https.onRequest(async (request, response) =>
         for (let project in projectsTime) {
             setProjectData(project);
         }
+
+        admin.database().ref(`/projectsMetadata/since`).set(dataSince);
+        admin.database().ref(`/projectsMetadata/until`).set(dataUntil);
 
         response.set('Access-Control-Allow-Origin', '*');
         response.send(projectsTime);
