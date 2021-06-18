@@ -58,11 +58,16 @@
         storageBucket: "portfolio-75ffa.appspot.com",
         messagingSenderId: "171226664150",
         appId: "1:171226664150:web:f635186022f77c6456cd77",
+        // Currently set to localhost database (emulator)
+        databaseURL: "http://localhost:9000/?ns=portfolio-75ffa-default-rtdb:",
         measurementId: "G-01YFKWBCBW"
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+
+      // Get a reference to DB
+      var database = firebase.database();
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" type="module"></script> -->
   </body>
