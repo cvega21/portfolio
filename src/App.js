@@ -36,7 +36,7 @@ function App() {
   // get projects data and articles on website load
   useEffect(() => {
     const getProjects = async () => {
-      let response = await fetch('http://localhost:5001/portfolio-75ffa/us-central1/getProjectsData');
+      let response = await fetch('http://localhost:5001/portfolio-75ffa/us-central1/loadInitialProjectsData');
       let responseJSON = await response.json();
       setProjectsData(responseJSON);
     }

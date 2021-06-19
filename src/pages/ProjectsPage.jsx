@@ -40,7 +40,7 @@ const Projects = (props) => {
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="togglBannerContainer">
-        <p className='togglBanner'><b>⏳ = hours tracked</b></p>
+        <p className='togglBanner'>⏳ = hours tracked on Toggl</p>
         {/* <a href="https://www.toggl.com">refreshed daily using toggl's API</a> */}
         {/* <a href="https://www.toggl.com">last update: today</a> */}
       </div>
