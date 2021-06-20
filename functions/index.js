@@ -16,15 +16,15 @@ const axiosClient = axios.create({
     }
 })
 
-// exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
-//     try {
-//         const result = await axiosClient.get(`/api/v8/me`)
-//         response.send(result.data);
-//         return result
-//     } catch (err) {
-//         console.error(err);
-//     }
-// })
+exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
+    try {
+        const result = await axiosClient.get(`/api/v8/me`)
+        response.send(result.data);
+        return result
+    } catch (err) {
+        console.error(err);
+    }
+})
 
 exports.getWorkspaceTags = functions.https.onRequest(async (request, response) => {
     try {
@@ -50,14 +50,14 @@ exports.addDailyDataTest = functions.https.onRequest(async (request, response) =
 
     const getDate = async () => {
         const date = await database.ref(`/projectsMetadata/until`).get();
-        const luxonDate = DateTime.fromISO(date.val());
-        const today = DateTime.now()
-        if (date.exists() && luxonDate < today) {
-            console.log(`date exists! ${date.val()}`)
+        const luxonDate = DateTime.fromISO(date.val(), { zone: 'America/Mexico_City'});
+        const today = DateTime.now().setZone('America/Mexico_City');
+        if (date.exists() && luxonDate.startOf('day') < today.startOf('day')) {
+            console.log(`DB last updated at ${luxonDate}.loading data from ${today}.`)
             return luxonDate.plus({ days: 1 }).toISODate();
-        } else if (luxonDate >= today) {
-            console.log(`today's data is already loaded. value of 'until' in DB: ${date.val()}`)
-            return
+        } else {
+            console.log(`today's data is already loaded. last updated: ${date.val()}`)
+            return null
         }
     }
 
@@ -89,20 +89,31 @@ exports.addDailyDataTest = functions.https.onRequest(async (request, response) =
     }
 
     const setNewProjectData = (project) => {
+        console.log(`${project}: ${projectsTime[project]}`)
         return database.ref(`/projects/${project}`).set(projectsTime[project])
     }
     
     try {
-        const dateToLoad = await getDate();        
-        console.log(`date to load: ${dateToLoad}`);
+        const dateToLoad = await getDate();
+
         console.log(`-----existing data----------------`)
         for (let project in projectsTime) {
             await getExistingProjectData(project);
         }
         console.log(`----------------------------------`)
-        const newData = await getNewProjectData(1, dateToLoad);
+
+        if (dateToLoad === null) {
+            console.log('no changes needed. exit function...')
+            response.set('Access-Control-Allow-Origin', '*');
+            response.send(projectsTime);
+            return null
+        } else {
+            console.log('starting daily update...')
+        }
+    
         console.log(`-----new data---------------------`)
-        console.log(`new records: ${newData.total_count}`)
+        const newData = await getNewProjectData(1, dateToLoad);
+        console.log(`new records count: ${newData.total_count}`)
         console.log(`----------------------------------`)
 
         newData.data.forEach((record) => {
@@ -119,8 +130,8 @@ exports.addDailyDataTest = functions.https.onRequest(async (request, response) =
         console.log(`-----updated data-----------------`)
         console.log(projectsTime)
         console.log(`----------------------------------`)
-
         setDate(dateToLoad);
+    
         response.set('Access-Control-Allow-Origin', '*');
         response.send(projectsTime);
     } catch (err) {
@@ -163,9 +174,11 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
     // temp holder for all the data from API
     let totalData = [];
     
-    // parameters for the toggl API call, must be in YYYY-MM-DD format
+    // parameters for the toggl API call, must be in YYYY-MM-DD format; loads today's data
     let dataSince = '2021-01-01';
-    let dataUntil = '2021-06-18';
+    let dataUntil = DateTime.now().setZone('America/Mexico_City').toISODate();
+    let today = DateTime.now();
+    console.log(`${dataSince}, ${dataUntil}, ${today.zoneName}`)
     
     try {        
         const totalPages = Math.ceil((await getPage(1)).total_count/50);  
