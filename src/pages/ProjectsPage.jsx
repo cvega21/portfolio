@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ActionButton from '../components/ActionButton'
 import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
@@ -15,35 +15,19 @@ import portfolioStatic from '../assets/portfolioStatic.png';
 
 
 const Projects = (props) => {  
-  // const [projectsData, setProjectsData] = useState('');
+  console.log(`props: ${props}`);
+  console.log(props)
 
-  // useEffect(() => {
-  //   if (!projectsData) {
-  //     fetch('http://localhost:5001/portfolio-75ffa/us-central1/getProjectsData')
-  //       .then((res) => res.json())
-  //       .then((hours) => {
-  //         setProjectsData(hours);
-  //         console.log(hours);
-  //       });
-  //   }
 
-  // }, [projectsData])
-  
-  let portfolioProps = {
-    title: 'Portfolio',
-    description: 'a portfolio website within a portfolio website. #recursion',
-    stack: ['react','firebase'],
-    time: 'fromToggl'
-  }
-  
   return (
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="togglBannerContainer">
         <p className='togglBanner'>⏳ = hours tracked on Toggl</p>
         {/* <a href="https://www.toggl.com">refreshed daily using toggl's API</a> */}
-        {/* <a href="https://www.toggl.com">last update: today</a> */}
+        {/* <a href="https://www.toggl.com">last update: {props.projectsData.projectsMetadata.until}</a> */}
       </div>
+        {props.projectsData ? 
       <div className="ProjectsGrid">
         <Project 
           title="PORTFOLIO WEBSITE" 
@@ -51,7 +35,7 @@ const Projects = (props) => {
           gif={[portfolioStatic, portfolioStatic]} 
           link='https://christianvega.me'
           stack={['react','sass','firebase']}
-          time={props.projectsData['Build Portfolio Website']}
+          time={props.projectsData.projects['Build Portfolio Website']}
           />
         <Project
           title="WORKOUT TRACKER" 
@@ -59,7 +43,7 @@ const Projects = (props) => {
           gif={[fitness,fitnessStatic]} 
           link='https://github.com/cvega21/fitness-tracking'
           stack={['react', 'nodeJS', 'mongo']}
-          time={props.projectsData['Fitness Tracker App']}
+          time={props.projectsData.projects['Fitness Tracker App']}
           />
         <Project
           title="EDM SOUNDBOARD"
@@ -67,7 +51,7 @@ const Projects = (props) => {
           gif={[soundboard, soundboardStatic]}
           link='https://github.com/cvega21/edm-soundboard'
           stack={['react']}
-          time={props.projectsData['EDM Machine']}
+          time={props.projectsData.projects['EDM Machine']}
           />
         <Project
           title="POMODORO TIMER"
@@ -75,7 +59,7 @@ const Projects = (props) => {
           gif={[timer, timerStatic]}
           link='https://github.com/cvega21/pomodoro-timer'
           stack={['react']}
-          time={props.projectsData['Pomodoro Timer Project']}
+          time={props.projectsData.projects['Pomodoro Timer Project']}
           />
         <Project 
           title="CALCULATOR"
@@ -83,7 +67,7 @@ const Projects = (props) => {
           gif={[calculator,calculatorStatic]}
           link='https://github.com/cvega21/calculator-js'
           stack={['react']}
-          time={props.projectsData['Calculator Project']}
+          time={props.projectsData.projects['Calculator Project']}
           />
         <Project 
           title="RANDOM QUOTE GENERATOR" 
@@ -91,9 +75,10 @@ const Projects = (props) => {
           gif={[quoteGenerator, quoteGeneratorStatic]} 
           link='https://github.com/cvega21/random-quote-generator'
           stack={['react']}
-          time={'N/A'}
+          time={'untracked'}
           />
-      </div>
+      </div>  
+        : console.log('loading projects data...')}
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left" onChangeNav={props.onChangeNav}/>
         <ActionButton link="articles" navigation="right" onChangeNav={props.onChangeNav}/>

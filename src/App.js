@@ -5,12 +5,32 @@ import Home from './pages/HomePage';
 import AboutMe from './pages/AboutMePage';
 import Projects from './pages/ProjectsPage';
 import Articles from './pages/ArticlesPage';
-import CoolStuff from './pages/CoolStuffPage';
 import Contact from './pages/ContactPage';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.css';
 import './styles/Project.css';
 import './styles/Articles.css';
+import firebase from 'firebase'
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+  apiKey: "AIzaSyDUUrS6OUn2LJFC6oxRGMUJ4vYwaOIS8R8",
+  authDomain: "portfolio-75ffa.firebaseapp.com",
+  projectId: "portfolio-75ffa",
+  storageBucket: "portfolio-75ffa.appspot.com",
+  messagingSenderId: "171226664150",
+  appId: "1:171226664150:web:f635186022f77c6456cd77",
+  databaseURL: "https://portfolio-75ffa-default-rtdb.firebaseio.com/",
+  measurementId: "G-01YFKWBCBW"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+var database = firebase.database();
+
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
@@ -36,9 +56,10 @@ function App() {
   // get projects data and articles on website load
   useEffect(() => {
     const getProjects = async () => {
-      let response = await fetch('http://localhost:5001/portfolio-75ffa/us-central1/loadInitialProjectsData');
-      let responseJSON = await response.json();
-      setProjectsData(responseJSON.projectsTime);
+      let firebaseReq = await database.ref(`/`).get();
+      let firebaseJSON = await firebaseReq.val();
+      console.log(firebaseJSON);
+      setProjectsData(firebaseJSON);
     }
     if (!projectsData) {
       getProjects();
