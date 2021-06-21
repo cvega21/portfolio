@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
 import Home from './pages/HomePage';
 import AboutMe from './pages/AboutMePage';
@@ -41,16 +41,11 @@ function App() {
   // changes active window in nav bar
   useEffect(() => {
     setActiveNavPage(window.location.pathname);
-    console.log(window.location.pathname)
     if (!showNavBar && window.location.pathname !== '/home') {
       setShowNavBar(true); 
     }
-
-    // setActiveNavPage(window.location.pathname);
-    
     return () => {
     }
-
   }, [showNavBar, activeNavPage])
   
   // get projects data and articles on website load
@@ -58,7 +53,6 @@ function App() {
     const getProjects = async () => {
       let firebaseReq = await database.ref(`/`).get();
       let firebaseJSON = await firebaseReq.val();
-      console.log(firebaseJSON);
       setProjectsData(firebaseJSON);
     }
     if (!projectsData) {
@@ -78,7 +72,7 @@ function App() {
   }, [articles])
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className={showNavBar ? 'App' : 'AppNoNav'} >
         {showNavBar ? <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/> : void(0) }     
         <main>
@@ -101,13 +95,10 @@ function App() {
             <Route path="/articles">
               <Articles onChangeNav={setActiveNavPage} articles={articles}/>
             </Route>
-            {/* <Route path="/cool-stuff">
-              <CoolStuff onChangeNav={setActiveNavPage}/>
-            </Route> */}
           </Switch>
         </main>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

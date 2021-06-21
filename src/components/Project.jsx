@@ -17,7 +17,7 @@ const Project = (props) => {
   }
 
   const currentTechStack = props.stack.map((item) => {
-    return <img src={techStackIcons[item]} alt={item} title={item} className="techStackImage"></img>
+    return <img src={techStackIcons[item]} alt={item} title={item} className="techStackImage" key={techStackIcons[item]}></img>
   })
   
   const hoursToDisplay = () => {

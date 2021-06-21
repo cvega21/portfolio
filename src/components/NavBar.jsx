@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import ActionButton from './ActionButton';
 import NightModeButton from './NightModeButton';
 import NavBarLink from './NavBarLink';
@@ -9,7 +9,7 @@ const NavBar = (props) => {
 
   return (
       <nav className="NavBar">
-        <script src="https://kit.fontawesome.com/cd0cc07d13.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/cd0cc07d13.js" crossOrigin="anonymous"></script>
         <div className="NavBarTop">
           <h1>CHRISTIAN VEGA</h1>
           <ActionButton link='contact' onChangeNav={props.onChangeNav}/>

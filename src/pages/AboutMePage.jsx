@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
 import LogosBannerNew from '../components/LogosBannerNew';

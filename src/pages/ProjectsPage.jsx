@@ -15,17 +15,13 @@ import portfolioStatic from '../assets/portfolioStatic.png';
 
 
 const Projects = (props) => {  
-  console.log(`props: ${props}`);
-  console.log(props)
-
 
   return (
     <div className="GenericContainer">
       <h1>Projects</h1>
       <div className="togglBannerContainer">
         <p className='togglBanner'>⏳ = hours tracked on Toggl</p>
-        {/* <a href="https://www.toggl.com">refreshed daily using toggl's API</a> */}
-        {/* <a href="https://www.toggl.com">last update: {props.projectsData.projectsMetadata.until}</a> */}
+        {props.projectsData ? <a href="https://www.toggl.com">updated daily [last: {props.projectsData.projectsMetadata.until}]</a> : void(0)}
       </div>
         {props.projectsData ? 
       <div className="ProjectsGrid">
@@ -78,7 +74,7 @@ const Projects = (props) => {
           time={'untracked'}
           />
       </div>  
-        : console.log('loading projects data...')}
+        : void(0)}
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left" onChangeNav={props.onChangeNav}/>
         <ActionButton link="articles" navigation="right" onChangeNav={props.onChangeNav}/>
