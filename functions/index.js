@@ -164,14 +164,12 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
     try {
         const dateToLoad = await getDate();
         getFirebaseProjectData(projectsTime);
-
         if (dateToLoad === null) {
             console.log('no changes needed. exit function...')
             return null
         } else {
             console.log('starting daily update...')
         }
-
         const newData = await getTogglProjectData(dateToLoad);
         newData.data.forEach((record) => {
             if (projectsTime.hasOwnProperty(record.description)) {
@@ -179,7 +177,6 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
                 projectsTime[record.description] = projectsTime[record.description].toFixed(1);
             } 
         });
-
         setFirebaseProjectData(projectsTime);
         setDate(dateToLoad);
     } catch (err) {

@@ -51,7 +51,7 @@ function App() {
   // get projects data and articles on website load
   useEffect(() => {
     const getProjects = async () => {
-      let firebaseReq = await database.ref(`/`).get();
+      let firebaseReq = await database.ref(`/`).once('value');
       let firebaseJSON = await firebaseReq.val();
       setProjectsData(firebaseJSON);
     }

@@ -7,7 +7,7 @@ html, body {
 :root {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
-  --nav-background-color: #ebe6e1;
+  --nav-background-color: #f1f1f1;
   --nav-background-color2: #676ec0c7;
   --main-background-color: #ffffff;
   --font-color: #0A0908;
@@ -27,7 +27,7 @@ html, body {
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
-  --link-color: rgb(138, 255, 144);
+  --link-color: rgb(174, 255, 178);
   --toggle-color: #4d35ff;
   --toggle-color2: rgb(0, 223, 148);
   --socials-hover: #b1b1b1;
@@ -64,7 +64,7 @@ nav {
   min-width: 225px;
   width: 10vw;
   justify-content: space-between;
-  text-align: right;
+  text-align: left;
   position: fixed;
   grid-area: 'navbar';
   box-shadow: 0px 2px 7px -1px black;
@@ -79,6 +79,11 @@ nav h1 {
   width: 70%;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 28px;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  letter-spacing: -0.04em;
 }
 
 .NavBarTop, .NavBarBottom {
@@ -367,18 +372,46 @@ main {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   font-size: 80px;
-  margin: 50px 0px 30px 0px;
+  margin: 50px 0px 0px 0px;
+  letter-spacing: -0.04em;
   /* animation: fadein 1s; */
+  /* border: dotted; */
 }
 
 .HomeContent > div {
   margin: 0px 0px 0px 0px;
   width: 80%;
-  max-width: 800px;
+  max-width: 750px;
 }
 
 .HomeContent h1 {
   font-size: 135px;
+}
+
+.HeyThere {
+  display: flex;
+  /* Need to add media query for when it's mobile, flex-direction is column and justify content is probably different */
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.WavingHand {
+  white-space: nowrap;
+  animation-name: hello;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  font-size: 135px;
+}
+
+@keyframes hello {
+  30% {transform: rotate(0deg)}
+  68% {transform: rotate(0deg)}
+  71% {transform: rotate(35deg)}
+  74% {transform: rotate(-10deg)}
+  77% {transform: rotate(30deg)}
+  80% {transform: rotate(-10deg)}
+  83% {transform: rotate(0deg)}
 }
 
 .TypingContainer {
