@@ -27,7 +27,7 @@ html, body {
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
-  --link-color: rgb(174, 255, 178);
+  --link-color: rgb(0, 255, 200);
   --toggle-color: #4d35ff;
   --toggle-color2: rgb(0, 223, 148);
   --socials-hover: #b1b1b1;
@@ -41,7 +41,7 @@ body {
 
 .App {
   display: grid;
-  grid-template-columns: minmax(225px, 15vw) 1fr;
+  grid-template-columns: minmax(225px, 10vw) 1fr;
   grid-template-rows: 100vh;
   grid-template-areas: "navbar mainContent";
   animation: fadein 1.2s;
@@ -60,7 +60,7 @@ nav {
   flex-direction: column;
   font-family: 'Fira Code', monospace;
   font-size: large;
-  max-width: 325px;
+  /* max-width: 325px; */
   min-width: 225px;
   width: 10vw;
   justify-content: space-between;
@@ -123,6 +123,27 @@ h1 {
   60% {transform: rotate(-15deg)}
   90% {transform: rotate(5deg)}
   100% {transform: rotate(0deg)}
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0px 0px 0px;
+  padding: 30px 0px 30px 0px;
+  width: 100%;
+  background-color: #0a0a0a;
+  height: 200px;
+}
+
+footer span {
+  color: red;
+}
+
+footer p {
+  padding: 0px 100px 0px 100px;
 }
 
 /* Action Button */
@@ -341,8 +362,10 @@ main {
   align-items: center;
   display: flex;
   width: 100%;
+  /* border: dotted; */
+  height: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /* Home */
@@ -388,10 +411,15 @@ main {
   font-size: 135px;
 }
 
+.HomeContent .WavingHand {
+  font-size: 150px;
+}
+
 .HeyThere {
   display: flex;
   /* Need to add media query for when it's mobile, flex-direction is column and justify content is probably different */
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -401,7 +429,6 @@ main {
   animation-name: hello;
   animation-duration: 4.5s;
   animation-timing-function: linear;
-  font-size: 135px;
 }
 
 @keyframes hello {

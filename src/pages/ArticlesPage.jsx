@@ -1,6 +1,7 @@
 import React from 'react'
 import ActionButton from '../components/ActionButton'
 import Article from '../components/Article'
+import Footer from '../components/Footer'
 
 const Articles = (props) => {
 
@@ -19,8 +20,8 @@ const Articles = (props) => {
       </div>
       <div className="ActionButtonCluster">
         <ActionButton link="projects" navigation="left" onChangeNav={props.onChangeNav}/>
-        {/* <ActionButton link="cool-stuff" navigation="right" onChangeNav={props.onChangeNav}/> */}
       </div>
+      <Footer/>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
 import LogosBannerNew from '../components/LogosBannerNew';
+import Footer from '../components/Footer';
 
 const AboutMe = (props) => {
 
@@ -27,6 +28,7 @@ const AboutMe = (props) => {
         <ActionButton link="home" navigation="left" onChangeNav={props.onChangeNav}/>
         <ActionButton link="projects" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
+      <Footer/>
     </div>
   )
 }

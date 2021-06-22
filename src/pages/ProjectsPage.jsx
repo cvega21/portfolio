@@ -12,6 +12,7 @@ import timerStatic from '../assets/timerStatic.jpg';
 import soundboard from '../assets/soundboard.gif';
 import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolioStatic from '../assets/portfolioStatic.png';
+import Footer from '../components/Footer';
 
 
 const Projects = (props) => {  
@@ -79,6 +80,7 @@ const Projects = (props) => {
         <ActionButton link="about-me" navigation="left" onChangeNav={props.onChangeNav}/>
         <ActionButton link="articles" navigation="right" onChangeNav={props.onChangeNav}/>
       </div>
+      <Footer/>
     </div>
   )
 }
