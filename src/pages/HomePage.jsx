@@ -25,7 +25,7 @@ const Home = (props) => {
       <div className="HomeContent">
           <div className="HeyThere">
             <h1>Hey there </h1>
-            <h1 className="WavingHand">👋</h1>
+            <h1 className="WavingHand">👋🏽</h1>
           </div>
           <div className="TypingContainer">
             <span ref={typedElement}></span>
