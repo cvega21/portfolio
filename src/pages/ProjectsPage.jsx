@@ -13,7 +13,8 @@ import soundboard from '../assets/soundboard.gif';
 import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolioStatic from '../assets/portfolioStatic.png';
 import Footer from '../components/Footer';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboard } from '@fortawesome/free-regular-svg-icons';
 
 const Projects = (props) => {  
 
