@@ -36,8 +36,8 @@ const Contact = (props) => {
           <input className="EmailContainer" placeholder="your e-mail" value={email} onChange={(e)=>setEmail(e.target.value)} name='user_email'></input>
           <textarea className="MessageContainer" placeholder="your message" type="text" value={message} onChange={(e)=>setMessage(e.target.value)} name='message'></textarea>
         </form>
-        <div className="ActionButtonCluster">
-          <button onClick={sendEmail} className='EmailButton'>send e-mail</button>
+        <button onClick={sendEmail} className='EmailButton'>send e-mail</button>
+        <div>
         </div>
       </div>
     </div>

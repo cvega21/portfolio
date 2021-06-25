@@ -173,16 +173,12 @@ footer p {
   width: 100%;
 }
 
-.EmailButton {
-  width: 60%;
-}
-
 .ActionButton.Contact {
   text-align: center;
   width: 100%;
 }
 
-.ActionButton:hover {
+.ActionButton:hover, .EmailButton:hover {
   cursor: pointer;
   background-color: var(--primary-color-dark);
 }
@@ -416,12 +412,24 @@ main {
   /* border: dotted; */
 }
 
+#contact_form {
+  color: red;
+  width: 100%;
+}
+
+.EmailButton {
+  width: 50%;
+  min-width: 400px;
+  padding: 10px;
+}
+
 .ContactContainer input, .ContactContainer textarea {
   font-size: 30px;
   font-family: 'Fira Sans', sans-serif;
   padding: 10px 0px 0px 10px;
   min-height: 50px;
-  min-width: 50%;
+  min-width: 400px;
+  width: 50%;
   box-shadow: 0px 3px 10px -2px black;
   margin: 15px 0px 0px 0px;
   border: 1px solid #141414!important;
