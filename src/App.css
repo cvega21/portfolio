@@ -160,7 +160,7 @@ footer p {
   width: 80%;
 }
 
-.ActionButton {
+.ActionButton, .EmailButton {
   background-color: var(--primary-color);
   border: none;
   border-radius: 10px;
@@ -171,6 +171,10 @@ footer p {
   padding: 10px 15px 10px 15px;
   min-width: auto;
   width: 100%;
+}
+
+.EmailButton {
+  width: 60%;
 }
 
 .ActionButton.Contact {

@@ -6,11 +6,12 @@
 
 .Article {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-;
+  /* border: solid; */
   width: 50%;
   min-width: 700px;
   height: 160px;
-  margin: 30px 0px 30px 0px;
+  margin: 75px 0px 30px 0px;
 }
 
 .ArticleLink {
@@ -19,7 +20,7 @@
   width: 50%;
   min-width: 700px;
   height: 160px;
-  margin: 30px 0px 30px 0px;
+  /* margin: 30px 0px 30px 0px; */
   text-decoration: none;
 }
 
@@ -30,11 +31,13 @@
 .Article img {
   width: 200px;
   object-fit: cover;
+  margin: 0px;
 }
 
 .ArticleTitleAndDate {
   display: flex;
   flex-direction: column;
+  /* border: dotted; */
   justify-content: space-between;
   text-align: left;
   height: 100%;
