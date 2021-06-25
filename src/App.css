@@ -7,9 +7,9 @@ html, body {
 :root {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
-  --nav-background-color: #f1f1f1;
+  --nav-background-color: #ececec;
   --nav-background-color2: #676ec0c7;
-  --main-background-color: #ffffff;
+  --main-background-color: #f5f5f5;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --link-color: rgb(0, 81, 255);
@@ -23,7 +23,7 @@ html, body {
   --primary-color-dark: rgb(0, 197, 131);
   --nav-background-color: #363636;
   --nav-background-color2: #646464;
-  --nav-background-color3: #535353;
+  --nav-background-color3: #000000;
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
@@ -393,23 +393,32 @@ main {
   padding: 0px;
 }
 
-.ContactContainer div {
+.ContactContainer > div > button {
   color: var(--primary-color);
   text-align: center;
   display: flex;
   align-items: center;
   font-size: 30px;
-  /* border: dotted; */
-  margin: 10px 0px 60px 0px;
+  margin: 10px 0px 40px 0px;
+  background: none;
+  border: none;
 }
 
-.ContactContainer div p {
+.ContactContainer > div > button:hover {
+  cursor: pointer;
+}
+
+.ContactContainer p {
   margin: 0px 20px 0px 0px;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
   font-size: 30px;
   padding: 0px;
-  /* border: dotted; */
+  color: var(--primary-color)
+}
+
+.ContactContainer p {
+
 }
 
 #contact_form {
@@ -426,25 +435,27 @@ main {
 .ContactContainer input, .ContactContainer textarea {
   font-size: 30px;
   font-family: 'Fira Sans', sans-serif;
-  padding: 10px 0px 0px 10px;
+  padding: 10px 0px 10px 20px;
   min-height: 50px;
   min-width: 400px;
   width: 50%;
-  box-shadow: 0px 3px 10px -2px black;
+  box-shadow: inset 0 0 12px var(--nav-background-color3);
   margin: 15px 0px 0px 0px;
-  border: 1px solid #141414!important;
-  background-color: #141414!important;
+  /* border: 2px solid var(--primary-color); */
+  border: none;
+  background-color: var(--nav-background-color);
+  border-radius: 5px;
   outline:none!important;
   /* font-size: x-large; */
   text-align: start;
-  color: white;
+  color: var(--font-color);
   word-wrap: normal;
   resize: none;
   opacity: 90%;
 }
 
 .ContactContainer input {
-  padding: 5px 0px 0px 10px;
+  padding: 5px 0px 5px 20px;
 }
 
 /* .ContactContainer input::placeholder {
