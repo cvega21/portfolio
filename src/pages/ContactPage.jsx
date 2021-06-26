@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ActionButton from '../components/ActionButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import{ init, sendForm } from 'emailjs-com';
+import Footer from '../components/Footer'
 require('dotenv').config();
 init(process.env.REACT_APP_EMAILJS_UID);
 
@@ -11,22 +11,31 @@ const Contact = (props) => {
   const [message, setMessage] = useState('');
   const [copied, setCopied] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [incompleteForm, setIncompleteForm] = useState(false);
   
   const sendEmail = async (e) => {
     let form = document.getElementById('contact_form');
     e.preventDefault();
-    try {
-      setEmailSent(true);
-      let response = await sendForm('portolio_website', 'portfolio_message', form);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setEmail('');
-      setMessage('');
+    if (email && message) {
+      console.log(`button clicked... email: ${email}, message: ${message}`)
+      try {
+        setEmailSent(true);
+        let response = await sendForm('portolio_website', 'portfolio_message', form);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setEmail('');
+        setMessage('');
+        setTimeout(() => {
+          setEmailSent(false);
+        }, 2500);
+        return 
+      }
+    } else {
+      setIncompleteForm(true);
       setTimeout(() => {
-        setEmailSent(false);
+        setIncompleteForm(false);
       }, 2500);
-      return 
     }
   }
 
@@ -52,8 +61,19 @@ const Contact = (props) => {
           <input className="EmailContainer" placeholder="e-mail" value={email} onChange={(e)=>setEmail(e.target.value)} name='user_email'></input>
           <textarea className="MessageContainer" placeholder="message" type="text" value={message} onChange={(e)=>setMessage(e.target.value)} name='message'></textarea>
         </form>
-        {emailSent ? <p>sent!</p> : <button onClick={sendEmail} className='EmailButton'>send e-mail</button>}
+        {emailSent ? 
+          <p>sent!</p> : 
+          <button onClick={sendEmail} className='EmailButton'>send e-mail</button>
+          }
+        {incompleteForm ? 
+          <div className="incompleteError">
+            <FontAwesomeIcon icon={faTimes}/>
+            <p>type your email and message to send</p>
+          </div> : 
+          void(0)
+          }
       </div>
+      <Footer/>
     </div>
   )
 }

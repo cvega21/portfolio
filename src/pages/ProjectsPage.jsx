@@ -14,17 +14,17 @@ import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolioStatic from '../assets/portfolioStatic.png';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboard } from '@fortawesome/free-regular-svg-icons';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
 const Projects = (props) => {  
 
   return (
     <div className="GenericContainer">
       <h1>Projects</h1>
-      <div className="togglBannerContainer">
-        <p className='togglBanner'>⏳ = hours tracked on Toggl</p>
-        {props.projectsData ? <a href="https://www.toggl.com">updated daily [last: {props.projectsData.projectsMetadata.until}]</a> : void(0)}
-      </div>
+      <a href="http://www.google.com" className="togglBannerContainer">
+        <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
+        <FontAwesomeIcon icon={faQuestionCircle}/>
+      </a>
         {props.projectsData ? 
       <div className="ProjectsGrid">
         <Project 

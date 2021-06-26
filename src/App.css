@@ -12,6 +12,7 @@ html, body {
   --main-background-color: #f5f5f5;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
+  --footer-color: #e2e2e2;
   --link-color: rgb(0, 81, 255);
   --toggle-color: #FFB11A;
   --toggle-color2: #f3cf00;
@@ -27,6 +28,7 @@ html, body {
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
+  --footer-color: #000000;
   --link-color: rgb(0, 255, 200);
   --toggle-color: #4d35ff;
   --toggle-color2: rgb(0, 223, 148);
@@ -134,7 +136,8 @@ footer {
   margin: 50px 0px 0px 0px;
   padding: 30px 0px 30px 0px;
   width: 100%;
-  background-color: #0a0a0a;
+  background-color: var(--footer-color);
+  color: var(--font-color);
   height: 200px;
 }
 
@@ -168,6 +171,7 @@ footer p {
   color: var(--font-color2);
   font-family: 'Fira Code', monospace;
   font-size: medium;
+  font-weight: 500;
   padding: 10px 15px 10px 15px;
   min-width: auto;
   width: 100%;
@@ -417,8 +421,19 @@ main {
   color: var(--primary-color)
 }
 
-.ContactContainer p {
+.ContactContainer .incompleteError {
+  color: red;
+  margin-top: 20px;
+  animation: fadein 0.5s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.incompleteError *, .incompleteError p {
+  color: red;
+  font-size: 20px;
+  margin: 5px;
 }
 
 #contact_form {
@@ -495,11 +510,15 @@ main {
 .HomeContent h1, .GenericContainer > h1 {
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
-  font-size: 80px;
+  font-size: 100px;
   margin: 50px 0px 0px 0px;
   letter-spacing: -0.04em;
   /* animation: fadein 1s; */
   /* border: dotted; */
+}
+
+.GenericContainer > h1 {
+  margin: 50px 0px 50px 0px;
 }
 
 .HomeContent > div {
