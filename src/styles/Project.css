@@ -3,7 +3,7 @@
   display: grid;
   width: 70%;
   max-width: 1500px;
-  row-gap: 75px;
+  row-gap: 50px;
   grid-template-columns: 1fr;
   font-weight: 300;
 }

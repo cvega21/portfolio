@@ -46,7 +46,7 @@ body {
 .App {
   display: grid;
   grid-template-columns: minmax(225px, 10vw) 1fr;
-  grid-template-rows: 100vh;
+  grid-template-rows: 100%;
   grid-template-areas: "navbar mainContent";
   animation: fadein 1.2s;
 }
@@ -140,7 +140,7 @@ footer {
   width: 100%;
   background-color: var(--footer-color);
   color: var(--font-color);
-  height: 200px;
+  height: 50px;
 }
 
 footer span {
@@ -194,7 +194,7 @@ footer p {
   display: flex;
   justify-content: space-around;
   width: 60%;
-  margin: 40px 0px 40px 0px;
+  margin: 80px 0px 60px 0px;
 }
 
 .ActionButtonCluster > .ActionButtonContainer {

@@ -7,8 +7,8 @@ const Article = (props) => {
         <div className="Article">
             <a href={props.link} className="ArticleLink">
               <div className="ArticleTitleAndDate">
-                  <p>{props.title}</p>
-                  <h2>{formattedDate}</h2>
+                  <h2>{props.title}</h2>
+                  <h3>{formattedDate}</h3>
               </div>
               <img src={props.image} alt={props.title}/>
             </a>
