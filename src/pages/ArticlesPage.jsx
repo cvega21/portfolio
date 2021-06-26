@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ActionButton from '../components/ActionButton'
 import Article from '../components/Article'
 import Footer from '../components/Footer'
 
 const Articles = (props) => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+    return () => {
+    }
+  }, [])
+  
   return (
     <div className = "GenericContainer">
       <h1>Articles</h1>

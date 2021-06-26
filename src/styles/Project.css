@@ -1,18 +1,20 @@
 .ProjectsGrid {
   margin-top: 100px;
   display: grid;
-  width: 70%;
+  min-width: 850px;
+  width: 65%;
   max-width: 1500px;
-  row-gap: 50px;
+  row-gap: 100px;
   grid-template-columns: 1fr;
   font-weight: 300;
 }
+
 
 .ProjectContainer {
   display: flex;
   /* min-height: 250px; */
   /* flex-direction: column; */
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Sans';
   text-align: left;
   max-width: 100%;
   min-width: 850px;
@@ -22,10 +24,17 @@
   position: relative;
 }
 
+.ProjectContainer:nth-child(even) {
+  flex-direction: row-reverse;
+  color: red;
+  height: 700px;
+}
+
 .loadingIcon {
   font-size: 72px;
   color: var(--primary-color);
   animation: rotating 0.8s ease-in-out infinite;
+  margin-top: 50px;
 }
 
 @keyframes rotating {
@@ -41,6 +50,7 @@
   height: 100%;
   text-decoration: none;
   margin-bottom: 0;
+  /* padding: 15px 30px 0px 30px; */
   color: var(--font-color);
   width: 100%;
 }
@@ -50,14 +60,21 @@
 }
 
 .ProjectTextContainer {
-  padding: 0px 15px 0px 15px;
+  /* padding: 15px 30px 15px 30px; */
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   height: 100%;
 }
 
 .ProjectTextContainer * {
   margin-bottom: auto;
+}
+
+.ProjectText {
+  margin: 0px;
+  min-height: 125px;
+  padding: 15px 30px 0px 30px;
 }
 
 .togglBannerContainer {
@@ -124,7 +141,7 @@
 }
 
 .ProjectTextDescription {
-  margin:0px;
+  margin: 0px;
 }
 
 .ProjectContainer h1 {
@@ -154,8 +171,8 @@
 
 .techStackImage, .techStackFa {
   width: auto;
-  height: 25px;
-  padding: 6px;
+  height: 35px;
+  padding: 0px 15px 5px 0px;
 }
 
 .ProjectTime {
@@ -166,7 +183,8 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  margin: 10px 0px 0px 0px;
+  /* margin: 10px 0px 0px 0px; */
+  padding: 0px 30px 0px 30px;
 }
 
 .TimeContainer {

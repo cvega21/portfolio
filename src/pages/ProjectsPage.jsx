@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ActionButton from '../components/ActionButton'
 import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
@@ -18,6 +18,11 @@ import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = (props) => {  
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+    return () => {
+    }
+  }, [])
 
   return (
     <div className="GenericContainer">
@@ -68,7 +73,7 @@ const Projects = (props) => {
           time={props.projectsData.projects['Calculator Project']}
           />
         <Project 
-          title="RANDOM QUOTE GENERATOR" 
+          title="QUOTE GENERATOR" 
           description='an iOS-inspired random quote generator.' 
           gif={[quoteGenerator, quoteGeneratorStatic]} 
           link='https://github.com/cvega21/random-quote-generator'

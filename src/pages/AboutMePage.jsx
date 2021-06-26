@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
 import LogosBannerNew from '../components/LogosBannerNew';
 import Footer from '../components/Footer';
 
 const AboutMe = (props) => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+    return () => {
+    }
+  }, [])
 
   return (
     <div className="GenericContainer">

@@ -20,7 +20,7 @@ const Contact = (props) => {
       console.log(`button clicked... email: ${email}, message: ${message}`)
       try {
         setEmailSent(true);
-        let response = await sendForm('portolio_website', 'portfolio_message', form);
+        await sendForm('portolio_website', 'portfolio_message', form);
       } catch (e) {
         console.error(e);
       } finally {
@@ -54,7 +54,9 @@ const Contact = (props) => {
           <h1>let's talk</h1>
           <button href='' onClick={copyEmail}>
             <p>christianvega.cvm@gmail.com</p>
-            {!copied ? <FontAwesomeIcon icon={faCopy}/> : <FontAwesomeIcon icon={faCheck}/>}
+            <div className='CheckContainer'>
+              {!copied ? <FontAwesomeIcon icon={faCopy}/> : <FontAwesomeIcon icon={faCheck}/>}
+            </div>
           </button>
         </div>
         <form id='contact_form'>

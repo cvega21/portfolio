@@ -10,7 +10,7 @@ html, body {
   --nav-background-color: #ececec;
   --nav-background-dark: #d8d8d8;
   --nav-background-color2: #d1d1d1;
-  --main-background-color: #f5f5f5;
+  --main-background-color: #fafafa;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --footer-color: #e2e2e2;
@@ -398,6 +398,10 @@ main {
   /* border: dotted; */
   margin: 75px 0px 0px 0px;
   padding: 0px;
+}
+
+.CheckContainer {
+  width: 50px;
 }
 
 .ContactContainer > div > button {

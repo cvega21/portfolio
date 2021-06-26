@@ -12,13 +12,14 @@
   min-width: 600px;
   min-height: 160px;
   height: auto;
-  margin: 75px 0px 30px 0px;
+  margin: 30px 0px 50px 0px;
 }
 
 .ArticleLink {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 60%;
+  width: 65%;
   min-width: 600px;
   height: auto;
   /* margin: 30px 0px 30px 0px; */
@@ -41,11 +42,11 @@
   display: flex;
   flex-direction: column;
   /* border: dotted; */
-  justify-content: space-between;
+  justify-content: center;
   text-align: left;
   height: auto;
   /* width: 100%; */
-  margin: 0px 10px 0px 0px;
+  /* margin: 0px 10px 0px 0px; */
 }
 
 .ArticleTitleAndDate h2 {
@@ -58,6 +59,7 @@
 
 
 .ArticleTitleAndDate h3 {
+  margin: 0px;
   margin-top: 20px;
   color: var(--font-color);
   font-weight: lighter;
