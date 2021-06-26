@@ -8,14 +8,15 @@ html, body {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
   --nav-background-color: #ececec;
-  --nav-background-color2: #676ec0c7;
+  --nav-background-dark: #d8d8d8;
+  --nav-background-color2: #d1d1d1;
   --main-background-color: #f5f5f5;
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --footer-color: #e2e2e2;
   --link-color: rgb(0, 81, 255);
   --toggle-color: #FFB11A;
-  --toggle-color2: #f3cf00;
+  --toggle-color2: #4229ff;
   --socials-hover: #383838;
 }
 
@@ -23,8 +24,9 @@ html, body {
   --primary-color: rgb(0, 255, 170);
   --primary-color-dark: rgb(0, 197, 131);
   --nav-background-color: #363636;
+  --nav-background-dark: #424242;
   --nav-background-color2: #646464;
-  --nav-background-color3: #000000;
+  --nav-background-color3: #202020;
   --main-background-color: #202020;
   --font-color: #f8f7f6;
   --font-color2: #000000;
@@ -69,7 +71,7 @@ nav {
   text-align: left;
   position: fixed;
   grid-area: 'navbar';
-  box-shadow: 0px 2px 7px -1px black;
+  /* box-shadow: 0px 2px 7px -1px black; */
 }
 
 nav button {
@@ -185,6 +187,7 @@ footer p {
 .ActionButton:hover, .EmailButton:hover {
   cursor: pointer;
   background-color: var(--primary-color-dark);
+  transition: 0.2s ease-in;
 }
 
 .ActionButtonCluster {

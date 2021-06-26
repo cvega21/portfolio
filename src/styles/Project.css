@@ -1,22 +1,36 @@
 .ProjectsGrid {
-  margin: 100px;
+  margin-top: 100px;
   display: grid;
-  width: 80%;
-  column-gap: 125px;
-  row-gap: 100px;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 70%;
+  max-width: 1500px;
+  row-gap: 75px;
+  grid-template-columns: 1fr;
   font-weight: 300;
 }
 
 .ProjectContainer {
   display: flex;
-  flex-direction: column;
+  /* min-height: 250px; */
+  /* flex-direction: column; */
   font-family: 'Fira Code', monospace;
   text-align: left;
   max-width: 100%;
+  min-width: 850px;
+  max-height: 255px;
   background: var(--nav-background-color);
-  box-shadow: 0px 7px 7px -4px black;
+  /* box-shadow: 0px 7px 7px -4px black; */
   position: relative;
+}
+
+.loadingIcon {
+  font-size: 72px;
+  color: var(--primary-color);
+  animation: rotating 0.8s ease-in-out infinite;
+}
+
+@keyframes rotating {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(360deg)}
 }
 
 .ProjectImageLink {
@@ -28,6 +42,7 @@
   text-decoration: none;
   margin-bottom: 0;
   color: var(--font-color);
+  width: 100%;
 }
 
 .ProjectContainer:hover, .ProjectsTextContainer:hover, .StackContainer:hover {
@@ -48,21 +63,26 @@
 .togglBannerContainer {
   display: flex;
   align-items: center;
-  background-color: var(--toggle-color);
-  color: var(--font-color);
+  background-color: var(--primary-color);
+  color: var(--toggle-color);
   border-radius: 15px;
   box-shadow: 0px 2px 6px -2px black;
   padding: 12px 15px 12px 15px;
   /* margin: 50px 0px 0px 0px; */
-  margin: 30px;
+  margin-top: 100px;
   text-decoration: none;
-  margin: 0px 0px 0px 0px;
   font-size: larger;
+}
+
+.togglBannerContainer:hover {
+  background-color: var(--primary-color-dark);
+  transition: 0.2s ease-in;
 }
 
 .togglBannerContainer p {
   margin: 0px 10px 0px 0px;
   text-decoration: none;
+  color: var(--font-color2);
 }
 
 .togglBannerContainer a {
@@ -88,12 +108,19 @@
 }
 
 .ProjectImageContainer img, #GifCover {
-  width: 100%;
+  /* min-width: 0px; */
+  /* width: 250px; */
+  min-height: 100%;
+  height: 250px;
+  max-height: 250px;
+  object-fit: cover;
+  margin: 0px;
+  padding: 0px;
 }
 
 .ProjectImageContainer {
   position: relative;
-  height: auto;
+  height: 100%;
 }
 
 .ProjectTextDescription {
@@ -101,9 +128,15 @@
 }
 
 .ProjectContainer h1 {
-  font-weight: bold;
-  font-size: 24px;
+  font-family: 'Fira Sans';
+  font-weight: 600;
+  font-size: 42px;
+  letter-spacing: 0em;
   margin: 10px 0px 5px 0px;
+}
+
+.ProjectContainer p {
+  font-size: 20px;
 }
 
 .StackContainer {
@@ -143,5 +176,5 @@
   width: 100%;
   margin: 10px 0px 10px 0px;
   padding-top: 10px;
-  border-top: solid 2px rgb(58, 58, 58);
+  border-top: solid 2px var(--nav-background-dark);
 }

@@ -15,12 +15,12 @@ import portfolioStatic from '../assets/portfolioStatic.png';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = (props) => {  
 
   return (
     <div className="GenericContainer">
-      <h1>Projects</h1>
       <a href="http://www.google.com" className="togglBannerContainer">
         <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
         <FontAwesomeIcon icon={faQuestionCircle}/>
@@ -76,7 +76,7 @@ const Projects = (props) => {
           time={'untracked'}
           />
       </div>  
-        : void(0)}
+        : <FontAwesomeIcon icon={faCircleNotch} className='loadingIcon'/>}
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left" onChangeNav={props.onChangeNav}/>
         <ActionButton link="articles" navigation="right" onChangeNav={props.onChangeNav}/>
