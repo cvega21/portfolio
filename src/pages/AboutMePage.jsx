@@ -15,7 +15,7 @@ const AboutMe = (props) => {
     <div className="GenericContainer">
       <h1>About Me</h1>
       <div className="ProfileContainer">
-        <img src={profilePicture} alt="Profile" loading="lazy"></img>
+        <img src={profilePicture} alt="Profile"></img>
         <div className="ProfileTextContainer">
           <p>23 year old that loves learning new things. Studied Finance at UT Austin, interned at pension funds and investment banks during college, then became fascinated by fintech and made the leap to pursue a career in software.
           </p>
