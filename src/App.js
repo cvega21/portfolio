@@ -11,6 +11,8 @@ import './styles/LogosBanner.css';
 import './styles/Project.scss';
 import './styles/Articles.css';
 import './styles/NavBar.scss';
+import './styles/Footer.scss';
+import './styles/ActionButton.scss';
 import firebase from 'firebase'
 
 // Your web app's Firebase configuration

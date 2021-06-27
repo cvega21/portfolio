@@ -58,31 +58,9 @@ body {
 
 /* Make a column centered container @mixin */
 
-/* Footer */
-
-footer {
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 0px 0px 0px;
-  padding: 30px 0px 30px 0px;
-  width: 100%;
-  background-color: var(--footer-color);
-  color: var(--font-color);
-  height: 50px;
-}
-
-footer span {
-  color: red;
-}
-
-footer p {
-  padding: 0px 100px 0px 100px;
-}
-
 /* Action Button */
 
-.ActionButtonContainer {
+/* .ActionButtonContainer {
   display: block;
   text-decoration: none;
   max-width: 300px;
@@ -149,20 +127,15 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border: dotted; */
-  /* padding: 10px 5px 5px 0px; */
   margin: 0px 0px 0px 0px;
 }
 
 .LinkButtonTextAndIcon:nth-child(2) {
   margin: 0px 10px 0px 30px;
-  /* display: flex; */
-  /* border: solid; */
 }
  
 .NavIcon {
   margin: 10px 10px 10px 30px;
-  /* border: solid; */
   width: 30px;
   font-size: 18px;
   height: auto;
@@ -173,12 +146,10 @@ footer p {
 .LinkButtonTextAndIcon p {
   margin: 0px;
   padding: 0px;
-  /* border: solid; */
 }
 
 .LinkButtonContainer, .activeLinkButtonContainer {
   list-style: none;
-  /* display: flex; */
 }
 
 .LinkButtonContainer a, .activeLinkButtonContainer a {
@@ -205,7 +176,7 @@ footer p {
 
 .LinkButtonTextAndIcon:hover a, .LinkButtonTextAndIcon:hover {
   color: var(--toggle-color2);
-}
+} */
 
 
 /* Night Mode button */

@@ -1,0 +1,126 @@
+.ActionButtonContainer {
+  display: block;
+  text-decoration: none;
+  max-width: 300px;
+}
+  
+.ActionButtonContactContainer {
+  display: block;
+  text-decoration: none;
+  width: 80%;
+}
+  
+.ActionButton, .EmailButton {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 7px -1px black;
+  color: var(--font-color2);
+  font-family: 'Fira Code', monospace;
+  font-size: medium;
+  font-weight: 500;
+  padding: 10px 15px 10px 15px;
+  min-width: auto;
+  width: 100%;
+}
+  
+.ActionButton.Contact {
+  text-align: center;
+  width: 100%;
+}
+  
+.ActionButton:hover, .EmailButton:hover {
+  cursor: pointer;
+  background-color: var(--primary-color-dark);
+  transition: 0.2s ease-in;
+}
+
+.ActionButtonCluster {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 80px 0px 60px 0px;
+
+  >.ActionButtonContainer {
+    display: flex;
+    margin: 0px 75px 0px 75px;
+    width: 50%;
+    
+    >.ActionButton {
+      width: 100%;
+    }
+  }
+}
+
+// .ActionButtonCluster > .ActionButtonContainer {
+//   display: flex;
+//   margin: 0px 75px 0px 75px;
+//   width: 50%;
+// }
+
+// .ActionButtonCluster > .ActionButtonContainer > .ActionButton {
+//   width: 100%;
+// }
+
+.LinkContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
+
+.LinkButtonTextAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px 0px 0px 0px;
+}
+
+.LinkButtonTextAndIcon:nth-child(2) {
+  margin: 0px 10px 0px 30px;
+}
+  
+.NavIcon {
+  margin: 10px 10px 10px 30px;
+  width: 30px;
+  font-size: 18px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.LinkButtonTextAndIcon p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.LinkButtonContainer, .activeLinkButtonContainer {
+  list-style: none;
+}
+
+.LinkButtonContainer a, .activeLinkButtonContainer a {
+  text-decoration: none;
+  color: var(--font-color);
+  font-size: large;
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.activeLinkButtonContainer {
+  background-color: var(--nav-background-color2);
+}
+
+.activeLinkButtonContainer a {
+  color: var(--toggle-color2);
+}
+
+.LinkButtonContainer:hover {
+  background-color: var(--nav-background-color2);
+  transition: .3s;
+  color: var(--toggle-color2);
+}
+
+.LinkButtonTextAndIcon:hover a, .LinkButtonTextAndIcon:hover {
+  color: var(--toggle-color2);
+}

@@ -7,7 +7,6 @@
 .Article {
   display: flex;
   justify-content: center;
-  /* border: solid; */
   width: 100%;
   min-width: 600px;
   min-height: 160px;
@@ -24,6 +23,8 @@
   height: auto;
   /* margin: 30px 0px 30px 0px; */
   text-decoration: none;
+
+  
 }
 
 .ArticleLink:hover {
