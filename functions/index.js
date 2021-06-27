@@ -170,7 +170,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
         } else {
             console.log('starting daily update...')
         }
-        const newData = await getTogglProjectData(dateToLoad);
+        const newData = await getTogglProjectData(dateToLoad, dateToLoad);
         newData.data.forEach((record) => {
             if (projectsTime.hasOwnProperty(record.description)) {
                 projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000))

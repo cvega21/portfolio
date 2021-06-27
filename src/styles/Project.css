@@ -2,7 +2,7 @@
   margin-top: 100px;
   display: grid;
   min-width: 850px;
-  width: 65%;
+  width: 55%;
   max-width: 1500px;
   row-gap: 100px;
   grid-template-columns: 1fr;
