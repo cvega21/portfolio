@@ -24,7 +24,7 @@ const Articles = (props) => {
         })}
       </div>
       <div className="ActionButtonCluster">
-        <ActionButton link="projects" navigation="left" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="projects" navigation="left" />
       </div>
       <Footer/>
     </div>

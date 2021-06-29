@@ -124,3 +124,9 @@
 .LinkButtonTextAndIcon:hover a, .LinkButtonTextAndIcon:hover {
   color: var(--toggle-color2);
 }
+
+.EmailButton {
+  width: 50%;
+  min-width: 300px;
+  padding: 10px;
+}

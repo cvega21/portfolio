@@ -1,10 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import ActionButton from '../components/ActionButton'
 import Typed from 'typed.js';
 
 const Home = (props) => {
   const typedElement = useRef(null);
   const typed = useRef(null);
+  // const changePage = useContext(PageContext);
   
   useEffect(() => {
     const options = {
@@ -30,7 +31,7 @@ const Home = (props) => {
           <div className="TypingContainer">
             <span ref={typedElement}></span>
           </div>
-        <ActionButton link="about-me" navigation="right" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="about-me" navigation="right" />
       </div>
     </div>
   )

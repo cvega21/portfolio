@@ -29,8 +29,8 @@ const AboutMe = (props) => {
       </div>
       <LogosBannerNew/>
       <div className="ActionButtonCluster">
-        <ActionButton link="home" navigation="left" onChangeNav={props.onChangeNav}/>
-        <ActionButton link="projects" navigation="right" onChangeNav={props.onChangeNav}/>
+        <ActionButton link="home" navigation="left" />
+        <ActionButton link="projects" navigation="right" />
       </div>
       <Footer/>
     </div>

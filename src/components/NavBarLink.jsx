@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faCode, faSignature } from '@fortawesome/free-solid-svg-icons';
-
+import { PageContext } from '../App';
 
 const NavBarLink = (props) => {
   let text = '';
@@ -12,13 +12,14 @@ const NavBarLink = (props) => {
     text += word.slice() + ' ';
   });
   const [isActive, setIsActive] = useState('');
+  const pageContext = useContext(PageContext);
 
   useEffect(() => {
-    props.active === linkTo ? setIsActive('active') : setIsActive('');
+    pageContext[1] === linkTo ? setIsActive('active') : setIsActive('');
 
     return () => {
     }
-  },[isActive, linkTo, props.active])
+  },[pageContext, linkTo])
   
   const iconMapping = {
     'home': faHome,
@@ -29,7 +30,7 @@ const NavBarLink = (props) => {
 
   return (
   <li className={isActive + "LinkButtonContainer"}>
-    <Link to={linkTo} className='LinkButtonTextAndIcon' onClick={() => props.onChangeNav(linkTo)}>
+    <Link to={linkTo} className='LinkButtonTextAndIcon' onClick={() => pageContext[0](linkTo)}>
         <div className="NavIcon">
           <FontAwesomeIcon icon={iconMapping[props.to]}/>
         </div>

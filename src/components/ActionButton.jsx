@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import { Link } from "react-router-dom";
+import { PageContext } from '../App';
+
 
 const ActionButton = (props) => {
   let computedContainerClassName;
   let computedClassName;
   let text = '';
   let linkTo = '/'.concat(props.link);
+
+  const changePage = useContext(PageContext);
 
   if (props.link === 'contact') {
     // contact button is smaller and container width is a different %
@@ -30,7 +34,7 @@ const ActionButton = (props) => {
 
   return (
   <Link to={linkTo} className={computedContainerClassName}>
-    <button className={computedClassName} onClick={() => props.onChangeNav(linkTo)}>{text}</button>
+    <button className={computedClassName} onClick={() => changePage(linkTo)}>{text}</button>
   </Link>
   )
 }

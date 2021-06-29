@@ -35,6 +35,8 @@ firebase.analytics();
 var database = firebase.database();
 
 export const ProjectContext = React.createContext();
+export const PageContext = React.createContext();
+export const ArticlesContext = React.createContext();
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
@@ -75,37 +77,35 @@ function App() {
     }
   }, [articles])
 
-  const test = 'hello world'
-
   return (
     <BrowserRouter>
-      <ProjectContext.Provider value={projectsData}>
+        <PageContext.Provider value={[setActiveNavPage, activeNavPage]}>
         <div className={showNavBar ? 'App' : 'AppNoNav'} >
-          {showNavBar ? <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/> : void(0) }     
+          {showNavBar ? <NavBar active={activeNavPage}/> : void(0) }     
           <main>
             <Switch>
               <Route exact path="/">
                 <Redirect to="/home" />
               </Route>
               <Route path="/contact">
-                <Contact onChangeNav={setActiveNavPage}/>
+                <Contact/>
               </Route>
               <Route path="/home">
-                <Home onChangeNav={setActiveNavPage}/>
+                <Home/>
               </Route>
               <Route path="/about-me">
-                <AboutMe onChangeNav={setActiveNavPage}/>
+                <AboutMe/>
               </Route >
               <Route path="/projects">
-                <Projects onChangeNav={setActiveNavPage}/>
+                <Projects projectsData={projectsData}/>
               </Route>
               <Route path="/articles">
-                <Articles onChangeNav={setActiveNavPage} articles={articles}/>
+                <Articles articles={articles}/>
               </Route>
             </Switch>
           </main>
         </div>
-      </ProjectContext.Provider>
+        </PageContext.Provider>
     </BrowserRouter>
   );
 }

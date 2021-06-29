@@ -14,10 +14,10 @@ const NavBar = (props) => {
           <h1>CHRISTIAN VEGA</h1>
           <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
           <ul className="LinkContainer">
-            <NavBarLink to='home' active={props.active} onChangeNav={props.onChangeNav}/>
-            <NavBarLink to='about-me' active={props.active} onChangeNav={props.onChangeNav}/>
-            <NavBarLink to='projects' active={props.active} onChangeNav={props.onChangeNav}/>
-            <NavBarLink to='articles' active={props.active} onChangeNav={props.onChangeNav}/>
+            <NavBarLink to='home' active={props.active}/>
+            <NavBarLink to='about-me' active={props.active}/>
+            <NavBarLink to='projects' active={props.active}/>
+            <NavBarLink to='articles' active={props.active}/>
           </ul>
         </div>
         <div className="NavBarBottom">
