@@ -34,6 +34,7 @@ firebase.analytics();
 
 var database = firebase.database();
 
+export const ProjectContext = React.createContext();
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
@@ -74,33 +75,37 @@ function App() {
     }
   }, [articles])
 
+  const test = 'hello world'
+
   return (
     <BrowserRouter>
-      <div className={showNavBar ? 'App' : 'AppNoNav'} >
-        {showNavBar ? <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/> : void(0) }     
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-            <Route path="/contact">
-              <Contact onChangeNav={setActiveNavPage}/>
-            </Route>
-            <Route path="/home">
-              <Home onChangeNav={setActiveNavPage}/>
-            </Route>
-            <Route path="/about-me">
-              <AboutMe onChangeNav={setActiveNavPage}/>
-            </Route >
-            <Route path="/projects">
-              <Projects onChangeNav={setActiveNavPage} projectsData={projectsData}/>
-            </Route>
-            <Route path="/articles">
-              <Articles onChangeNav={setActiveNavPage} articles={articles}/>
-            </Route>
-          </Switch>
-        </main>
-      </div>
+      <ProjectContext.Provider value={projectsData}>
+        <div className={showNavBar ? 'App' : 'AppNoNav'} >
+          {showNavBar ? <NavBar active={activeNavPage} onChangeNav={setActiveNavPage}/> : void(0) }     
+          <main>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
+              <Route path="/contact">
+                <Contact onChangeNav={setActiveNavPage}/>
+              </Route>
+              <Route path="/home">
+                <Home onChangeNav={setActiveNavPage}/>
+              </Route>
+              <Route path="/about-me">
+                <AboutMe onChangeNav={setActiveNavPage}/>
+              </Route >
+              <Route path="/projects">
+                <Projects onChangeNav={setActiveNavPage}/>
+              </Route>
+              <Route path="/articles">
+                <Articles onChangeNav={setActiveNavPage} articles={articles}/>
+              </Route>
+            </Switch>
+          </main>
+        </div>
+      </ProjectContext.Provider>
     </BrowserRouter>
   );
 }

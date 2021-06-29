@@ -23,10 +23,18 @@ const NavBar = (props) => {
         <div className="NavBarBottom">
           <NightModeButton/>
           <div className="SocialIcons">
-            <FontAwesomeIcon icon={faLinkedin} size='2x'/>
-            <FontAwesomeIcon icon={faMedium} size='2x'/>
-            <FontAwesomeIcon icon={faGithubSquare} size='2x'/>
-            <FontAwesomeIcon icon={faTwitterSquare} size='2x'/>
+            <a href='https://www.linkedin.com/in/christian-vm/'>
+              <FontAwesomeIcon icon={faLinkedin} size='2x' />
+            </a>
+            <a href='https://medium.com/@christianvegaaa1'>
+              <FontAwesomeIcon icon={faMedium} size='2x'/>
+            </a>
+            <a href='https://github.com/cvega21'>
+              <FontAwesomeIcon icon={faGithubSquare} size='2x'/>
+            </a>
+            {/* <a href='www.twitter.com'>
+              <FontAwesomeIcon icon={faTwitterSquare} size='2x'/>
+            </a> */}
           </div>
         </div>
       </nav>

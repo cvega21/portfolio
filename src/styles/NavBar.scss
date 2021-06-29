@@ -51,6 +51,7 @@ nav {
   display: flex;
   margin-top: 25px;
    >* {
+     color: var(--font-color);
      margin: 0px 10px 0px 10px;
      transition: transform .5s ease-out;
    }

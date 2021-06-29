@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import ActionButton from '../components/ActionButton'
 import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
@@ -16,8 +16,11 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { ProjectContext } from '../App'
 
 const Projects = (props) => {  
+  const projectsData = useContext(ProjectContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);  
     return () => {
@@ -30,7 +33,7 @@ const Projects = (props) => {
         <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
         <FontAwesomeIcon icon={faQuestionCircle}/>
       </a>
-        {props.projectsData ? 
+        {projectsData ? 
       <div className="ProjectsGrid">
         <Project 
           title="PORTFOLIO WEBSITE" 
@@ -38,7 +41,7 @@ const Projects = (props) => {
           gif={[portfolioStatic, portfolioStatic]} 
           link='https://christianvega.me'
           stack={['react','sass','firebase']}
-          time={props.projectsData.projects['Build Portfolio Website']}
+          time={projectsData.projects['Build Portfolio Website']}
           />
         <Project
           title="WORKOUT TRACKER" 
@@ -46,7 +49,7 @@ const Projects = (props) => {
           gif={[fitness,fitnessStatic]} 
           link='https://github.com/cvega21/fitness-tracking'
           stack={['react', 'nodeJS', 'mongo']}
-          time={props.projectsData.projects['Fitness Tracker App']}
+          time={projectsData.projects['Fitness Tracker App']}
           />
         <Project
           title="EDM SOUNDBOARD"
@@ -54,7 +57,7 @@ const Projects = (props) => {
           gif={[soundboard, soundboardStatic]}
           link='https://github.com/cvega21/edm-soundboard'
           stack={['react']}
-          time={props.projectsData.projects['EDM Machine']}
+          time={projectsData.projects['EDM Machine']}
           />
         <Project
           title="POMODORO TIMER"
@@ -62,7 +65,7 @@ const Projects = (props) => {
           gif={[timer, timerStatic]}
           link='https://github.com/cvega21/pomodoro-timer'
           stack={['react']}
-          time={props.projectsData.projects['Pomodoro Timer Project']}
+          time={projectsData.projects['Pomodoro Timer Project']}
           />
         <Project 
           title="CALCULATOR"
@@ -70,7 +73,7 @@ const Projects = (props) => {
           gif={[calculator,calculatorStatic]}
           link='https://github.com/cvega21/calculator-js'
           stack={['react']}
-          time={props.projectsData.projects['Calculator Project']}
+          time={projectsData.projects['Calculator Project']}
           />
         <Project 
           title="QUOTE GENERATOR" 
