@@ -34,7 +34,7 @@ const ActionButton = (props) => {
 
   return (
   <Link to={linkTo} className={computedContainerClassName}>
-    <button className={computedClassName} onClick={() => changePage(linkTo)}>{text}</button>
+    <button className={computedClassName} onClick={() => changePage[0](linkTo)}>{text}</button>
   </Link>
   )
 }

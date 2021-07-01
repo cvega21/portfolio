@@ -137,7 +137,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
         const today = DateTime.now().setZone('America/Mexico_City');
         if (date.exists() && luxonDate.startOf('day') < today.startOf('day')) {
             console.log(`DB last updated at ${luxonDate.toISODate()}. loading data from ${today.toISODate()}.`)
-            return luxonDate.plus({ days: 1 }).toISODate();
+            return luxonDate.toISODate();
         } else {
             console.log(`today's data is already loaded. last updated: ${date.val()}`)
             return null
