@@ -3,10 +3,13 @@ import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8318.jpeg';
 import LogosBannerNew from '../components/LogosBannerNew';
 import Footer from '../components/Footer';
+import IndustryExperience from '../components/IndustryExperience';
 
 const AboutMe = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);  
+    
+    
     return () => {
     }
   }, [])
@@ -28,6 +31,7 @@ const AboutMe = (props) => {
         </div>
       </div>
       <LogosBannerNew/>
+      <IndustryExperience/>
       <div className="ActionButtonCluster">
         <ActionButton link="home" navigation="left" />
         <ActionButton link="projects" navigation="right" />
