@@ -8,19 +8,43 @@ const IndustryExperience = () => {
     <div className="IndustrySection">
       <h1>Industry Experience</h1>
       <div className="IndustryGrid">
-        <div>
-          <FontAwesomeIcon icon={faLandmark}/>
-          <h2>Investment Banking</h2>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <FontAwesomeIcon icon={faLandmark}/>
+              <h2>Investment Banking</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Business Role</h1>
+              <h2>Consumer and Retail M&A</h2>
+            </div>
+          </div>
         </div>
-        <div>
-          <FontAwesomeIcon icon={faCommentsDollar}/>
-          <h2>Payments</h2>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <FontAwesomeIcon icon={faCommentsDollar}/>
+              <h2>Payments</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Technology Role</h1>
+              <h2>Real-Time Fraud Prevention</h2>
+            </div>
+          </div>
         </div>
-        <div>
-          <FontAwesomeIcon icon={faBuilding}/>
-          <h2>Real Estate</h2>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <FontAwesomeIcon icon={faBuilding}/>
+              <h2>Real Estate</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Business Role</h1>
+              <h2>Institutional Asset Management</h2>
+            </div>
+          </div>
         </div>
-      </div>
+      </div>  
     </div>
     )
 }

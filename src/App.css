@@ -7,10 +7,12 @@ html, body {
 :root {
   --primary-color: #4229ff;
   --primary-color-dark: #2813cc;
+  --primary-color-light: rgb(132, 130, 255);
   --nav-background-color: #ececec;
   --nav-background-dark: #d8d8d8;
   --nav-background-color2: #d1d1d1;
   --main-background-color: #fafafa;
+  --accent-background-color: rgb(2, 6, 60);
   --font-color: #0A0908;
   --font-color2: #F5F1ED;
   --footer-color: #e2e2e2;
@@ -23,11 +25,15 @@ html, body {
 .DarkTheme {
   --primary-color: rgb(0, 255, 170);
   --primary-color-dark: rgb(0, 197, 131);
+  --primary-color-light: rgb(0, 95, 67);
   --nav-background-color: #363636;
   --nav-background-dark: #424242;
   --nav-background-color2: #646464;
   --nav-background-color3: #202020;
   --main-background-color: #202020;
+  --accent-background-color: rgb(0, 26, 10);
+  /* --accent-background-color: linear-gradient(0); */
+  /* --accent-background-color: linear-gradient(to right, rgb(0, 26, 10) 0%, rgb(170, 255, 203) 100%); */
   --font-color: #f8f7f6;
   --font-color2: #000000;
   --footer-color: #000000;
