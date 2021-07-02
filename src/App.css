@@ -502,7 +502,7 @@ main {
 .ProfileContainer > img {
   width: auto;
   height: 75%;
-  border-radius: 15px;
+  border-radius: 150px;
 }
 
 .ProfileTextContainer {
