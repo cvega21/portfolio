@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: var(--accent-background-color);
+  background: var(--accent-background-color);
   width: 100%;
 
   h1 {
@@ -113,7 +113,7 @@
 .flip-card-front {
   // background-color: var(--nav-background-color);
   background-color: rgb(0, 3, 153);
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-color);
   // color: white;
 
   svg {
@@ -123,7 +123,7 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: rgb(237, 193, 255);
+  background-color: var(--flipcard-back);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@
   }
 
   h1 {
-    color: black;
+    color: var(--font-color);
     font-size: 22px;
     margin: 0px;
     font-family: 'Fira Sans', sans-serif;
