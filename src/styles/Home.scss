@@ -1,0 +1,88 @@
+.HomeContainer {
+  align-items: flex-start;
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.HomeContent {  
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomeContent h1, .GenericContainer > h1 {
+  font-family: 'Lato';
+  font-weight: bold;
+  font-size: 100px;
+  margin: 50px 0px 0px 0px;
+  letter-spacing: -0.04em;
+}
+
+.GenericContainer > h1 {
+  margin: 50px 0px 20px 0px;
+}
+
+.HomeContent > div {
+  margin: 0px 0px 0px 0px;
+  width: 80%;
+  max-width: 750px;
+}
+
+.HomeContent h1 {
+  font-size: 135px;
+}
+
+.HomeContent .WavingHand {
+  font-size: 150px;
+}
+
+.HeyThere {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.WavingHand {
+  white-space: nowrap;
+  animation-name: hello;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes hello {
+  30% {transform: rotate(0deg)}
+  68% {transform: rotate(0deg)}
+  71% {transform: rotate(35deg)}
+  74% {transform: rotate(-10deg)}
+  77% {transform: rotate(30deg)}
+  80% {transform: rotate(-10deg)}
+  83% {transform: rotate(0deg)}
+}
+
+.TypingContainer {
+  min-height: 250px;
+  width: 90%;
+}
+
+.HomeContent span {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 50px;
+  margin: 0px 0px 0px 0px; 
+  text-align: left;
+}
+
+.typed-cursor.typed-cursor--blink {
+  color: var(--primary-color)
+}

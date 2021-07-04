@@ -17,7 +17,7 @@ const LogosBanner = () => {
   return (
     <div className="logos-banner">
       <h1>Tech Stack Experience</h1>
-      <p>work + personal projects</p>
+      <h2>work + personal projects</h2>
       <div className="logo-slider-container">
           <div className="logo-slider">  
             <div className="fade-background fade-background-left"></div>

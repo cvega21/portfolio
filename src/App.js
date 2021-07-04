@@ -7,12 +7,13 @@ import Projects from './pages/ProjectsPage';
 import Articles from './pages/ArticlesPage';
 import Contact from './pages/ContactPage';
 import NavBar from './components/NavBar';
-import './styles/LogosBanner.css';
+import './styles/LogosBanner.scss';
 import './styles/Project.scss';
 import './styles/Articles.css';
 import './styles/NavBar.scss';
 import './styles/Footer.scss';
 import './styles/ActionButton.scss';
+import './styles/Home.scss';
 import firebase from 'firebase'
 
 // Your web app's Firebase configuration

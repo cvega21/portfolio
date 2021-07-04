@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import{ init, sendForm } from 'emailjs-com';
 import Footer from '../components/Footer'
+import '../styles/Contact.scss';
 require('dotenv').config();
 init(process.env.REACT_APP_EMAILJS_UID);
 

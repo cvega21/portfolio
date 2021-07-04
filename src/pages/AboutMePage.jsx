@@ -29,14 +29,9 @@ const AboutMe = (props) => {
         <div className="ProfileContainer">
           <img src={profilePicture} alt="Profile"></img>
           <div className="ProfileTextContainer">
-            <p>23 year old that loves learning new things. Studied Finance at UT Austin, interned at pension funds and investment banks during college, then became fascinated by fintech and made the leap to pursue a career in software.
-            </p>
-            <p>
-            Currently working in Operations + Infrastructure (Product Reliability Engineering) at Visa and tinkering with web development on the side. Passionate about making the financial world more accessible to all.
-            </p>
-            <p>
-            📍 Austin, Texas.
-            </p>
+            <h2>🎓 UT Austin McCombs Grad</h2>
+            <h2>💼 Systems Analyst at Visa</h2>
+            <h2>🚀 Self-Taught Web Developer</h2>
           </div>
         </div>
         <LogosBannerNew/>

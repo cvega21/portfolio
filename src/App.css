@@ -34,7 +34,7 @@ html, body {
   --nav-background-color3: #202020;
   --main-background-color: #202020;
   --accent-background-color: linear-gradient(180deg, rgb(0, 49, 19)  0%, rgba(32,32,32,1) 65%);
-  --accent-background-color: rgb(0, 26, 10);`
+  --accent-background-color: rgb(0, 26, 10);
   --flipcard-back: rgb(0, 114, 51);
   --font-color: #f8f7f6;
   --font-color2: #000000;
@@ -65,126 +65,6 @@ body {
 }
 
 /* Make a column centered container @mixin */
-
-/* Action Button */
-
-/* .ActionButtonContainer {
-  display: block;
-  text-decoration: none;
-  max-width: 300px;
-}
-
-.ActionButtonContactContainer {
-  display: block;
-  text-decoration: none;
-  width: 80%;
-}
-
-.ActionButton, .EmailButton {
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 2px 7px -1px black;
-  color: var(--font-color2);
-  font-family: 'Fira Code', monospace;
-  font-size: medium;
-  font-weight: 500;
-  padding: 10px 15px 10px 15px;
-  min-width: auto;
-  width: 100%;
-}
-
-.ActionButton.Contact {
-  text-align: center;
-  width: 100%;
-}
-
-.ActionButton:hover, .EmailButton:hover {
-  cursor: pointer;
-  background-color: var(--primary-color-dark);
-  transition: 0.2s ease-in;
-}
-
-.ActionButtonCluster {
-  display: flex;
-  justify-content: space-around;
-  width: 60%;
-  margin: 80px 0px 60px 0px;
-}
-
-.ActionButtonCluster > .ActionButtonContainer {
-  display: flex;
-  margin: 0px 75px 0px 75px;
-  width: 50%;
-}
-
-.ActionButtonCluster > .ActionButtonContainer > .ActionButton {
-  width: 100%;
-}
-
-
-.LinkContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100%;
-  padding: 0px 0px 0px 0px;
-}
-
-.LinkButtonTextAndIcon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0px 0px 0px 0px;
-}
-
-.LinkButtonTextAndIcon:nth-child(2) {
-  margin: 0px 10px 0px 30px;
-}
- 
-.NavIcon {
-  margin: 10px 10px 10px 30px;
-  width: 30px;
-  font-size: 18px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.LinkButtonTextAndIcon p {
-  margin: 0px;
-  padding: 0px;
-}
-
-.LinkButtonContainer, .activeLinkButtonContainer {
-  list-style: none;
-}
-
-.LinkButtonContainer a, .activeLinkButtonContainer a {
-  text-decoration: none;
-  color: var(--font-color);
-  font-size: large;
-  padding: 0px 0px 0px 0px;
-  margin: 0px;
-}
-
-.activeLinkButtonContainer {
-  background-color: var(--nav-background-color2);
-}
-
-.activeLinkButtonContainer a {
-  color: var(--toggle-color2);
-}
-
-.LinkButtonContainer:hover {
-  background-color: var(--nav-background-color2);
-  transition: .3s;
-  color: var(--toggle-color2);
-}
-
-.LinkButtonTextAndIcon:hover a, .LinkButtonTextAndIcon:hover {
-  color: var(--toggle-color2);
-} */
 
 
 /* Night Mode button */
@@ -277,221 +157,19 @@ main {
   align-items: center;
   display: flex;
   width: 100%;
-  /* border: dotted; */
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.ContactContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: space-evenly; */
-  min-height: 100%;
-  min-width: 100%;
-}
-
-.ContactContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: auto;
-  font-weight: 800;
-}
-
-.ContactContainer h1 {
-  font-size: 80px;
-  /* border: dotted; */
-  margin: 75px 0px 0px 0px;
-  padding: 0px;
-}
-
-.CheckContainer {
-  width: 50px;
-}
-
-.ContactContainer > div > button {
-  color: var(--primary-color);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  font-size: 30px;
-  margin: 10px 0px 40px 0px;
-  background: none;
-  border: none;
-}
-
-.ContactContainer > div > button:hover {
-  cursor: pointer;
-}
-
-.ContactContainer p {
-  margin: 0px 20px 0px 0px;
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: 300;
-  font-size: 30px;
-  padding: 0px;
-  color: var(--primary-color)
-}
-
-.ContactContainer .incompleteError {
-  color: red;
-  margin-top: 20px;
-  animation: fadein 0.5s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.incompleteError *, .incompleteError p {
-  color: red;
-  font-size: 20px;
-  margin: 5px;
-}
-
-#contact_form {
-  color: red;
-  width: 100%;
-}
-
-.ContactContainer input, .ContactContainer textarea {
-  font-size: 30px;
-  font-family: 'Fira Sans', sans-serif;
-  padding: 10px 0px 10px 20px;
-  min-height: 50px;
-  min-width: 400px;
-  width: 50%;
-  box-shadow: inset 0 0 12px var(--nav-background-color3);
-  margin: 15px 0px 0px 0px;
-  /* border: 2px solid var(--primary-color); */
-  border: none;
-  background-color: var(--nav-background-color);
-  border-radius: 5px;
-  outline:none!important;
-  /* font-size: x-large; */
-  text-align: start;
-  color: var(--font-color);
-  word-wrap: normal;
-  resize: none;
-  opacity: 90%;
-}
-
-.ContactContainer input {
-  padding: 5px 0px 5px 20px;
-}
-
-/* .ContactContainer input::placeholder {
-  text-align: start;
-  display: flex;
-  justify-content: flex-start;
-} */
-
-.ContactContainer .MessageContainer {
-  min-height: 200px;
-  margin: 15px 0px 100px 0px;
 }
 
 /* Home */
-.HomeContainer {
-  align-items: flex-start;
-  display: flex;
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.HomeContent {  
-  margin: 0px 0px 0px 0px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* border: dotted; */
-}
-
-.HomeContent h1, .GenericContainer > h1 {
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: bold;
-  font-size: 100px;
-  margin: 50px 0px 0px 0px;
-  letter-spacing: -0.04em;
-  /* animation: fadein 1s; */
-  /* border: dotted; */
-}
-
-.GenericContainer > h1 {
-  margin: 50px 0px 50px 0px;
-}
-
-.HomeContent > div {
-  margin: 0px 0px 0px 0px;
-  width: 80%;
-  max-width: 750px;
-}
-
-.HomeContent h1 {
-  font-size: 135px;
-}
-
-.HomeContent .WavingHand {
-  font-size: 150px;
-}
-
-.HeyThere {
-  display: flex;
-  /* Need to add media query for when it's mobile, flex-direction is column and justify content is probably different */
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-
-.WavingHand {
-  white-space: nowrap;
-  animation-name: hello;
-  animation-duration: 4.5s;
-  animation-timing-function: linear;
-}
-
-@keyframes hello {
-  30% {transform: rotate(0deg)}
-  68% {transform: rotate(0deg)}
-  71% {transform: rotate(35deg)}
-  74% {transform: rotate(-10deg)}
-  77% {transform: rotate(30deg)}
-  80% {transform: rotate(-10deg)}
-  83% {transform: rotate(0deg)}
-}
-
-.TypingContainer {
-  /* border: solid; */
-  min-height: 250px;
-  /* height: 150px; */
-  width: 90%;
-}
-
-/* Media Query if width === phone, then typing container height min: 315 */
-
-.HomeContent span {
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: lighter;
-  font-size: 50px;
-  margin: 0px 0px 0px 0px; 
-  text-align: left;
-}
-
-.typed-cursor.typed-cursor--blink {
-  color: var(--primary-color)
-}
+/*  */
 
 /* About Me */
+
+.GenericContainer > h1 {
+  margin: 0px;
+}
 
 .ProfileContainer {
   display: flex;
@@ -510,6 +188,12 @@ main {
 .ProfileTextContainer {
   width: 50%;
 }
+
+.ProfileTextContainer h2 {
+  font-weight: lighter;
+}
+
+
 
 .LogoBanner {
   display: flex;
