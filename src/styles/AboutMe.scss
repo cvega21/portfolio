@@ -1,0 +1,25 @@
+.GenericContainer > h1 {
+  margin: 0px;
+}
+
+.ProfileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  height: 300px;
+}
+
+.ProfileContainer > img {
+  width: auto;
+  height: 75%;
+  border-radius: 150px;
+}
+
+.ProfileTextContainer {
+  width: 50%;
+}
+
+.ProfileTextContainer h2 {
+  font-weight: lighter;
+}

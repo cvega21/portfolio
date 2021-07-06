@@ -14,6 +14,8 @@ import './styles/NavBar.scss';
 import './styles/Footer.scss';
 import './styles/ActionButton.scss';
 import './styles/Home.scss';
+import './styles/NightModeButton.scss';
+import './styles/AboutMe.scss';
 import firebase from 'firebase'
 
 // Your web app's Firebase configuration
