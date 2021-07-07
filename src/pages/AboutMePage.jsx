@@ -4,6 +4,7 @@ import profilePicture from '../assets/IMG_8318.jpeg';
 import LogosBannerNew from '../components/LogosBannerNew';
 import Footer from '../components/Footer';
 import IndustryExperience from '../components/IndustryExperience';
+import WorkExperience from '../components/WorkExperience';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
@@ -36,6 +37,7 @@ const AboutMe = (props) => {
         </div>
         <LogosBannerNew/>
         <IndustryExperience/>
+        <WorkExperience/>
         <div className="ActionButtonCluster">
           <ActionButton link="home" navigation="left" />
           <ActionButton link="projects" navigation="right" />
