@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ActionButton from '../components/ActionButton';
-import profilePicture from '../assets/IMG_8318.jpeg';
+import profilePicture from '../assets/IMG_8239.JPG';
 import LogosBannerNew from '../components/LogosBannerNew';
 import Footer from '../components/Footer';
 import IndustryExperience from '../components/IndustryExperience';
@@ -25,14 +25,18 @@ const AboutMe = (props) => {
     <div className="GenericContainer">
       { isMounted ?
       <>
-      {/* <div> */}
-        <h1>About Me</h1>
         <div className="ProfileContainer">
           <img src={profilePicture} alt="Profile"></img>
           <div className="ProfileTextContainer">
-            <h2>🎓 UT Austin McCombs Grad</h2>
-            <h2>💼 Systems Analyst at Visa</h2>
-            <h2>🚀 Self-Taught Web Developer</h2>
+            <div>
+              <h1>Christian</h1>
+              <h1>Vega-Munguia</h1>
+            </div>
+            <div>
+              <h2>🎓 UT Austin McCombs Grad</h2>
+              <h2>💼 Systems Analyst at Visa</h2>
+              <h2>🚀 Self-Taught Web Developer</h2>
+            </div>
           </div>
         </div>
         <LogosBannerNew/>
@@ -43,7 +47,6 @@ const AboutMe = (props) => {
           <ActionButton link="projects" navigation="right" />
         </div>
         <Footer/>
-      {/* </div> */}
       </>
       : <FontAwesomeIcon icon={faCircleNotch} className='loadingIcon'/>}
     </div>
