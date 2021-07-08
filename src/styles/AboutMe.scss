@@ -7,46 +7,90 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  // height: 100px;
+  height: 600px;
   // border: solid;
   background-color: var(--accent-background-color);
+  // background-color: rgb(7, 0, 36);
+  color: rgb(88, 214, 88);
   color: white;
 
 
-  img {
+  >div>img {
     width: 200px;
-    min-width: 450px;
-    min-height: 450px;
+    min-width: 350px;
+    min-height: 350px;
     // height: 30vh;
-    margin: 100px 75px 100px 0px;
+    border: solid var(--accent-background-color) 8px;
+    margin: 0px 0px 0px 0px;
     object-position: 10% 0px;
     border-radius: 250px;
     object-fit: cover;
-    box-shadow: 2px 5px 10px 0px rgb(0, 0, 0);
+    z-index: 2;
+    // position: absolute;
+    // box-shadow: 2px 5px 10px 10px rgb(0, 0, 0);
+    // position: absolute;
+    // animation: rotating 5s linear reverse infinite;
+  }
+
+  .ProfilePicture {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .RainbowContainer {
+    background: linear-gradient(45deg, #ffca57, #b91f69, #680051);
+    // border: 10px black solid;
+    height: 355px;
+    width: 355px;
+    padding: 10px;
+    border-radius: 250px;
+    animation: rotating 2.5s linear infinite;
+    position: absolute;
   }
 }
 
 .ProfileTextContainer {
   // border: solid;
+  margin-left: 50px;
   // width: 50%;
-  
+  img {
+    height: 50px;
+    width: 50px;
+    margin: 0px 0px -15px 3px;
+    // object-position: 10px 6px;
+  }
+
   h1 {
     text-align: left;
     font-size: 68px;
     font-family: 'Lato';
-    font-weight: 900;
+    font-weight: 700;
     width: 100%;
     margin: 0px;
+    display: flex;
+    align-items: center;
   }
 
   h2 {
     font-size: 30px;
     font-weight: lighter;
-    margin-top: 25px;
+    margin-top: 15px;
+  }
+
+  >div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    // margin-top: 50px;
   }
 
   >div:nth-child(2) {
-    // color: red;
-    margin-top: 50px;
+    margin-top: 30px;
+    
+    a {
+      // color: red;
+      text-decoration: none;
+    }
   }
 }

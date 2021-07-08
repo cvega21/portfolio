@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: var(--accent-background-color);
+  // background-color: var(--accent-background-color);
   width: 100%;
 
   h1 {
     font-size: 70px;
     margin: 75px 0px 100px 0px;
-    color: white;
+    color: var(--font-color);
   }
 
   .IndustryGrid {
@@ -16,7 +16,7 @@
     justify-content: center;
     grid-template-columns: 300px 300px 300px;
     width: 100%;
-    column-gap: 30px;
+    column-gap: 60px;
     margin-bottom: 125px;
   }
 }
