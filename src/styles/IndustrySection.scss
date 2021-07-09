@@ -6,17 +6,18 @@
   width: 100%;
 
   h1 {
-    font-size: 70px;
     margin: 75px 0px 100px 0px;
     color: var(--font-color);
+    font-size: 40px;
+    font-family: 'Lato';
   }
 
   .IndustryGrid {
     display: grid;
     justify-content: center;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 250px 250px 250px;
     width: 100%;
-    column-gap: 60px;
+    column-gap: 75px;
     margin-bottom: 125px;
   }
 }
@@ -54,7 +55,7 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 300px;
+  width: 250px;
   height: 140px;
   // border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */

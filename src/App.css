@@ -11,7 +11,7 @@ html, body {
   --nav-background-color: #ececec;
   --nav-background-dark: #d8d8d8;
   --nav-background-color2: #d1d1d1;
-  --main-background-color: #fafafa;
+  --main-background-color: #f6f9fc;
   --accent-background-color: linear-gradient(0deg, #fafafa 0%, rgba(2,6,60,1) 69%);
   --accent-background-color: rgba(2,6,60,1);
   --flipcard-back: rgb(169, 160, 255);
@@ -48,7 +48,7 @@ html, body {
 body {
   background: var(--main-background-color);
   color: var(--font-color);
-  font-family: 'Fira Sans', sans-serif
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .App {

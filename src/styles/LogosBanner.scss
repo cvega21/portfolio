@@ -1,14 +1,20 @@
 .logos-banner {
   text-align: center;
-  margin: 30px 0px 50px 0px;
+  margin: 100px 0px 50px 0px;
+  background-color: white;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
+  // padding: 10px;
 
   h1 {
-    font-size: 58px;
-    margin: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px 0px 0px 0px;
+    // color: var(--primary-color);
+    font-family: 'Lato';
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: lighter;
     margin: 15px 0px 50px 0px;
   }
@@ -19,7 +25,7 @@
   padding: 20px;
   overflow: hidden;
   max-width: 800px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -35,12 +41,12 @@
 }
 
 .fade-background-left {
-  background-image: linear-gradient(to right, var(--main-background-color) 0%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0));
   left: 0px;  
 }
 
 .fade-background-right {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--main-background-color) 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
   right: 0px;  
 }
 
@@ -57,6 +63,7 @@
   animation: marquee 30s linear infinite;
   animation-direction: reverse;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .logo-slider > div > img {
@@ -64,7 +71,7 @@
   height: var(--image-size);
   margin: 0 2vw;
   filter: grayscale(100%);
-  opacity: 60%;
+  opacity: 30%;
   z-index: 1;
 }
 

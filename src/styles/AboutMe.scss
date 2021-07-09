@@ -4,16 +4,16 @@
 
 .ProfileContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 90px;
   justify-content: center;
   width: 100%;
-  height: 600px;
+  height: 450px;
   // border: solid;
   background-color: var(--accent-background-color);
   // background-color: rgb(7, 0, 36);
-  color: rgb(88, 214, 88);
+  color: rgb(214, 134, 88);
   color: white;
-
 
   >div>img {
     width: 200px;
@@ -26,10 +26,6 @@
     border-radius: 250px;
     object-fit: cover;
     z-index: 2;
-    // position: absolute;
-    // box-shadow: 2px 5px 10px 10px rgb(0, 0, 0);
-    // position: absolute;
-    // animation: rotating 5s linear reverse infinite;
   }
 
   .ProfilePicture {
@@ -37,6 +33,8 @@
     position: relative;
     align-items: center;
     justify-content: center;
+    animation: fadedown 1s;
+    margin-top: -25px;
   }
 
   .RainbowContainer {
@@ -46,14 +44,15 @@
     width: 355px;
     padding: 10px;
     border-radius: 250px;
-    animation: rotating 2.5s linear infinite;
+    animation: rotating 2s ease-in infinite;
     position: absolute;
   }
 }
 
 .ProfileTextContainer {
   // border: solid;
-  margin-left: 50px;
+  margin-left: 70px;
+  animation: fadedown 1s;
   // width: 50%;
   img {
     height: 50px;
@@ -64,7 +63,7 @@
 
   h1 {
     text-align: left;
-    font-size: 68px;
+    font-size: 50px;
     font-family: 'Lato';
     font-weight: 700;
     width: 100%;
@@ -74,9 +73,10 @@
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: lighter;
     margin-top: 15px;
+    color: rgb(216, 216, 216);
   }
 
   >div:nth-child(1) {
@@ -89,8 +89,20 @@
     margin-top: 30px;
     
     a {
-      // color: red;
+      // color: rgb(129, 226, 255);
       text-decoration: none;
     }
+  }
+}
+
+.AboutSection {
+  // background-color: var(--accent-background-color);
+  width: 100%;
+  color: var(--font-color);
+  text-align: center;
+
+  h1 {
+    font-family: 'Lato';
+    font-size: 40px;
   }
 }

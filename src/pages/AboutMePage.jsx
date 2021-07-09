@@ -40,15 +40,19 @@ const AboutMe = (props) => {
               </div>
             </div>
             <div>
-              <h2>🎓 Finance Grad from <a style={{color: '#ff6a00'}} href="http://www.utaustin.com">UT Austin</a></h2>
-              <h2>🖥️ Systems Analyst at <a style={{color: '#fcb70a'}} href="https://www.visa.com">Visa</a></h2>
-              <h2>🚀 Self-Taught<a style={{color: 'rgb(88, 214, 88)'}} href="http://www.utaustin.com"> Web Developer</a></h2>
+              <h2>🎓 Finance Grad from <a style={{color: 'rgb(214, 134, 88)'}} href="http://www.utaustin.com">UT Austin</a></h2>
+              <h2>🖥️ Systems Analyst at <a style={{color: 'rgb(88, 185, 214)'}} href="https://www.visa.com">Visa</a></h2>
+              <h2>🚀 Self-Taught Web Developer</h2>
             </div>
           </div>
         </div>
+        <div className="AboutSection">
+          <h1>About Me</h1>
+          <p></p>
+        </div>
         <LogosBannerNew/>
         <IndustryExperience/>
-        <WorkExperience/>
+        {/* <WorkExperience/> */}
         <div className="ActionButtonCluster">
           <ActionButton link="home" navigation="left" />
           <ActionButton link="projects" navigation="right" />
