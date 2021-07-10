@@ -47,20 +47,22 @@ const AboutMe = (props) => {
               <h2>🚀 Self-Taught Web Developer</h2> */}
               <h2>Systems Analyst at Visa</h2>
               <ActionButton link=" see my resume" /> 
-              <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music fan 🕺🏽</h3>
+              <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music Fan </h3>
             </div>
           </div>
         </div>
         <div className="AboutSection">
           <h1>About Me</h1>
           <p>
-            Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the University of Texas as part of the 2020 class - yay for virtual graduation! 😎 
+            Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the University of Texas as part of the 2020 ("Zoomer" 👨🏽‍💻) class.
           </p>
           <p>
-            After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of finance and technology and decided to purse a career in the technical side of things.
+            After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of finance and technology and decided to purse a career in the technical side of the industry. 
+            {/* At Visa, I am responsible for supporting several payment fraud prevention and management systems totaling $100m+ in annual revenue. Operations include maintaining over 500 on-premise servers hosted in a multi-datacenter environment, writing scripts to automate tasks, generating reports for business analysis, troubleshooting live production issues, and participating in monthly on-call rotations. */}
           </p>
           <p>
-
+            {/* Currently interested in web development, cryptocurrencies (particularly Ethereum) and personal finance.  */}
+            I love fitness, tacos mañaneros, English soccer and a wide variety of electronic music.
           </p>
         </div>
         <LogosBannerNew/>

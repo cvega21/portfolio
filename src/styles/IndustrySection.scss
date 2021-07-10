@@ -8,7 +8,7 @@
   h1 {
     margin: 75px 0px 100px 0px;
     color: var(--font-color);
-    font-size: 40px;
+    font-size: 42px;
     font-family: 'Lato';
   }
 
@@ -60,9 +60,14 @@
   // border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
-  h2 {
-    font-size: 25px;
+  h1 {
     font-weight: 300;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Lato';
     height: 60%;
     vertical-align: text-bottom;
     display: flex;

@@ -15,8 +15,8 @@ const IndustryExperience = () => {
               <h2>Investment Banking</h2>
             </div>
             <div class="flip-card-back">
-              <h1>Business Role</h1>
-              <h2>Consumer and Retail M&A</h2>
+              {/* <h1>Business Role</h1> */}
+              <h1>Consumer and Retail M&A</h1>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const IndustryExperience = () => {
               <h2>Payments</h2>
             </div>
             <div class="flip-card-back">
-              <h1>Technology Role</h1>
+              {/* <h1>Technology Role</h1> */}
               <h2>Real-Time Fraud Prevention</h2>
             </div>
           </div>
@@ -39,7 +39,7 @@ const IndustryExperience = () => {
               <h2>Real Estate</h2>
             </div>
             <div class="flip-card-back">
-              <h1>Business Role</h1>
+              {/* <h1>Business Role</h1> */}
               <h2>Institutional Asset Management</h2>
             </div>
           </div>
