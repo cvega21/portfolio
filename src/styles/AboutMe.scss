@@ -1,5 +1,6 @@
 .GenericContainer > h1 {
-  margin: 0px 0px 0px 0px;
+  margin: 40px 0px 0px 0px;
+  animation: fadedown 1s;
 }
 
 .ProfileContainer {
@@ -129,7 +130,7 @@
   width: 100%;
   color: var(--font-color);
   text-align: center;
-  margin: 20px 0px 20px 0px;
+  margin: 40px 0px 40px 0px;
 
   h1 {
     font-family: 'Lato';

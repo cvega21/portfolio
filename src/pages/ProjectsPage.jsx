@@ -27,10 +27,12 @@ const Projects = (props) => {
 
   return (
     <div className="GenericContainer">
-      <a href="http://www.google.com" className="togglBannerContainer">
-        <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
-        <FontAwesomeIcon icon={faQuestionCircle}/>
-      </a>
+      <div className="togglBannerContainerSuper">
+        <a href="http://www.google.com" className="togglBannerContainer">
+          <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
+          <FontAwesomeIcon icon={faQuestionCircle}/>
+        </a>
+      </div>
         {props.projectsData ? 
       <div className="ProjectsGrid">
         <Project 

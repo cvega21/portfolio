@@ -1,6 +1,6 @@
 .logos-banner {
   text-align: center;
-  margin: 70px 0px 50px 0px;
+  margin: 60px 0px 50px 0px;
   background-color: var(--banner-background-color);
   box-shadow: 0 0 60px 0 rgb(0 0 0 / 20%);
   // padding: 10px;
@@ -46,7 +46,7 @@
 }
 
 .fade-background-right {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), (--banner-background-color) 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--banner-background-color) 100%);
   right: 0px;  
 }
 
