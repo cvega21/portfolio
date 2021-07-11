@@ -1,8 +1,8 @@
 .logos-banner {
   text-align: center;
-  margin: 100px 0px 50px 0px;
-  background-color: white;
-  box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
+  margin: 70px 0px 50px 0px;
+  background-color: var(--banner-background-color);
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 20%);
   // padding: 10px;
 
   h1 {
@@ -41,12 +41,12 @@
 }
 
 .fade-background-left {
-  background-image: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, var(--banner-background-color) 0%, rgba(255, 255, 255, 0));
   left: 0px;  
 }
 
 .fade-background-right {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), (--banner-background-color) 100%);
   right: 0px;  
 }
 
@@ -70,11 +70,20 @@
   display: block;
   height: var(--image-size);
   margin: 0 2vw;
-  filter: grayscale(100%);
-  opacity: 30%;
   z-index: 1;
 }
 
+.noInvert {
+  filter: grayscale(100%);
+  opacity: 30%;
+  // filter: invert(1);
+}
+
+.invert {
+  // width: 400px;
+  filter: var(--banner-filter);
+  opacity: var(--banner-opacity);
+}
 
 .logo-slider > div > img:hover {
   transition: all 0.3s ease-out;
