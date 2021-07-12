@@ -13,8 +13,6 @@ const Home = (props) => {
   
   useEffect(() => {
     typed.current = new Typed(typedElement.current, options);
-
-
     return () => {
       typed.current.destroy();
     }

@@ -19,6 +19,7 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = (props) => {  
 
+
   useEffect(() => {
     window.scrollTo(0, 0);  
     return () => {

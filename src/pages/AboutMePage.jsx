@@ -24,8 +24,6 @@ const AboutMe = (props) => {
       }, 825);
     } else {
       setIsMounted(true);
-      // setTimeout(() => {
-      // }, 1);
     }
 
     return () => {
@@ -46,15 +44,11 @@ const AboutMe = (props) => {
             <div>
               <h1>CHRISTIAN</h1>
               <div className="CheckedName">
-                {/* <h1>VEGA</h1> */}
                 <h1>VEGA MUNGUIA</h1>
                 <img src={check} alt=''/>
               </div>
             </div>
             <div>
-              {/* <h2>🎓 Finance Grad from <a style={{color: 'rgb(214, 134, 88)'}} href="http://www.utaustin.com">UT Austin</a></h2>
-              <h2>🖥️ Systems Analyst at <a style={{color: 'rgb(88, 185, 214)'}} href="https://www.visa.com">Visa</a></h2>
-              <h2>🚀 Self-Taught Web Developer</h2> */}
               <h2>Systems Analyst at Visa</h2>
               <ActionButton link=" see my resume" /> 
               <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music Fan </h3>
@@ -66,20 +60,9 @@ const AboutMe = (props) => {
           <p>
             Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the University of Texas as part of the 2020 ("Zoomer" 👨🏽‍💻) class. After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of finance and technology and decided to purse a career in the technical side of the business. I enjoy fitness, English soccer, tacos mañaneros, and a wide variety of electronic music.
           </p>
-          <p>
-            {/* At Visa, I am responsible for supporting several payment fraud prevention and management systems totaling $100m+ in annual revenue. Operations include maintaining over 500 on-premise servers hosted in a multi-datacenter environment, writing scripts to automate tasks, generating reports for business analysis, troubleshooting live production issues, and participating in monthly on-call rotations. */}
-          </p>
-          <p>
-            
-          </p>
-          <p>
-            {/* Currently interested in web development, cryptocurrencies (particularly Ethereum) and personal finance.  */}
-            
-          </p>
         </div>
         <LogosBannerNew/>
         <IndustryExperience/>
-        {/* <WorkExperience/> */}
         <div className="ActionButtonCluster">
           <ActionButton link="home" navigation="left" />
           <ActionButton link="projects" navigation="right" />

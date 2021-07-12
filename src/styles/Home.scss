@@ -20,7 +20,7 @@
 }
 
 .HomeContent h1, .GenericContainer > h1 {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 100px;
   margin: 50px 0px 0px 0px;
@@ -50,6 +50,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  animation: fadedown 1s;
 }
 
 

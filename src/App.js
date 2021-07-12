@@ -9,7 +9,7 @@ import Contact from './pages/ContactPage';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.scss';
 import './styles/Project.scss';
-import './styles/Articles.css';
+import './styles/Articles.scss';
 import './styles/NavBar.scss';
 import './styles/Footer.scss';
 import './styles/ActionButton.scss';
