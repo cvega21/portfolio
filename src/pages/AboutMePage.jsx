@@ -1,26 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8239.JPG';
 import check from '../assets/checkmark.png';
 import LogosBannerNew from '../components/LogosBannerNew';
 import Footer from '../components/Footer';
 import IndustryExperience from '../components/IndustryExperience';
-import WorkExperience from '../components/WorkExperience';
+import { PageContext } from '../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const AboutMe = (props) => {
   const [isMounted, setIsMounted] = useState(false);
+  const pageContext = useContext(PageContext);
   
   useEffect(() => {
     window.scrollTo(0, 0);  
-    setTimeout(() => {
+    
+    // pageContext[2] === hasHomeLoaded. set this to true on the first load so that the loading animation is only displayed once
+    if (pageContext[2] === false) {
+      setTimeout(() => {
+        setIsMounted(true);
+        pageContext[3](true);
+      }, 825);
+    } else {
       setIsMounted(true);
-    }, 825);
+      // setTimeout(() => {
+      // }, 1);
+    }
 
     return () => {
     }
-  }, [])
+  }, [pageContext])
 
   return (
     <div className="GenericContainer">

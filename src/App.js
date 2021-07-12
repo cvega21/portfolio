@@ -46,6 +46,7 @@ function App() {
   const [projectsData, setProjectsData] = useState(false);
   const [articles, setArticles] = useState([]);
   const [showNavBar, setShowNavBar] = useState(false); 
+  const [homeHasLoaded, setHomeHasLoaded] = useState(false); 
 
   // changes active window in nav bar
   useEffect(() => {
@@ -82,7 +83,7 @@ function App() {
 
   return (
     <BrowserRouter>
-        <PageContext.Provider value={[setActiveNavPage, activeNavPage]}>
+        <PageContext.Provider value={[setActiveNavPage, activeNavPage, homeHasLoaded, setHomeHasLoaded]}>
         <div className={showNavBar ? 'App' : 'AppNoNav'} >
           {showNavBar ? <NavBar active={activeNavPage}/> : void(0) }     
           <main>
