@@ -49,7 +49,7 @@ const Projects = (props) => {
           description='a small, responsive full-stack app to keep track of your workouts.' 
           gif={[fitness,fitnessStatic]} 
           link='https://github.com/cvega21/fitness-tracking'
-          stack={['react', 'nodeJS', 'mongo']}
+          stack={['react', 'nodeJS', 'mongo', 'bootstrap']}
           time={props.projectsData.projects['Fitness Tracker App']}
           />
         <Project
@@ -57,7 +57,7 @@ const Projects = (props) => {
           description='an electronic dance music (EDM) inspired piano and soundboard.'
           gif={[soundboard, soundboardStatic]}
           link='https://github.com/cvega21/edm-soundboard'
-          stack={['react']}
+          stack={['react', 'bootstrap']}
           time={props.projectsData.projects['EDM Machine']}
           />
         <Project
@@ -65,7 +65,7 @@ const Projects = (props) => {
           description='a simple time management tool built on React.'
           gif={[timer, timerStatic]}
           link='https://github.com/cvega21/pomodoro-timer'
-          stack={['react']}
+          stack={['react', 'bootstrap']}
           time={props.projectsData.projects['Pomodoro Timer Project']}
           />
         <Project 
@@ -81,7 +81,7 @@ const Projects = (props) => {
           description='an iOS-inspired random quote generator.' 
           gif={[quoteGenerator, quoteGeneratorStatic]} 
           link='https://github.com/cvega21/random-quote-generator'
-          stack={['react']}
+          stack={['react', 'bootstrap']}
           time={'untracked'}
           />
       </div>  

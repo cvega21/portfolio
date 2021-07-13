@@ -14,7 +14,7 @@ html, body {
   --main-background-color: #f6f9fc;
   --banner-background-color: white;
   --banner-filter: grayscale(100%) invert(0);
-  --banner-opacity: 30%;
+  --banner-opacity: 35%;
   --accent-background-color: rgba(2,6,60,1);
   --flipcard-back: rgb(169, 160, 255);
   --font-color: #0A0908;

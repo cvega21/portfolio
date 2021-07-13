@@ -174,9 +174,18 @@
   .techStackImage, .techStackFa {
     width: auto;
     height: 35px;
-    padding: 0px 15px 5px 0px;
+    // border: solid;
+    padding: 0px 18px 5px 0px;
+    // display: flex;
+    // justify-content: center;
   }
   
+  .techStackImage.bootstrap, .techStackImage.firebase {
+    // border: solid;
+    padding: 0px 10px 5px 0px;
+    margin: 0px 0px 0px -5px;
+  }
+
   .ProjectTime {
     margin: 0px;
   }

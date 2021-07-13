@@ -4,6 +4,7 @@ import firebase from '../assets/firebase.png';
 import react from '../assets/react.png';
 import nodeJS from '../assets/node.png';
 import sass from '../assets/sass.png';
+import bootstrap from '../assets/bootstrap-stack.png';
 
 
 const Project = (props) => {
@@ -13,11 +14,12 @@ const Project = (props) => {
     'nodeJS': nodeJS,
     'mongo': mongo,
     'sass': sass,
-    'firebase': firebase
+    'firebase': firebase,
+    'bootstrap': bootstrap
   }
 
   const currentTechStack = props.stack.map((item) => {
-    return <img src={techStackIcons[item]} alt={item} title={item} className="techStackImage" key={techStackIcons[item]}></img>
+    return <img src={techStackIcons[item]} alt={item} title={item} className={`techStackImage ${item}`} key={techStackIcons[item]}></img>
   })
   
   const hoursToDisplay = () => {
