@@ -152,12 +152,14 @@ nav {
   .ResponsiveNav {
     display: flex;
     width: 100%;
+    margin: 0px 0px 0px -20px;
     height: auto;
     // border: solid 5px white;
   }
   
   .NavBarTitle {
     padding-bottom: 20px;
+    padding: 0px 0px 20px 0px;
 
     >a>button {
       min-width: 325px;
