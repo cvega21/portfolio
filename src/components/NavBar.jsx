@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ActionButton from './ActionButton';
 import NightModeButton from './NightModeButton';
 import NavBarLink from './NavBarLink';
@@ -6,13 +6,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithubSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 
 const NavBar = (props) => {
+  const [navIsExpanded, setNavIsExpanded] = useState(false);
+
+  const toggleNav = (e) => {
+    setNavIsExpanded(!navIsExpanded);
+    console.log('hi')
+  }
 
   return (
       <nav className="NavBar">
         <script src="https://kit.fontawesome.com/cd0cc07d13.js" crossOrigin="anonymous"></script>
         <div className="ResponsiveNav">
           <div className="NavBarTitle">
-            <h1>CHRISTIAN VEGA</h1>
+            <div className="NavBarTitleToggle">
+              <button onClick={toggleNav}>☰</button>
+              <h1>CHRISTIAN VEGA</h1>
+              {/* <p>{navIsExpanded && 'expanded'}</p> */}
+            </div>
             <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
           </div>
           <div className="NavBarTop">

@@ -12,6 +12,7 @@ nav {
   text-align: left;
   position: fixed;
   grid-area: 'navbar';
+  z-index: 10;
 
   button {
     font-size: large;
@@ -46,15 +47,37 @@ nav {
   // border: dotted;
   
   button {
-    font-size: large;
+    // font-size: large;
     margin: 3px 0px 6px 0px;
   }
 
   h1 {
-    width: 70%;
+    width: 100%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 28px;
     letter-spacing: 0.03em;
+    margin: 0px;
+    padding: 0px 0px 0px 15px;
+    // border: dotted;
+    // text-align: left;
+  }
+
+  .NavBarTitleToggle {
+    display: flex;
+    align-items: center;
+    // justify-content: flex-start;
+    // border: solid;
+    width: 80%;
+    padding: 20px 0px 10px 0px;
+
+    button {
+      // font-size: 32px;
+      background-color: transparent;
+      border: none;
+      color: var(--font-color);
+      display: none;
+      margin: -12px 0px 0px 0px;
+    }
   }
 }
 
@@ -112,6 +135,10 @@ nav {
   
   .NavBarTitle {
     padding-bottom: 20px;
+
+    >a>button {
+      min-width: 325px;
+    }
   }
 
   .App {
@@ -130,4 +157,20 @@ nav {
     // width: 100%;
     // margin-top: 10vh;
   }
+
+  .NavBarTitleToggle {
+    > button {
+      display: block!important;
+      font-size: 40px;
+      margin: 0px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+    h1 {
+      min-width: 280px;
+    }
+  }
+
 }
