@@ -5,7 +5,7 @@ const Article = (props) => {
     
     return (
         <div className="Article">
-            <a href={props.link} className="ArticleLink">
+            <a target="_blank" rel="noopener noreferrer" href={props.link} className="ArticleLink">
               <div className="ArticleTitleAndDate">
                   <h2>{props.title}</h2>
                   <h3>{formattedDate}</h3>

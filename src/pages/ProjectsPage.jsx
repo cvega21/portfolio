@@ -29,7 +29,7 @@ const Projects = (props) => {
   return (
     <div className="GenericContainer">
       <div className="togglBannerContainerSuper">
-        <a href="http://www.google.com" className="togglBannerContainer">
+        <a target="_blank" rel="noopener noreferrer" href="http://www.google.com" className="togglBannerContainer">
           <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
           <FontAwesomeIcon icon={faQuestionCircle}/>
         </a>

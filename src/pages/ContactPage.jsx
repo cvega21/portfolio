@@ -53,7 +53,7 @@ const Contact = (props) => {
       <div className="ContactContainer">
         <div>
           <h1>let's talk</h1>
-          <button href='' onClick={copyEmail}>
+          <button onClick={copyEmail}>
             <p>christianvega.cvm@gmail.com</p>
             <div className='CheckContainer'>
               {!copied ? <FontAwesomeIcon icon={faCopy}/> : <FontAwesomeIcon icon={faCheck}/>}

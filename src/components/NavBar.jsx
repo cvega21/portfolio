@@ -3,7 +3,7 @@ import ActionButton from './ActionButton';
 import NightModeButton from './NightModeButton';
 import NavBarLink from './NavBarLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faMedium, faGithubSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 const NavBar = (props) => {
   const [navIsExpanded, setNavIsExpanded] = useState(false);
@@ -18,14 +18,9 @@ const NavBar = (props) => {
         height: window.innerHeight,
         width: window.innerWidth
       })
-      // console.log({
-      //   height: window.innerHeight,
-      //   width: window.innerWidth
-      // });
     }
     window.innerWidth > 900 && !navIsExpanded ? setNavIsExpanded(true) : void(0)
     window.innerWidth <= 900 && navIsExpanded ? setNavIsExpanded(false) : void(0)
-
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -35,20 +30,12 @@ const NavBar = (props) => {
 
   useEffect(() => {
     let linkButtons = document.getElementsByClassName('LinkButtonContainer');
-    // console.log(linkButtons.length);
-    // console.log(linkButtons);
-    // console.log(typeof(linkButtons));
-    // console.log('hi')
     for (let i = 0; i < linkButtons.length; i++) {
       console.log(linkButtons[i].style);
-      // console.log('hello')
     }
-
     return () => {
     }
   }, [navIsExpanded])
-
-
 
   const toggleNav = () => {
     setNavIsExpanded(!navIsExpanded);
@@ -62,7 +49,6 @@ const NavBar = (props) => {
             <div className="NavBarTitleToggle">
               <button onClick={toggleNav}>☰</button>
               <h1>CHRISTIAN VEGA</h1>
-              {/* <p>{navIsExpanded && 'expanded'}</p> */}
             </div>
             <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
           </div>
@@ -80,13 +66,13 @@ const NavBar = (props) => {
             <div className="NavBarBottom">
               <NightModeButton/>
               <div className="SocialIcons">
-                <a href='https://www.linkedin.com/in/christian-vm/'>
+                <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/christian-vm/'>
                   <FontAwesomeIcon icon={faLinkedin} size='2x' />
                 </a>
-                <a href='https://medium.com/@christianvegaaa1'>
+                <a target="_blank" rel="noopener noreferrer" href='https://medium.com/@christianvegaaa'>
                   <FontAwesomeIcon icon={faMedium} size='2x'/>
                 </a>
-                <a href='https://github.com/cvega21'>
+                <a target="_blank" rel="noopener noreferrer" href='https://github.com/cvega21'>
                   <FontAwesomeIcon icon={faGithubSquare} size='2x'/>
                 </a>
               </div>
