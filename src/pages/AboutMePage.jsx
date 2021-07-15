@@ -41,14 +41,17 @@ const AboutMe = (props) => {
             <img src={profilePicture} alt="Profile"></img>
           </div>
           <div className="ProfileTextContainer">
-            <div>
-              <h1>CHRISTIAN</h1>
+            <h1>CHRISTIAN </h1>
+            <div className="LastNameContainer">
+              <div>
+                <h1>VEGA </h1>
+              </div>
               <div className="CheckedName">
-                <h1>VEGA MUNGUIA</h1>
+                <h1>MUNGUIA</h1>
                 <img src={check} alt=''/>
               </div>
             </div>
-            <div>
+            <div className="ProfileTextBio">
               <h2>Systems Analyst at Visa</h2>
               <ActionButton link=" see my resume" /> 
               <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music Fan </h3>

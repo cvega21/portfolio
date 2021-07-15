@@ -234,7 +234,97 @@ nav {
     margin-bottom: 0px!important;
 
     .flip-card {
-      margin: 50px 0px 50px 0px;
+      margin: 40px 0px 40px 0px;
     }
+  }
+
+  .ProfileContainer {
+    height: 100%!important;
+    flex-direction: column;
+    
+    >div>img {
+      margin: 40px!important;
+      padding: 0px!important;
+      width: 100px !important;
+      min-width: 300px!important;
+      min-height: 300px!important;
+
+    }
+    
+    .RainbowContainer {
+      // padding: 0px!important;
+      height: 305px!important;
+      width: 305px!important;
+    }
+
+    .ProfilePicture {
+      width: 100%;
+      justify-content: center;
+      position: initial;
+    }
+  }
+
+  .ProfileTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0px!important;
+    // margin-left: 0px!important;
+    padding: 0px!important;
+    width: 100%!important;
+    // border: solid;
+
+    h1 {
+      display: block!important;
+      text-align: center!important;
+      width: 100%!important;
+    }
+
+    >div:nth-child(3) {
+      // display: flex;
+      // width: 100%!important;
+      // max-width: 400px;
+      flex-direction: column!important;
+      // margin-top: 30px;
+      align-items: center!important;
+      justify-content: center!important;
+
+    }
+  }
+
+  .ProfileTextBio {
+    display: flex;
+    // color: red;
+    // border: solid;
+    width: 75%;
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .LastNameContainer {
+    flex-direction: column;
+
+    h1 {
+      width: 100%!important;
+    }
+    
+    .CheckedName {
+      margin-left: 50px;
+      // border: dotted;
+      width: auto!important;
+
+      h1 {
+        margin-right: 0px!important;
+      }
+    }
+  }
+
+  .CheckedName {
+    // flex-direction: column!important;
+    // width: 60%;
+    width: 40%!important;
   }
 }

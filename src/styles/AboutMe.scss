@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     animation: fadedown 1s;
-    margin-top: 15px;
+    // margin-top: 15px;
   }
 
   .RainbowContainer {
@@ -56,6 +56,10 @@
     width: 50px;
   }
 
+  >div>h1 {
+    width: 60%;
+  }
+
   h1 {
     text-align: left;
     font-size: 44px;
@@ -65,12 +69,13 @@
     margin: 0px;
     display: flex;
     align-items: center;
+    // border: solid;
   }
 
   h2 {
     font-size: 28px;
     font-weight: 300;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 35px 0px;
     padding: 0px;
     color: rgb(162, 166, 170);
   }
@@ -82,9 +87,15 @@
     color: rgb(255, 255, 255);
   }
 
+  >div>div:nth-child(1) {
+    // border: solid;
+    // display: flex;
+    width: 100%;
+  }
+  
   >div:nth-child(1) {
-    display: flex;
     width: auto;
+    // border: dotted;
     max-width: 400px;
     flex-direction: column;
     margin-top: 30px;
@@ -101,14 +112,36 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    // border: dotted;
+    width: 60%;
+    min-width: none;
 
     h1 {
+      width: auto;
       margin: 0px;
+      // border: dotted;
+      padding: 0px;
     }
   }
 
-  .ActionButton {
-    width: 400px;
+.LastNameContainer {
+  display: flex;
+
+  >div:nth-child(1) {
+    width: auto;
+    margin-right: 10px;
+
+    h1 {
+      width: auto;
+      display: block;
+    }
+  }
+}
+
+.ActionButton {
+    width: 90%;
+    min-width: 220px;
+    max-width: 400px;
   }
 }
 
