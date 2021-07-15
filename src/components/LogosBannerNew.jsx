@@ -12,6 +12,7 @@ import python from '../assets/python.png';
 import react from '../assets/react.png';
 import rhel from '../assets/rhel.png';
 import tomcat from '../assets/tomcat.png';
+import firebase from '../assets/firebase.png';
 
 const LogosBanner = () => {
   return (
@@ -26,20 +27,20 @@ const LogosBanner = () => {
               <img src={css3} alt="CSS3" className='invert'></img>
               <img src={javascript} alt="JavaScript" className='noInvert'></img>
               <img src={react} alt="React" className='noInvert'></img>
-              <img src={python} alt="Python" className='noInvert'></img>
-              <img src={bash} alt="Bash" className='invert'></img>
-              <img src={mysql} alt="MySQL" className='noInvert'></img>
               <img src={mongo} alt="Mongo" className='invert'></img>
+              <img src={firebase} alt="Firebase" className='noInvert'></img>
+              <img src={mysql} alt="MySQL" className='noInvert'></img>
+              <img src={python} alt="Python" className='noInvert'></img>
             </div>
             <div className="logo-slider-segment">
               <img src={html5} alt="HTML5" className='invert'></img>
               <img src={css3} alt="CSS3" className='invert'></img>
               <img src={javascript} alt="JavaScript" className='noInvert'></img>
               <img src={react} alt="React" className='noInvert'></img>
-              <img src={python} alt="Python" className='noInvert'></img>
-              <img src={bash} alt="Bash" className='invert'></img>
-              <img src={mysql} alt="MySQL" className='noInvert'></img>
               <img src={mongo} alt="Mongo" className='invert'></img>
+              <img src={firebase} alt="Firebase" className='noInvert'></img>
+              <img src={mysql} alt="MySQL" className='noInvert'></img>
+              <img src={python} alt="Python" className='noInvert'></img>
             </div>
             <div className="fade-background fade-background-right"></div>
           </div>
@@ -51,6 +52,7 @@ const LogosBanner = () => {
               <img src={jira} alt="Jira" className='invert'></img>
               <img src={rhel} alt="Red Hat Enterprise Linux" className='invert'></img>
               <img src={tomcat} alt="Tomcat" className='invert'></img>
+              <img src={bash} alt="Bash" className='invert'></img>
             </div>
             <div className="logo-slider-segment2">
               <img src={heroku} alt="Heroku" className='invert'></img>
@@ -58,6 +60,7 @@ const LogosBanner = () => {
               <img src={jira} alt="Jira" className='invert'></img>
               <img src={rhel} alt="Red Hat Enterprise Linux" className='invert'></img>
               <img src={tomcat} alt="Tomcat" className='invert'></img>
+              <img src={bash} alt="Bash" className='invert'></img>
             </div>
             <div className="fade-background fade-background-right"></div>
           </div>
