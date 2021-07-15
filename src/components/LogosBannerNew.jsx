@@ -17,7 +17,7 @@ import firebase from '../assets/firebase.png';
 const LogosBanner = () => {
   return (
     <div className="logos-banner">
-      <h1>Tech Stack Experience</h1>
+      <h1>Tech Experience</h1>
       <h2>work + personal projects</h2>
       <div className="logo-slider-container">
           <div className="logo-slider">  
