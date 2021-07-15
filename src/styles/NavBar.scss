@@ -209,4 +209,32 @@ nav {
   .logos-banner {
     width: 100%;
   }
+
+  .AboutSection {
+    p {
+      padding: 0% 10% 0% 10%!important;
+    }
+  }
+
+  .IndustrySection {
+    // border: solid;
+
+    h1 {
+      margin: 30px 0px 30px 0px;
+    }
+  }
+
+  .IndustryGrid {
+    // grid-template-columns: 100% !important;
+    display: flex!important;
+    flex-direction: column;
+    // border: dotted;
+    column-gap: 0px;
+    align-items: center;
+    margin-bottom: 0px!important;
+
+    .flip-card {
+      margin: 50px 0px 50px 0px;
+    }
+  }
 }
