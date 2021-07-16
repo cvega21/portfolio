@@ -68,6 +68,10 @@ body {
 .AppNoNav {
   overflow: hidden;
   animation: fadedown 1.2s;
+
+  .HomeContainer {
+    
+  }
 }
 
 /* Make a column centered container @mixin */ 

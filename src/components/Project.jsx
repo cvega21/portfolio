@@ -5,6 +5,8 @@ import react from '../assets/react.png';
 import nodeJS from '../assets/node.png';
 import sass from '../assets/sass.png';
 import bootstrap from '../assets/bootstrap-stack.png';
+import typescript from '../assets/typescript.png';
+import nextjs from '../assets/nextjs.png';
 
 
 const Project = (props) => {
@@ -15,7 +17,9 @@ const Project = (props) => {
     'mongo': mongo,
     'sass': sass,
     'firebase': firebase,
-    'bootstrap': bootstrap
+    'bootstrap': bootstrap,
+    'nextjs': nextjs,
+    'typescript': typescript
   }
 
   const currentTechStack = props.stack.map((item) => {

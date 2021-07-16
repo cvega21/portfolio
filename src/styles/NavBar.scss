@@ -327,4 +327,44 @@ nav {
     // width: 60%;
     width: 40%!important;
   }
+
+  .AppNoNav {
+    main {
+      padding: 0px;
+    }
+  }
+
+  .HeyThere {
+    flex-direction: column!important;
+    margin: 0px 0px 10px 0px!important;
+
+    h1 {
+      margin: 0px!important;
+      font-size: 110px!important;
+    }
+
+    .WavingHand {
+      font-size: 80px!important;
+    }
+  }
+
+  .TypingContainer {
+    min-height: 150px!important;
+
+    span {
+      font-size: 2.4em!important;
+    }
+  }
+
+  .App {
+    .HomeContainer {
+      min-height: 80vh!important;
+    }
+  }
+
+  .HomeContent {
+    .ActionButtonContainer {
+      // width: 80%;
+    }
+  }
 }
