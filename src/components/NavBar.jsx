@@ -79,12 +79,13 @@ const NavBar = (props) => {
               <button onClick={toggleNav}>☰</button>
               <h1>CHRISTIAN VEGA</h1>
             </div>
-            <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
+            {/* <ActionButton link='contact' onChangeNav={props.onChangeNav}/> */}
           </div>
           {
             navIsExpanded &&
           <div className="NavBarCollapsible">
             <div className="NavBarTop">
+              <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
               <ul className="LinkContainer">
                 <NavLinkContext.Provider value={setNavIsExpanded}>
                   <NavBarLink to='home' active={props.active}/>

@@ -142,7 +142,7 @@ nav {
   }
 
   nav {
-    min-height: 130px;
+    min-height: 65px;
     height: auto;
     text-align: center;
     width: 100vw;
@@ -158,8 +158,8 @@ nav {
   }
   
   .NavBarTitle {
-    padding-bottom: 20px;
-    padding: 0px 0px 20px 0px;
+    // padding-bottom: 20px;
+    padding: 0px 0px 10px 0px;
 
     >a>button {
       min-width: 325px;
@@ -171,7 +171,7 @@ nav {
   }
 
   main {
-    padding-top: 130px;
+    padding-top: 65px;
   }
 
   .NavBarTitleToggle {
@@ -370,7 +370,7 @@ nav {
 
   .GenericContainer {
     .togglBannerContainer, .ProjectsGrid {
-      margin-top: 75px;
+      margin-top: 50px;
     }
 
     .ProjectsGrid {
