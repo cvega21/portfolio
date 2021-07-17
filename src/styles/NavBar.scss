@@ -367,4 +367,52 @@ nav {
       // width: 80%;
     }
   }
+
+  .GenericContainer {
+    .togglBannerContainer, .ProjectsGrid {
+      margin-top: 75px;
+    }
+
+    .ProjectsGrid {
+      // min-width: 100%;
+      min-width: 300px;
+      width: 100%;
+      max-width: 600px!important;
+
+      // border: dotted;
+      grid-row-gap: 0px;
+
+      .ProjectContainer {
+        min-width: 300px;
+        max-height: 100%;
+        flex-direction: column;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .ProjectImageContainer {
+    min-height: 400px;
+    height: 50%;
+  }
+
+  .ProjectImageContainer img, #GifCover {
+    // max-height: 400px;
+    // height: 50vh;
+    display: block;
+    height: auto!important;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    object-fit:cover;
+    bottom: 0;
+  }
+
+  .ProjectContainer:nth-child(even) {
+    height: auto;
+  }
+}
+
+  
+  @media (max-width: 500px) {
 }
