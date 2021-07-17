@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faCode, faSignature } from '@fortawesome/free-solid-svg-icons';
 import { PageContext } from '../App';
+import { NavLinkContext } from './NavBar';
 
 const NavBarLink = (props) => {
   let text = '';
@@ -13,8 +14,16 @@ const NavBarLink = (props) => {
   });
   const [isActive, setIsActive] = useState('');
   const pageContext = useContext(PageContext);
+  const navLinkContext = useContext(NavLinkContext);
+  const handleClick = () => {
+    pageContext[0](linkTo);
+    window.innerWidth <= 900 ? navLinkContext(false): void (0);
+    console.log(`navLinkContext: ${navLinkContext}`);
+    console.log(navLinkContext);
+  }
 
   useEffect(() => {
+    // pageContext[1] === activeNavPage
     pageContext[1] === linkTo ? setIsActive('active') : setIsActive('');
 
     return () => {
@@ -30,7 +39,7 @@ const NavBarLink = (props) => {
 
   return (
   <li className={isActive + "LinkButtonContainer"}>
-    <Link to={linkTo} className='LinkButtonTextAndIcon' onClick={() => pageContext[0](linkTo)}>
+    <Link to={linkTo} className='LinkButtonTextAndIcon' onClick={handleClick}>
         <div className="NavIcon">
           <FontAwesomeIcon icon={iconMapping[props.to]}/>
         </div>

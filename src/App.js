@@ -51,9 +51,18 @@ function App() {
   // changes active window in nav bar
   useEffect(() => {
     setActiveNavPage(window.location.pathname);
+    console.log('inside App useEffect')
+    console.log(window.innerWidth)
+    console.log(window.pageYOffset)
+    // if (window.location.pathname === '/about-me' && window.innerWidth < 900 && window.pageYOffset < 800) {
+    //   console.log('mobile about me!');
+    //   setShowNavBar(false);
+    // } 
+    
     if (!showNavBar && window.location.pathname !== '/home') {
       setShowNavBar(true); 
     }
+
     return () => {
     }
   }, [showNavBar, activeNavPage])
@@ -83,8 +92,8 @@ function App() {
 
   return (
     <BrowserRouter>
-        <PageContext.Provider value={[setActiveNavPage, activeNavPage, homeHasLoaded, setHomeHasLoaded]}>
-        <div className={showNavBar ? 'App' : 'AppNoNav'} >
+        <PageContext.Provider value={[setActiveNavPage, activeNavPage, homeHasLoaded, setHomeHasLoaded, showNavBar, setShowNavBar]}>
+        <div className={showNavBar ? 'App' : 'AppNoNav'} id='AppContainer'>
           {showNavBar ? <NavBar active={activeNavPage}/> : void(0) }     
           <main>
             <Switch>

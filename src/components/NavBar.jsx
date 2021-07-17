@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ActionButton from './ActionButton';
 import NightModeButton from './NightModeButton';
 import NavBarLink from './NavBarLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { PageContext } from '../App';
+
+export const NavLinkContext = React.createContext();
 
 const NavBar = (props) => {
   const [navIsExpanded, setNavIsExpanded] = useState(false);
@@ -11,16 +14,38 @@ const NavBar = (props) => {
     height: window.innerHeight,
     width: window.innerWidth
   })
+  // let timerID;
+  // const navContext = useContext(PageContext)
+
+  // const throttle = (func, delay) => {
+  //   if (timerID) return
+
+  //   timerID = setTimeout(() => {
+  //     func();
+  //     console.log('throttle executed')
+  //     timerID = undefined;
+  //   }, delay)
+  // }
 
   useEffect(() => {
     const handleResize = () => {
+      console.log('handleResize executed...')
+      console.log(dimensions);
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth
       })
     }
-    window.innerWidth > 900 && !navIsExpanded ? setNavIsExpanded(true) : void(0)
-    window.innerWidth <= 900 && navIsExpanded ? setNavIsExpanded(false) : void(0)
+    // const throttledHandleResize = throttle(handleResize, 500);
+
+    if (window.innerWidth > 900 && !navIsExpanded) {
+      // navContext[4] === false ? navContext[5](true) : void(0);
+      // !navIsExpanded ? setNavIsExpanded(true) : void(0);
+      setNavIsExpanded(true);
+    } else if (window.innerWidth <= 900 && navIsExpanded) {
+      setNavIsExpanded(false)
+    }
+
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -28,14 +53,18 @@ const NavBar = (props) => {
     }
   }, [dimensions])
 
-  useEffect(() => {
-    let linkButtons = document.getElementsByClassName('LinkButtonContainer');
-    for (let i = 0; i < linkButtons.length; i++) {
-      console.log(linkButtons[i].style);
-    }
-    return () => {
-    }
-  }, [navIsExpanded])
+  // useEffect(() => {
+  //   const listenToScroll = () => {
+  //     if (window.pageYOffset > 900) {
+  //       navContext[5](true);
+  //     }
+  //   }
+  //   window.addEventListener('scroll', listenToScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener('scroll', listenToScroll)
+  //   }
+  // })
 
   const toggleNav = () => {
     setNavIsExpanded(!navIsExpanded);
@@ -57,10 +86,12 @@ const NavBar = (props) => {
           <div className="NavBarCollapsible">
             <div className="NavBarTop">
               <ul className="LinkContainer">
-                <NavBarLink to='home' active={props.active}/>
-                <NavBarLink to='about-me' active={props.active}/>
-                <NavBarLink to='projects' active={props.active}/>
-                <NavBarLink to='articles' active={props.active}/>
+                <NavLinkContext.Provider value={setNavIsExpanded}>
+                  <NavBarLink to='home' active={props.active}/>
+                  <NavBarLink to='about-me' active={props.active}/>
+                  <NavBarLink to='projects' active={props.active}/>
+                  <NavBarLink to='articles' active={props.active}/>
+                </NavLinkContext.Provider>
               </ul>
             </div>
             <div className="NavBarBottom">

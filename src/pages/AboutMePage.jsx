@@ -14,7 +14,8 @@ const AboutMe = (props) => {
   const pageContext = useContext(PageContext);
   
   useEffect(() => {
-    window.scrollTo(0, 0);  
+    // window.scrollTo(0, 0);
+    // console.log('inside about me')
     
     // pageContext[2] === hasHomeLoaded. set this to true on the first load so that the loading animation is only displayed once
     if (pageContext[2] === false) {
@@ -29,6 +30,21 @@ const AboutMe = (props) => {
     return () => {
     }
   }, [pageContext])
+
+  // useEffect(() => {
+  //   const listenToScroll = () => {
+  //     if (window.pageYOffset >= 900) {
+  //       pageContext[5](true);
+  //     } else if (window.pageYOffset < 900) {
+  //       pageContext[5](false);
+  //     } 
+  //   }
+  //   window.addEventListener('scroll', listenToScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener('scroll', listenToScroll)
+  //   }
+  // })
 
   return (
     <div className="GenericContainer">
