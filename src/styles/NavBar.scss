@@ -455,6 +455,22 @@ nav {
     width: 80%!important;
   }
 
+  .ContactContainer {
+    h1 {
+      margin-top: 30px;
+    }
+
+    div {
+      button {
+        flex-direction: column;
+        margin: 15px 0px 20px 0px!important;
+        p {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
 }
 
   
