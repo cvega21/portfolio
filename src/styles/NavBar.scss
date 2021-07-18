@@ -369,6 +369,11 @@ nav {
   }
 
   .GenericContainer {
+    > h1 {
+      font-size: 64px!important;
+      margin: 30px 0px 35px 0px!important;
+    }
+
     .togglBannerContainer, .ProjectsGrid {
       margin-top: 50px;
     }
@@ -393,7 +398,8 @@ nav {
 
   .ProjectImageContainer {
     min-height: 400px;
-    height: 50%;
+    height: 67vw;
+    max-height: 450px;
   }
 
   .ProjectImageContainer img, #GifCover {
@@ -411,6 +417,34 @@ nav {
   .ProjectContainer:nth-child(even) {
     height: auto;
   }
+
+  .ArticleLink {
+    min-width: unset;
+    width: 85%;
+    height: 100px;
+
+    img {
+      height: 100%;
+      width: 40%;
+      object-fit: cover;
+    }
+  }
+
+  .Article {
+    min-width: unset;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .ArticleTitleAndDate {
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+
 }
 
   
