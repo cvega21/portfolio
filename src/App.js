@@ -37,16 +37,18 @@ firebase.analytics();
 
 var database = firebase.database();
 
-export const ProjectContext = React.createContext();
+// export const ProjectContext = React.createContext();
 export const PageContext = React.createContext();
-export const ArticlesContext = React.createContext();
+export const NavContext = React.createContext();
+// export const ArticlesContext = React.createContext();
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
   const [projectsData, setProjectsData] = useState(false);
   const [articles, setArticles] = useState([]);
   const [showNavBar, setShowNavBar] = useState(false); 
-  const [homeHasLoaded, setHomeHasLoaded] = useState(false); 
+  const [homeHasLoaded, setHomeHasLoaded] = useState(false);
+  const [navIsExpanded, setNavIsExpanded] = useState(false);
 
   // changes active window in nav bar
   useEffect(() => {
@@ -92,7 +94,8 @@ function App() {
 
   return (
     <BrowserRouter>
-        <PageContext.Provider value={[setActiveNavPage, activeNavPage, homeHasLoaded, setHomeHasLoaded, showNavBar, setShowNavBar]}>
+        <PageContext.Provider value={[setActiveNavPage, activeNavPage, homeHasLoaded, setHomeHasLoaded, showNavBar, setShowNavBar, navIsExpanded, setNavIsExpanded]}>
+        <NavContext.Provider value={[showNavBar, setShowNavBar, navIsExpanded, setNavIsExpanded]}>
         <div className={showNavBar ? 'App' : 'AppNoNav'} id='AppContainer'>
           {showNavBar ? <NavBar active={activeNavPage}/> : void(0) }     
           <main>
@@ -118,6 +121,7 @@ function App() {
             </Switch>
           </main>
         </div>
+        </NavContext.Provider>
         </PageContext.Provider>
     </BrowserRouter>
   );

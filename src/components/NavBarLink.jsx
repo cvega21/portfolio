@@ -17,7 +17,7 @@ const NavBarLink = (props) => {
   const navLinkContext = useContext(NavLinkContext);
   const handleClick = () => {
     pageContext[0](linkTo);
-    window.innerWidth <= 900 ? navLinkContext(false): void (0);
+    window.innerWidth <= 900 ? navLinkContext(false) : void (0);
     console.log(`navLinkContext: ${navLinkContext}`);
     console.log(navLinkContext);
   }

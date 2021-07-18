@@ -1,7 +1,8 @@
 import React, { useContext} from 'react'
 import { Link } from "react-router-dom";
 import { PageContext } from '../App';
-
+import { NavLinkContext } from './NavBar';
+import { NavContext } from '../App';
 
 const ActionButton = (props) => {
   let computedContainerClassName;
@@ -10,12 +11,15 @@ const ActionButton = (props) => {
   let linkTo = '/'.concat(props.link);
 
   const changePage = useContext(PageContext);
+  const navLinkContext = useContext(NavLinkContext);
+  const navContext = useContext(NavContext);
 
   if (props.link === 'contact') {
     // contact button is smaller and container width is a different %
     computedContainerClassName = 'ActionButtonContactContainer';
     computedClassName = 'ActionButton Contact';
     text = 'contact me';
+    // window.innerWidth <= 900 ? navLinkContext(false): void (0);
   } else if (props.link) {
     // all other buttons are for navigation, have arrows, and are bigger
     computedContainerClassName = 'ActionButtonContainer';
@@ -32,9 +36,15 @@ const ActionButton = (props) => {
     text = '<- ' + text;
   } 
 
+  const handleClick = () => {
+    changePage[0](linkTo);
+    window.innerWidth <= 900 ? navContext[3](false) : void (0);
+    return
+  }
+
   return (
   <Link to={linkTo} className={computedContainerClassName}>
-    <button className={computedClassName} onClick={() => changePage[0](linkTo)}>{text}</button>
+    <button className={computedClassName} onClick={handleClick}>{text}</button>
   </Link>
   )
 }
