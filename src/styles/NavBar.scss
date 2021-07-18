@@ -51,6 +51,7 @@ nav {
 
 .NavBarTitle {
   @extend %NavBarSection;
+  margin: 15px 0px 15px 0px;
   // border: dotted;
   
   button {
@@ -160,6 +161,7 @@ nav {
   .NavBarTitle {
     // padding-bottom: 20px;
     padding: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
 
     >a>button {
       min-width: 325px;
