@@ -101,7 +101,7 @@
   z-index: -99;
 }
 
-@media (max-width: 900px) {
+@media (max-width: var(--mobile-width)) {
   logo-slider {
     --image-size: 50px;
     --image-size: min(max(50px, 10vw), 100px);

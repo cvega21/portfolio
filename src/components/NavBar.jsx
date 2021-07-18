@@ -48,11 +48,11 @@ const NavBar = (props) => {
     //   setNavIsExpanded(false)
     // }
 
-    if (window.innerWidth > 900 && !navContext[2]) {
+    if (window.innerWidth > 1000 && !navContext[2]) {
       // navContext[4] === false ? navContext[5](true) : void(0);
       // !navIsExpanded ? setNavIsExpanded(true) : void(0);
       navContext[3](true);
-    } else if (window.innerWidth <= 900 && navContext[2]) {
+    } else if (window.innerWidth <= 1000 && navContext[2]) {
       navContext[3](false);
     }
 
