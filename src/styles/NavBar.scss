@@ -130,16 +130,9 @@ nav {
 }
 
 @media (max-width: 1000px) {
-  .LinkContainer, .NavBarBottom , .NavBarTop {
-  }
 
   .NavBarCollapsible {
     animation: fadedown 0.3s;
-  }
-
-  .LinkContainer *{
-    // padding-left: 50px;
-    // margin-left: 40px;
   }
 
   nav {

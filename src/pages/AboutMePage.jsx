@@ -69,7 +69,7 @@ const AboutMe = (props) => {
             </div>
             <div className="ProfileTextBio">
               <h2>Systems Analyst at Visa</h2>
-              <ActionButton link=" see my resume" /> 
+              <ActionButton link='resume'/> 
               <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music Fan </h3>
             </div>
           </div>
