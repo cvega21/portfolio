@@ -6,6 +6,7 @@ import AboutMe from './pages/AboutMePage';
 import Projects from './pages/ProjectsPage';
 import Articles from './pages/ArticlesPage';
 import Contact from './pages/ContactPage';
+import Resume from './pages/ResumePage';
 import NavBar from './components/NavBar';
 import './styles/LogosBanner.scss';
 import './styles/Project.scss';
@@ -117,6 +118,9 @@ function App() {
               </Route>
               <Route path="/articles">
                 <Articles articles={articles}/>
+              </Route>
+              <Route path="/resume">
+                <Resume/>
               </Route>
             </Switch>
           </main>

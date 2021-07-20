@@ -1,0 +1,16 @@
+.ResumeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  position: relative;
+  height: 60vh;
+  justify-content: center;
+  animation: fadedown 1s;
+
+  h1 {
+    font-size: 80px;
+    font-weight: 500;
+    font-family: 'Fira Sans';
+  }
+}
