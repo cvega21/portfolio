@@ -81,8 +81,9 @@
   }
 
   h3 {
-    width: 80%;
+    width: 90%;
     min-width: 350px;
+    max-width: 700px;
     font-size: 24px;
     font-weight: lighter;
     margin: 35px 0px 30px 0px;
@@ -161,7 +162,7 @@
 
   p {
     padding: 0% 20% 0% 20%;
-    margin: 0px;
+    margin: 15px 0px 15px 0px;
     text-align: left;
   }
 }
