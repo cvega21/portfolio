@@ -36,7 +36,7 @@ const ActionButton = (props) => {
 
   const handleClick = () => {
     changePage[0](linkTo);
-    window.innerWidth <= 1000 ? navContext[3](false) : void (0);
+    window.innerWidth <= 1200 ? navContext[3](false) : void (0);
     return
   }
 

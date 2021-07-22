@@ -129,7 +129,7 @@ nav {
   100% {transform: rotate(0deg)}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 
   .NavBarCollapsible {
     animation: fadedown 0.3s;
@@ -432,7 +432,7 @@ nav {
 
   .ArticleTitleAndDate {
     h2 {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     h3 {
