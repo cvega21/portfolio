@@ -36,7 +36,7 @@
   }
 
   .RainbowContainer {
-    background: linear-gradient(45deg, #ffca57, #b91f69, #680051);
+    background: var(--rainbow-gradient);
     height: 355px;
     width: 355px;
     padding: 10px;
