@@ -31,7 +31,7 @@ const Projects = (props) => {
       <div className="togglBannerContainerSuper">
         <a target="_blank" rel="noopener noreferrer" href="http://www.google.com" className="togglBannerContainer">
           <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
-          <FontAwesomeIcon icon={faQuestionCircle}/>
+          {/* <FontAwesomeIcon icon={faQuestionCircle}/> */}
         </a>
       </div>
         {props.projectsData ? 
