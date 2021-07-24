@@ -80,7 +80,7 @@ const AboutMe = (props) => {
             Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the <b>University of Texas</b> as part of the 2020 ("Zoomer" 👨🏽‍💻) class. After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of <b>finance</b> and <b>technology</b> and decided to purse a career in the technical side of the business. 
           </p>
           <p>
-            I currently work at Visa supporting several enterprise software applications centered around real-time fraud detection, large-scale financial breach monitoring and payments risk management. I am also learning web development and exploring different areas of technology during my free time, particularly blockchain. I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
+            I currently work at Visa supporting several enterprise software applications centered around real-time <b>fraud detection</b>, large-scale <b>financial breach</b> monitoring and payments <b>risk management</b>. I am also learning web development and exploring different areas of technology during my free time, particularly <b>blockchain</b>. I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
           </p>
         </div>
         <LogosBannerNew/>
