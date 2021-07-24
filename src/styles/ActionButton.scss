@@ -21,6 +21,9 @@
   font-size: medium;
   font-weight: 500;
   padding: 10px 15px 10px 15px;
+  // margin-bottom: 40px;
+  // width: 50%;
+  // min-width: 300px;
   min-width: auto;
   width: 100%;
 }
@@ -41,7 +44,7 @@
   justify-content: space-around;
   width: 75%;
   max-width: 900px;
-  min-width: 450px;
+  min-width: 100vw;
   margin: 80px 0px 60px 0px;
 
   >.ActionButtonContainer {
@@ -129,7 +132,7 @@
 }
 
 .EmailButton {
+  margin-bottom: 40px;
   width: 50%;
   min-width: 300px;
-  padding: 10px;
 }
