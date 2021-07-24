@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import{ init, sendForm } from 'emailjs-com';
@@ -13,6 +13,10 @@ const Contact = (props) => {
   const [copied, setCopied] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [incompleteForm, setIncompleteForm] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+  }, [])
   
   const sendEmail = async (e) => {
     let form = document.getElementById('contact_form');
