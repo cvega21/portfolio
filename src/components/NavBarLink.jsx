@@ -6,33 +6,27 @@ import { PageContext } from '../App';
 import { NavLinkContext } from './NavBar';
 
 const NavBarLink = (props) => {
-  let text = '';
+  let text = props.to;
+  text === 'aboutme' ? text = 'about me' : void(0);
+
   let linkTo = '/'.concat(props.to);
-  let textArray = props.to.split('-');
-  textArray.forEach(word => {
-    text += word.slice() + ' ';
-  });
   const [isActive, setIsActive] = useState('');
   const pageContext = useContext(PageContext);
   const navLinkContext = useContext(NavLinkContext);
   const handleClick = () => {
     pageContext[0](linkTo);
     window.innerWidth <= 1200 ? navLinkContext(false) : void (0);
-    console.log(`navLinkContext: ${navLinkContext}`);
-    console.log(navLinkContext);
   }
 
   useEffect(() => {
-    // pageContext[1] === activeNavPage
     pageContext[1] === linkTo ? setIsActive('active') : setIsActive('');
-
     return () => {
     }
   },[pageContext, linkTo])
   
   const iconMapping = {
     'home': faHome,
-    'about-me': faUser,
+    'aboutme': faUser,
     'projects': faCode,
     'articles': faSignature
   }

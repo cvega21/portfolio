@@ -106,7 +106,7 @@ const NavBar = (props) => {
                 <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
                 <ul className="LinkContainer">
                     <NavBarLink to='home' active={props.active}/>
-                    <NavBarLink to='about-me' active={props.active}/>
+                    <NavBarLink to='aboutme' active={props.active}/>
                     <NavBarLink to='projects' active={props.active}/>
                     <NavBarLink to='articles' active={props.active}/>
                 </ul>

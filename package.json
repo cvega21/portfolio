@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://christianvega.me",
+  "homepage": "christianvega.me",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "echo 'christianvega.me' > ./build/CNAME && gh-pages -d build",
+    "deploy": "echo 'christianvega.me' > ./build/CNAME && cp ./404.html ./build/ && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

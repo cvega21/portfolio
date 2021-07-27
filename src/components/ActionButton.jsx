@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { PageContext, NavContext } from '../App';
 
 const ActionButton = (props) => {
-  let computedContainerClassName;
-  let computedClassName;
+  let computedContainerClassName = 'ActionButtonContainer';
+  let computedClassName = "ActionButton";
   let text = '';
   let linkTo = '/'.concat(props.link);
 
@@ -16,12 +16,11 @@ const ActionButton = (props) => {
     computedClassName = 'ActionButton Contact';
     text = 'contact me';
   } else if (props.link === 'resume') {
-    computedContainerClassName = 'ActionButtonContainer';
-    computedClassName = 'ActionButton';
     text = 'see my resume';
-  } else if (props.link) {
-    computedContainerClassName = 'ActionButtonContainer';
-    computedClassName = 'ActionButton';
+  } else if (props.link === 'aboutme') {
+    text = 'About Me '
+  }
+  else if (props.link) {
     let textArray = props.link.split('-');
     textArray.forEach(word => {
       text += word.charAt(0).toUpperCase() + word.slice(1) + ' ';

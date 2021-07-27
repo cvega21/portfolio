@@ -28,7 +28,7 @@ const Home = (props) => {
           <div className="TypingContainer">
             <span ref={typedElement}></span>
           </div>
-        <ActionButton link="about-me" navigation="right" />
+        <ActionButton link="aboutme" navigation="right" />
       </div>
     </div>
   )

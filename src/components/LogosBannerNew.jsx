@@ -18,14 +18,23 @@ const LogosBanner = () => {
   useEffect(() => {
     let topSliders = document.getElementsByClassName('logo-slider-segment');
     let bottomSliders = document.getElementsByClassName('logo-slider-segment2');
+    let timer1;
 
     if (topSliders.length && bottomSliders.length) {
-      setTimeout(() => {
-        topSliders[0].classList.toggle('scroll-fast');
-        topSliders[1].classList.toggle('scroll-fast');
-        bottomSliders[0].classList.toggle('scroll-med');
-        bottomSliders[1].classList.toggle('scroll-med');
-      }, 750)
+      try {
+        timer1 = setTimeout(() => {
+          topSliders[0].classList.toggle('scroll-fast');
+          topSliders[1].classList.toggle('scroll-fast');
+          bottomSliders[0].classList.toggle('scroll-med');
+          bottomSliders[1].classList.toggle('scroll-med');
+        }, 750)
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    
+    return () => {
+      clearTimeout(timer1);
     }
   }, [])
 

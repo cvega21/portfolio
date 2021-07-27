@@ -110,7 +110,7 @@ function App() {
               <Route path="/home">
                 <Home/>
               </Route>
-              <Route path="/about-me">
+              <Route path="/aboutme">
                 <AboutMe/>
               </Route >
               <Route path="/projects">
