@@ -52,17 +52,25 @@
   right: 0px;  
 }
 
-.logo-slider .logo-slider-segment {
+.scroll-fast {
+  animation: marquee 20s linear infinite;
+}
+
+.scroll-med {
+  animation: marquee 30s linear infinite;
+}
+
+.logo-slider-segment {
   display: flex;
   position: relative;
-  animation: marquee 20s linear infinite;
+  // animation: marquee 20s linear infinite;
   justify-content: space-around;
 }
 
 .logo-slider .logo-slider-segment2 {
   display: flex;
   position: relative;
-  animation: marquee 30s linear infinite;
+  // animation: marquee 30s linear infinite;
   animation-direction: reverse;
   justify-content: space-around;
   margin-bottom: 20px;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import bash from '../assets/bash.svg';
 import css3 from '../assets/css3.png';
 import heroku from '../assets/heroku.png';
@@ -15,6 +15,20 @@ import tomcat from '../assets/tomcat.png';
 import firebase from '../assets/firebase.png';
 
 const LogosBanner = () => {
+  useEffect(() => {
+    let topSliders = document.getElementsByClassName('logo-slider-segment');
+    let bottomSliders = document.getElementsByClassName('logo-slider-segment2');
+
+    if (topSliders.length && bottomSliders.length) {
+      setTimeout(() => {
+        topSliders[0].classList.toggle('scroll-fast');
+        topSliders[1].classList.toggle('scroll-fast');
+        bottomSliders[0].classList.toggle('scroll-med');
+        bottomSliders[1].classList.toggle('scroll-med');
+      }, 750)
+    }
+  }, [])
+
   return (
     <div className="logos-banner">
       <h1>Tech Experience</h1>
