@@ -122,6 +122,9 @@ function App() {
               <Route path="/resume">
                 <Resume/>
               </Route>
+              <Route path="*">
+                <Redirect to="/home" />
+              </Route>
             </Switch>
           </main>
         </div>
