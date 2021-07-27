@@ -68,7 +68,7 @@ nav {
     font-size: 28px;
     letter-spacing: 0.03em;
     margin: 0px;
-    padding: 0px 0px 0px 15px;
+    padding: 0px 0px 0px 5px;
     // border: dotted;
     // text-align: left;
   }
@@ -79,7 +79,7 @@ nav {
     // justify-content: flex-start;
     // border: solid;
     width: 80%;
-    padding: 10px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
 
     button {
       // font-size: 32px;
@@ -88,6 +88,7 @@ nav {
       color: var(--font-color);
       display: none;
       margin: -12px 0px 0px 0px;
+      padding: 0px 10px;
     }
   }
 }
