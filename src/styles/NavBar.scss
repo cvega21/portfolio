@@ -68,7 +68,7 @@ nav {
     font-size: 28px;
     letter-spacing: 0.03em;
     margin: 0px;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 3px;
     // border: dotted;
     // text-align: left;
   }
@@ -88,7 +88,7 @@ nav {
       color: var(--font-color);
       display: none;
       margin: -12px 0px 0px 0px;
-      padding: 0px 10px;
+      padding: 0px 3px;
     }
   }
 }
@@ -367,11 +367,12 @@ nav {
       font-size: 2.05em!important;
     }
   }
+  
+  .HomeContainer {
+    min-height: 80vh!important;
+  }
 
   .App {
-    .HomeContainer {
-      min-height: 80vh!important;
-    }
   }
 
   .HomeContent {
@@ -567,5 +568,7 @@ nav {
     .MessageContainer {
       min-height: 125px!important;
     }
+
+
 
   }
