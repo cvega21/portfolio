@@ -23,6 +23,7 @@ body {
   --nav-background-color2: #d1d1d1;
   --main-background-color: #f6f9fc;
   --banner-background-color: white;
+  // $banner-background-transparent: rgba(#ffffff, 0);
   --banner-filter: grayscale(100%) invert(0);
   --banner-opacity: 0.35;
   --accent-background-color: rgba(2,6,60,1);
@@ -47,6 +48,7 @@ body {
   --nav-background-color3: #202020;
   --main-background-color: #202020;
   --banner-background-color: rgb(46, 46, 46);
+  // $banner-background-transparent: rgba(46, 46, 46, 0);
   /* --banner-filter-opacity: 50%; */
   --banner-filter: grayscale(100%) invert(1);
   --banner-opacity: 0.4;

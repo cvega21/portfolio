@@ -27,7 +27,7 @@
   padding: 10px 0px 20px 0px;
   overflow: hidden;
   max-width: 1000px;
-  width: 90%;
+  width: 100%;
   // margin: 0 auto;
   position: relative;
   display: flex;
@@ -43,7 +43,9 @@
 }
 
 .fade-background-left {
-  background-image: linear-gradient(to right, var(--banner-background-color) 0%, rgba(255, 255, 255, 0));
+  $banner-background-transparent: #ffffff;
+  background: linear-gradient(to right, var(--banner-background-color) 0%, rgba($banner-background-transparent,0) 100%);
+  // background-image: -webkit-linear-gradient(to right,  var(--banner-background-color) 0%,rgba(255, 255, 255, 0));
   left: 0px;  
 }
 
