@@ -20,7 +20,9 @@ const Article = (props: Article) => {
           <h2>{props.title}</h2>
           <h3>{stringDate}</h3>
         </div>
-        <img src={props.image} alt={props.title}/>
+          <img src={props.image} alt={props.title}/>
+        <div>
+        </div>
       </a>
     </div>
   )

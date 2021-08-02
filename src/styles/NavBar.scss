@@ -576,4 +576,28 @@ nav {
     #contact_form {
       max-height: 250px;
     }
+
+    .ArticleTitleAndDate {
+    min-width: 140px;
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    .Article {
+      min-height: 125px;
+      height: 125px;
+    }
+
+    .ArticleLink {
+      height: auto;
+
+      img {
+        height: 65%;
+        // height: 100px;
+        width: 100%;
+        max-width: 115px;
+      }
+    }
   }
