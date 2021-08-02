@@ -7,13 +7,15 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const Articles = (props) => {
   useEffect(() => {
-    window.scrollTo(0, 0);  
+    window.scrollTo(0, 0);
     return () => {
     }
   }, [])
   
   return (
     <div className = "GenericContainer">
+      {/* {console.log(props.articles)}   */}
+      {/* {console.log(props.articles[0].pubDate)}   */}
       <h1>Articles</h1>
       {props.articles.length 
         ? 
