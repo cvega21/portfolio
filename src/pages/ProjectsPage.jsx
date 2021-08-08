@@ -39,7 +39,7 @@ const Projects = (props) => {
       <div className="ProjectsGrid">
         <Project 
           title="PORTFOLIO WEBSITE" 
-          description='a portfolio website in a portfolio website. #recursion' 
+          description='a mobile-first, API-integrated portfolio website built from scratch.' 
           gif={[portfolio, portfolioStatic]} 
           link='https://christianvega.me'
           stack={['react','sass','firebase']}

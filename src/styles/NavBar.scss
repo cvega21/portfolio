@@ -412,6 +412,10 @@ nav {
         max-height: 100%;
         flex-direction: column;
         padding-bottom: 20px;
+
+        .ProjectText {
+          padding: 15px 30px 10px 30px;
+        }
       }
     }
   }
@@ -560,7 +564,11 @@ nav {
         font-size: 18px!important;
       }
     }
-    
+
+    .ProjectImageContainer {
+      min-height: 300px;
+    }
+
     .ActionButtonContainer {
       font-size: 12px;
       margin: 0px 20px 0px 20px !important;
