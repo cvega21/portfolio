@@ -16,19 +16,6 @@ const NavBar = (props) => {
   })
   const navContext = useContext(NavContext);
 
-  // let timerID;
-  // const navContext = useContext(PageContext)
-
-  // const throttle = (func, delay) => {
-  //   if (timerID) return
-
-  //   timerID = setTimeout(() => {
-  //     func();
-  //     console.log('throttle executed')
-  //     timerID = undefined;
-  //   }, delay)
-  // }
-
   useEffect(() => {
     const handleResize = () => {
       console.log('handleResize executed...')
@@ -74,7 +61,7 @@ const NavBar = (props) => {
           <div className="NavBarTitle">
             <div className="NavBarTitleToggle">
               <button onClick={toggleNavContext}>☰</button>
-              <h1 onClick={toggleNavContext}>CHRISTIAN VEGA</h1>
+              <h1 onClick={window.innerWidth <= 1200 && toggleNavContext}>CHRISTIAN VEGA</h1>
             </div>
           </div>
           {
