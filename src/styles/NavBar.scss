@@ -380,11 +380,12 @@ nav {
   
   .ActionButtonCluster {
     // width: 80%;
-    min-width: 100vw!important;
+    max-width: 500px!important;
+    width: 100vw!important;
   }
 
   .GenericContainer {
-    overflow-x: scroll; /* Must be 'scroll' not 'auto' */
+    overflow-x: hidden; /* Must be 'scroll' not 'auto' */
     -webkit-overflow-scrolling: touch;
     min-width: 99vw;
 
@@ -401,7 +402,7 @@ nav {
       // min-width: 100%;
       min-width: 300px;
       width: 100%;
-      max-width: 600px!important;
+      max-width: 550px!important;
 
       // border: dotted;
       grid-row-gap: 0px;
@@ -416,20 +417,21 @@ nav {
   }
 
   .ProjectImageContainer {
-    min-height: 400px;
+    min-height: 350px;
     height: 67vw;
-    max-height: 450px;
+    max-height: 400px;
   }
 
   .ProjectImageContainer img, #GifCover {
     // max-height: 400px;
     // height: 50vh;
     display: block;
-    height: auto!important;
+    height: 300px!important;
+    max-height: 200px;
     width: 100%;
     position: absolute;
     overflow: hidden;
-    object-fit:cover;
+    object-fit: fill;
     bottom: 0;
   }
 
@@ -465,7 +467,6 @@ nav {
   }
 
   .ActionButtonCluster {
-    width: 80%!important;
     min-width: 400px;
   }
 
