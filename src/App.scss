@@ -39,6 +39,8 @@ body {
   --toggle-color2: #4229ff;
   --socials-hover: #383838;
   --rainbow-gradient: linear-gradient(45deg, #ffca57, #b91f69, #680051);
+  --sun-color: rgb(255, 136, 0);
+  --moon-color: rgba(255, 255, 255, 0);
 }
 
 .DarkTheme {
@@ -68,6 +70,8 @@ body {
   --rainbow-gradient: linear-gradient(45deg, #ffae00, #ff89a6, #00a6fb);
   --rainbow-gradient: linear-gradient(45deg, #ffae00, #e389ff, #00a6fb);
   --rainbow-gradient: linear-gradient(45deg, #60ffff, #e389ff, #4c00ff);
+  --sun-color: rgba(255, 136, 0, 0);
+  --moon-color: rgb(255, 255, 255);
 }
 
 body {

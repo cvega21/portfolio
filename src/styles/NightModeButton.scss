@@ -1,5 +1,22 @@
 .NightModeButtonContainer {
-  margin-left: 30%;
+  // margin-left: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  max-width: 180px;
+
+ .sunIcon {
+   color: var(--sun-color);
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+
+ .moonIcon {
+   color: var(--moon-color);
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
 }
 
 .switch {
@@ -25,7 +42,8 @@
   background-color: var(--toggle-color);
   -webkit-transition: .4s;
   transition: .4s;
-  box-shadow: 0px 2px 7px -2px black;
+  // box-shadow: 0px 2px 7px -2px black;
+  box-shadow: 0px 1px 15px -3px var(--primary-color);
 }
 
 .slider:before {

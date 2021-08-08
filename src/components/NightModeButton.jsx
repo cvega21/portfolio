@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const NightModeButton = () => {
   const changeTheme = e => {
@@ -7,10 +10,12 @@ const NightModeButton = () => {
   
   return (
     <div className="NightModeButtonContainer">
+      <FontAwesomeIcon icon={faSun} size='lg' className="sunIcon"/>
       <label className="switch">
         <input type="checkbox" onClick={changeTheme}/>
         <span className="slider round"></span>
       </label>  
+      <FontAwesomeIcon icon={faMoon} size='lg' className="moonIcon"/>
     </div>
   )
 }
