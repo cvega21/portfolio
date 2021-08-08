@@ -63,23 +63,6 @@ const NavBar = (props) => {
     }
   }, [dimensions])
 
-  // useEffect(() => {
-  //   const listenToScroll = () => {
-  //     if (window.pageYOffset > 900) {
-  //       navContext[5](true);
-  //     }
-  //   }
-  //   window.addEventListener('scroll', listenToScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener('scroll', listenToScroll)
-  //   }
-  // })
-
-  // const toggleNav = () => {
-  //   setNavIsExpanded(!navIsExpanded);
-  // }
-
   const toggleNavContext = () => {
     navContext[3](!navContext[2]);
   }
@@ -90,11 +73,9 @@ const NavBar = (props) => {
         <div className="ResponsiveNav">
           <div className="NavBarTitle">
             <div className="NavBarTitleToggle">
-              {/* <button onClick={toggleNav}>☰</button> */}
               <button onClick={toggleNavContext}>☰</button>
-              <h1>CHRISTIAN VEGA</h1>
+              <h1 onClick={toggleNavContext}>CHRISTIAN VEGA</h1>
             </div>
-            {/* <ActionButton link='contact' onChangeNav={props.onChangeNav}/> */}
           </div>
           {
             // navIsExpanded &&
