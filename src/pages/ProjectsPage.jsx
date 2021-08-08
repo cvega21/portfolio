@@ -11,8 +11,8 @@ import timer from '../assets/timer.gif';
 import timerStatic from '../assets/timerStatic.jpg';
 import soundboard from '../assets/soundboard.gif';
 import soundboardStatic from '../assets/soundboardStatic.jpg';
-// import portfolio from '../assets/portfolio.gif';
-import portfolioStatic from '../assets/portfolio.png';
+import portfolio from '../assets/portfolio.gif';
+import portfolioStatic from '../assets/portfolioStatic.jpg';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
@@ -40,7 +40,7 @@ const Projects = (props) => {
         <Project 
           title="PORTFOLIO WEBSITE" 
           description='a portfolio website in a portfolio website. #recursion' 
-          gif={[portfolioStatic, portfolioStatic]} 
+          gif={[portfolio, portfolioStatic]} 
           link='https://christianvega.me'
           stack={['react','sass','firebase']}
           time={props.projectsData.projects['Build Portfolio Website']}
