@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import ActionButton from '../components/ActionButton'
 import Article from '../components/Article'
 import Footer from '../components/Footer'
@@ -14,8 +14,6 @@ const Articles = (props) => {
   
   return (
     <div className = "GenericContainer">
-      {/* {console.log(props.articles)}   */}
-      {/* {console.log(props.articles[0].pubDate)}   */}
       <h1>Articles</h1>
       {props.articles.length 
         ? 

@@ -15,7 +15,6 @@ import portfolio from '../assets/portfolio.gif';
 import portfolioStatic from '../assets/portfolioStatic.jpg';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = (props) => {  
@@ -32,7 +31,6 @@ const Projects = (props) => {
       <div className="togglBannerContainerSuper">
         <a target="_blank" rel="noopener noreferrer" href="http://www.toggl.com" className="togglBannerContainer">
           <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
-          {/* <FontAwesomeIcon icon={faQuestionCircle}/> */}
         </a>
       </div>
         {props.projectsData ? 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8239.JPG';
 import check from '../assets/checkmark.png';

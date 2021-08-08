@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-evenly; */
   min-height: 100%;
   min-width: 100%;
   animation: fadedown 1s;
@@ -78,16 +77,13 @@
   padding: 10px 0px 10px 20px;
   min-height: 50px;
   min-width: 285px;
-  // min-width: 400px;
   width: 50%;
   box-shadow: inset 0 0 12px var(--nav-background-color3);
   margin: 15px 0px 0px 0px;
-  /* border: 2px solid var(--primary-color); */
   border: none;
   background-color: var(--nav-background-color);
   border-radius: 5px;
   outline:none!important;
-  /* font-size: x-large; */
   text-align: start;
   color: var(--font-color);
   word-wrap: normal;
@@ -102,9 +98,4 @@
 .ContactContainer .MessageContainer {
   min-height: 35vh; 
   margin: 15px 0px 60px 0px;
-  // min-height: 200px;
-  // margin: 15px 0px 100px 0px;
-}
-
-.ContactContainer {
 }

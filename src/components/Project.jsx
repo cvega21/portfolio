@@ -1,4 +1,3 @@
-import React from 'react'
 import mongo from '../assets/mongodb.png';
 import firebase from '../assets/firebase.png';
 import react from '../assets/react.png';

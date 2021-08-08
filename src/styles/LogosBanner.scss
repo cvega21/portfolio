@@ -1,5 +1,3 @@
-// @use '../App.scss';
-
 .logos-banner {
   text-align: center;
   margin: 60px 0px 40px 0px;
@@ -7,13 +5,11 @@
   box-shadow: 0 0 60px 0 rgb(0 0 0 / 20%);
   width: 100%;
   max-width: 1000px;
-  // padding: 10px;
 
   h1 {
     font-size: 42px;
     font-weight: bold;
     margin: 50px 0px 0px 0px;
-    // color: var(--primary-color);
     font-family: 'Lato', sans-serif;
   }
 
@@ -30,7 +26,6 @@
   overflow: hidden;
   max-width: 1000px;
   width: 100%;
-  // margin: 0 auto;
   position: relative;
   display: flex;
 }
@@ -82,14 +77,12 @@
 .logo-slider-segment {
   display: flex;
   position: relative;
-  // animation: marquee 20s linear infinite;
   justify-content: space-around;
 }
 
 .logo-slider .logo-slider-segment2 {
   display: flex;
   position: relative;
-  // animation: marquee 30s linear infinite;
   animation-direction: reverse;
   justify-content: space-around;
   margin-bottom: 20px;
@@ -105,11 +98,9 @@
 .noInvert {
   filter: grayscale(100%);
   opacity: 0.30;
-  // filter: invert(1);
 }
 
 .invert {
-  // width: 400px;
   filter: var(--banner-filter);
   opacity: var(--banner-opacity);
 }

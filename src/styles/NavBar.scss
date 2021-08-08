@@ -29,7 +29,6 @@ nav {
 }
 
 .ResponsiveNav {
-  // height: 100%;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -42,24 +41,18 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  // margin: 10px;
 }
 
 .NavBarTop {
   @extend %NavBarSection;
-  // border: solid;
-  
 }
 
 .NavBarTitle {
   @extend %NavBarSection;
   margin: 15px 0px 15px 0px;
-  // border: dotted;
   
   button {
-    // font-size: large;
     margin: 10px 0px 6px 0px;
-    // width: 100%!important;
   }
 
   h1 {
@@ -69,20 +62,15 @@ nav {
     letter-spacing: 0.03em;
     margin: 0px;
     padding: 0px 0px 0px 3px;
-    // border: dotted;
-    // text-align: left;
   }
 
   .NavBarTitleToggle {
     display: flex;
     align-items: center;
-    // justify-content: flex-start;
-    // border: solid;
     width: 80%;
     padding: 15px 0px 0px 0px;
 
     button {
-      // font-size: 32px;
       background-color: transparent;
       border: none;
       color: var(--font-color);
@@ -94,7 +82,6 @@ nav {
 }
 
 .NavBarCollapsible {
-  // border: dotted;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -105,7 +92,6 @@ nav {
   @extend %NavBarSection;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 20px 0px;
-  // border: solid;
   align-items: center;
 }
 
@@ -134,9 +120,7 @@ nav {
 
 @media (max-width: 1200px) {
   .GenericContainer, nav {
-    // overflow-x: scroll; /* Must be 'scroll' not 'auto' */
     -webkit-overflow-scrolling: touch;
-    // min-width: 100vw;
   }
 
   .NavBarCollapsible {
@@ -156,11 +140,9 @@ nav {
     width: 100%;
     margin: 0px 0px 0px -20px;
     height: auto;
-    // border: solid 5px white;
   }
   
   .NavBarTitle {
-    // padding-bottom: 20px;
     padding: 0px 0px 10px 0px;
     margin: 0px 0px 0px 0px;
 
@@ -206,7 +188,6 @@ nav {
   }
 
   .NavBarTop {
-    // padding: 0px 0px 0px 10%;
     .NavIcon {
       padding: 0px 0px 0px 5%;
     }
@@ -229,7 +210,6 @@ nav {
   }
 
   .IndustrySection {
-    // border: solid;
 
     h1 {
       margin: 30px 0px 30px 0px;
@@ -237,10 +217,8 @@ nav {
   }
 
   .IndustryGrid {
-    // grid-template-columns: 100% !important;
     display: flex!important;
     flex-direction: column;
-    // border: dotted;
     column-gap: 0px;
     align-items: center;
     margin-bottom: 0px!important;
@@ -264,7 +242,6 @@ nav {
     }
     
     .RainbowContainer {
-      // padding: 0px!important;
       height: 305px!important;
       width: 305px!important;
     }
@@ -282,10 +259,8 @@ nav {
     align-items: center;
     text-align: center;
     margin: 0px!important;
-    // margin-left: 0px!important;
     padding: 0px!important;
     width: 100%!important;
-    // border: solid;
 
     h1 {
       font-size: 60px!important;
@@ -295,11 +270,7 @@ nav {
     }
 
     >div:nth-child(3) {
-      // display: flex;
-      // width: 100%!important;
-      // max-width: 400px;
       flex-direction: column!important;
-      // margin-top: 30px;
       align-items: center!important;
       justify-content: center!important;
 
@@ -308,8 +279,6 @@ nav {
 
   .ProfileTextBio {
     display: flex;
-    // color: red;
-    // border: solid;
     width: 75%;
 
     a {
@@ -326,7 +295,6 @@ nav {
     
     .CheckedName {
       margin-left: 50px;
-      // border: dotted;
       width: auto!important;
 
       h1 {
@@ -336,8 +304,6 @@ nav {
   }
 
   .CheckedName {
-    // flex-direction: column!important;
-    // width: 60%;
     width: 40%!important;
   }
 
@@ -374,15 +340,8 @@ nav {
   .HomeContainer {
     min-height: 80vh!important;
   }
-
-  .App {
-  }
-
-  .HomeContent {
-  }
   
   .ActionButtonCluster {
-    // width: 80%;
     max-width: 500px!important;
     width: 100vw!important;
   }
@@ -402,12 +361,10 @@ nav {
     }
 
     .ProjectsGrid {
-      // min-width: 100%;
       min-width: 300px;
       width: 100%;
       max-width: 550px!important;
 
-      // border: dotted;
       grid-row-gap: 0px;
 
       .ProjectContainer {
@@ -430,8 +387,6 @@ nav {
   }
 
   .ProjectImageContainer img, #GifCover {
-    // max-height: 400px;
-    // height: 50vh;
     display: block;
     height: 300px!important;
     max-height: 200px;
@@ -523,7 +478,6 @@ nav {
       h1 {
         margin: 0px!important;
         font-size: 75px!important;
-        // width: 70%;
       }
   
       .WavingHand {
@@ -532,7 +486,6 @@ nav {
     }
   
     .TypingContainer {
-      // min-height: 150px!important;
   
       span {
         font-size: 1.55em!important;
@@ -607,7 +560,6 @@ nav {
 
       img {
         height: 65%;
-        // height: 100px;
         width: 100%;
         max-width: 115px;
       }

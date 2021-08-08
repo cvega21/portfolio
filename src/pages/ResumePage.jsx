@@ -1,5 +1,3 @@
-import React from 'react'
-import Footer from '../components/Footer'
 import '../styles/Resume.scss';
 import ActionButton from '../components/ActionButton';
 

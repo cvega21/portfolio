@@ -25,19 +25,8 @@ const NavBar = (props) => {
         width: window.innerWidth
       })
     }
-    // const throttledHandleResize = throttle(handleResize, 500);
-
-    // if (window.innerWidth > 900 && !navIsExpanded) {
-    //   // navContext[4] === false ? navContext[5](true) : void(0);
-    //   // !navIsExpanded ? setNavIsExpanded(true) : void(0);
-    //   setNavIsExpanded(true);
-    // } else if (window.innerWidth <= 900 && navIsExpanded) {
-    //   setNavIsExpanded(false)
-    // }
 
     if (window.innerWidth > 1200 && !navContext[2]) {
-      // navContext[4] === false ? navContext[5](true) : void(0);
-      // !navIsExpanded ? setNavIsExpanded(true) : void(0);
       navContext[3](true);
     } else if (window.innerWidth <= 1200 && navContext[2]) {
       navContext[3](false);
@@ -65,10 +54,8 @@ const NavBar = (props) => {
             </div>
           </div>
           {
-            // navIsExpanded &&
             navContext[2] &&
           <div className="NavBarCollapsible">
-            {/* <NavLinkContext.Provider value={setNavIsExpanded}> */}
             <NavLinkContext.Provider value={navContext[3]}>
               <div className="NavBarTop">
                 <ActionButton link='contact' onChangeNav={props.onChangeNav}/>

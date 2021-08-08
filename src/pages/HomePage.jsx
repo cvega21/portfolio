@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import { useRef, useEffect } from 'react';
 import ActionButton from '../components/ActionButton'
 import Typed from 'typed.js';
 

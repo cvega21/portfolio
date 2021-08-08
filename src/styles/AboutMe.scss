@@ -6,7 +6,6 @@
 .ProfileContainer {
   display: flex;
   align-items: center;
-  // padding: 0px 0px 0px 50px;
   justify-content: center;
   width: 100%;
   height: 75vh;
@@ -32,7 +31,6 @@
     align-items: center;
     justify-content: center;
     animation: fadedown 1s;
-    // margin-top: 15px;
   }
 
   .RainbowContainer {
@@ -69,7 +67,6 @@
     margin: 0px;
     display: flex;
     align-items: center;
-    // border: solid;
   }
 
   h2 {
@@ -91,14 +88,11 @@
   }
 
   >div>div:nth-child(1) {
-    // border: solid;
-    // display: flex;
     width: 100%;
   }
   
   >div:nth-child(1) {
     width: auto;
-    // border: dotted;
     max-width: 400px;
     flex-direction: column;
     margin-top: 30px;
@@ -115,14 +109,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    // border: dotted;
     width: 60%;
     min-width: none;
 
     h1 {
       width: auto;
       margin: 0px;
-      // border: dotted;
       padding: 0px;
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import bash from '../assets/bash.svg';
 import css3 from '../assets/css3.png';
 import heroku from '../assets/heroku.png';
