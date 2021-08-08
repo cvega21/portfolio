@@ -341,6 +341,16 @@ nav {
     min-height: 80vh!important;
   }
   
+  .ResumeContainer {
+    h1 {
+      margin: 25px 0px 0px 0px;
+    }
+  
+    h2 {
+      margin: 20px 0px 50px 0px;
+    }
+  }
+
   .ActionButtonCluster {
     max-width: 500px!important;
     width: 100vw!important;
@@ -564,4 +574,6 @@ nav {
         max-width: 115px;
       }
     }
+
+
   }

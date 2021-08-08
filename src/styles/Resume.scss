@@ -1,16 +1,26 @@
 .ResumeContainer {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
+  height: 80%;
   align-items: center;
   position: relative;
-  height: 60vh;
   justify-content: center;
   animation: fadedown 1s;
 
   h1 {
     font-size: 80px;
     font-weight: 500;
+    // padding: 50px 25px 50px 25px;
+    margin: 150px 0px 0px 0px;
     font-family: 'Fira Sans';
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 90px;
+    margin: 20px 0px 300px 0px;
+    // margin-bottom: 100px;
+    padding: 0px;
   }
 }
