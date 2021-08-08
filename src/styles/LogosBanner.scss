@@ -1,3 +1,5 @@
+// @use '../App.scss';
+
 .logos-banner {
   text-align: center;
   margin: 60px 0px 40px 0px;
@@ -42,16 +44,31 @@
   top: 0px;
 }
 
-.fade-background-left {
+:root {
   $banner-background-transparent: #ffffff;
-  background: linear-gradient(to right, var(--banner-background-color) 0%, rgba($banner-background-transparent,0) 100%);
-  // background-image: -webkit-linear-gradient(to right,  var(--banner-background-color) 0%,rgba(255, 255, 255, 0));
-  left: 0px;  
+  .fade-background-left {
+    background: linear-gradient(to right, var(--banner-background-color) 0%, rgba($banner-background-transparent,0) 100%);
+    left: 0px;  
+  }
+  
+  .fade-background-right {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--banner-background-color) 100%);
+    right: 0px;  
+  }
 }
 
-.fade-background-right {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--banner-background-color) 100%);
-  right: 0px;  
+.DarkTheme {
+  $banner-background-transparent: rgb(46, 46, 46);
+
+  .fade-background-left {
+    background: linear-gradient(to right, var(--banner-background-color) 0%, rgba($banner-background-transparent,0) 100%);
+    left: 0px;  
+  }
+  
+  .fade-background-right {
+    background-image: linear-gradient(to right, rgba($banner-background-transparent,0) 0%, var(--banner-background-color) 100%);
+    right: 0px;  
+  }
 }
 
 .scroll-fast {
