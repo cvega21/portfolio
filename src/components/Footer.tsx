@@ -1,4 +1,6 @@
-const Footer = () => {
+import { FunctionComponent } from 'react';
+
+const Footer: FunctionComponent = () => {
   return (
     <footer>
       <p>Made with <span>&#9829;</span> in Austin, TX</p>

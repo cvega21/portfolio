@@ -1,6 +1,7 @@
+import { FunctionComponent } from 'react';
 import { DateTime } from 'luxon';
 
-interface Article {
+interface ArticleProps {
   title: string;
   date: string;
   image: string;
@@ -8,7 +9,7 @@ interface Article {
   link: string;
 }
 
-const Article = (props: Article) => {
+const Article: FunctionComponent<ArticleProps> = (props) => {
   let parsedDate: DateTime = DateTime.fromISO(props.date.slice(0,10));
   let stringDate: string = parsedDate.toLocaleString(DateTime.DATE_MED);
   
