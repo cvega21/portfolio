@@ -22,7 +22,6 @@ const Contact = (props) => {
     let form = document.getElementById('contact_form');
     e.preventDefault();
     if (email && message) {
-      console.log(`button clicked... email: ${email}, message: ${message}`)
       try {
         setEmailSent(true);
         await sendForm('portolio_website', 'portfolio_message', form);

@@ -18,8 +18,6 @@ const NavBar = (props) => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log('handleResize executed...')
-      console.log(dimensions);
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth

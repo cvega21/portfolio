@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLandmark, faCommentsDollar, faBuilding } from '@fortawesome/free-solid-svg-icons';
 import FlipCard from './FlipCard';
 import '../styles/IndustrySection.scss'

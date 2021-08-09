@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLandmark, faCommentsDollar, faBuilding, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
 interface FlipCardProps {
