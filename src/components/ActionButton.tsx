@@ -1,35 +1,40 @@
-import React, { useContext} from 'react'
+import { useContext} from 'react'
 import { Link } from "react-router-dom";
 import { PageContext, NavContext } from '../App';
 
-const ActionButton = (props) => {
-  let computedContainerClassName = 'ActionButtonContainer';
-  let computedClassName = "ActionButton";
-  let text = '';
-  let linkTo = '/'.concat(props.link);
+interface ActionButtonProps {
+  link: string;
+  navigation: string;
+}
+
+const ActionButton = ({ link, navigation }: ActionButtonProps) => {
+  let computedContainerClassName: string = 'ActionButtonContainer';
+  let computedClassName: string = "ActionButton";
+  let text: string = '';
+  let linkTo: string = '/'.concat(link);
 
   const changePage = useContext(PageContext);
   const navContext = useContext(NavContext);
 
-  if (props.link === 'contact') {
+  if (link === 'contact') {
     computedContainerClassName = 'ActionButtonContactContainer';
     computedClassName = 'ActionButton Contact';
     text = 'contact me';
-  } else if (props.link === 'resume') {
+  } else if (link === 'resume') {
     text = 'see my resume';
-  } else if (props.link === 'aboutme') {
+  } else if (link === 'aboutme') {
     text = 'About Me '
   }
-  else if (props.link) {
-    let textArray = props.link.split('-');
-    textArray.forEach(word => {
+  else if (link) {
+    let textArray: Array<string> = link.split('-');
+    textArray.forEach((word: string) => {
       text += word.charAt(0).toUpperCase() + word.slice(1) + ' ';
     })
   }
   
-  if (props.navigation === "right") {
+  if (navigation === "right") {
     text += '->'
-  } else if (props.navigation === "left") {
+  } else if (navigation === "left") {
     text = '<- ' + text;
   } 
 
