@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
 
 const NightModeButton = () => {
-  const changeTheme = e => {
+  const changeTheme = (e: any) => {
     document.body.classList.toggle("DarkTheme");
+    return
   }
   
   return (
