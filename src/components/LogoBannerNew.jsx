@@ -13,6 +13,7 @@ import react from '../assets/react.png';
 import rhel from '../assets/rhel.png';
 import tomcat from '../assets/tomcat.png';
 import firebase from '../assets/firebase.png';
+import LogoSliderSegment from './LogoSliderSegment';
 
 const LogosBanner = () => {
   useEffect(() => {
@@ -46,6 +47,52 @@ const LogosBanner = () => {
           <div className="logo-slider">  
             <div className="fade-background fade-background-left"></div>
             <div className="logo-slider-segment">
+            {/* <LogoSliderSegment 
+              props={
+                [
+                  {
+                    src: html5,
+                    alt: 'HTML5',
+                    invert: true
+                  },
+                  {
+                    src: css3,
+                    alt: "CSS3",
+                    invert: true
+                  },
+                  {
+                    src: javascript,
+                    alt: "JavaScript",
+                    invert: false
+                  },
+                  {
+                    src: react,
+                    alt: "React",
+                    invert: false
+                  },
+                  {
+                    src: mongo,
+                    alt: "MongoDB",
+                    invert: true
+                  },
+                  {
+                    src: firebase,
+                    alt: "Firebase",
+                    invert: false
+                  },
+                  {
+                    src: mysql,
+                    alt: "MySQL",
+                    invert: false
+                  },
+                  {
+                    src: python,
+                    alt: "Python",
+                    invert: false
+                  }
+                ]
+            }/> */}
+            <LogoSliderSegment props={['HTML5']}/>
               <img src={html5} alt="HTML5" className='invert'></img>
               <img src={css3} alt="CSS3" className='invert'></img>
               <img src={javascript} alt="JavaScript" className='noInvert'></img>
@@ -53,9 +100,54 @@ const LogosBanner = () => {
               <img src={mongo} alt="Mongo" className='invert'></img>
               <img src={firebase} alt="Firebase" className='noInvert'></img>
               <img src={mysql} alt="MySQL" className='noInvert'></img>
-              <img src={python} alt="Python" className='noInvert'></img>
+            <img src={python} alt="Python" className='noInvert'></img>
             </div>
             <div className="logo-slider-segment">
+              {/* <LogoSliderSegment 
+                props={
+                  [
+                    {
+                      src: html5,
+                      alt: 'HTML5',
+                      invert: true
+                    },
+                    {
+                      src: css3,
+                      alt: "CSS3",
+                      invert: true
+                    },
+                    {
+                      src: javascript,
+                      alt: "JavaScript",
+                      invert: false
+                    },
+                    {
+                      src: react,
+                      alt: "React",
+                      invert: false
+                    },
+                    {
+                      src: mongo,
+                      alt: "MongoDB",
+                      invert: true
+                    },
+                    {
+                      src: firebase,
+                      alt: "Firebase",
+                      invert: false
+                    },
+                    {
+                      src: mysql,
+                      alt: "MySQL",
+                      invert: false
+                    },
+                    {
+                      src: python,
+                      alt: "Python",
+                      invert: false
+                    }
+                  ]
+              }/> */}
               <img src={html5} alt="HTML5" className='invert'></img>
               <img src={css3} alt="CSS3" className='invert'></img>
               <img src={javascript} alt="JavaScript" className='noInvert'></img>

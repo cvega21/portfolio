@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8239.JPG';
 import check from '../assets/checkmark.png';
-import LogosBannerNew from '../components/LogosBannerNew';
+import LogosBannerNew from '../components/LogoBannerNew';
 import Footer from '../components/Footer';
 import IndustryExperience from '../components/IndustryExperience';
 import { PageContext } from '../App';
