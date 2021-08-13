@@ -13,14 +13,19 @@ import rhel from '../assets/rhel.png';
 import tomcat from '../assets/tomcat.png';
 import firebase from '../assets/firebase.png';
 
+interface logoShape {
+    src: string;
+    alt: string;
+    invert: boolean;
+}   
 
-export const logosDict = {
-  'html5': {
+export const logosDict: Record<string, logoShape> = {
+  'html': {
       src: html5,
       alt: 'HTML5',
       invert: true
   },
-  'css3': {
+  'css': {
       src: css3,
       alt: "CSS3",
       invert: true
@@ -54,5 +59,35 @@ export const logosDict = {
       src: python,
       alt: "Python",
       invert: false
+  },
+  'heroku': {
+      src: heroku,
+      alt: "Heroku",
+      invert: true
+  },
+  'jenkins': {
+      src: jenkins,
+      alt: "Jenkins",
+      invert: false
+  },
+  'jira': {
+      src: jira,
+      alt: "Jira",
+      invert: true
+  },
+  'rhel': {
+      src: rhel,
+      alt: "Red Hat Enterprise Linux",
+      invert: true
+  },
+  'tomcat': {
+      src: tomcat,
+      alt: "Tomcat",
+      invert: true
+  },
+  'bash': {
+      src: bash,
+      alt: "Bash",
+      invert: true
   }
 }

@@ -26,3 +26,5 @@ yarn-error.log*
 ui-debug.log
 firebase-debug.log
 database-debug.log
+
+/src/components/test.tsx

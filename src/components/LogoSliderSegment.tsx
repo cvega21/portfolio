@@ -1,48 +1,25 @@
-import React from 'react'
 import { logosDict } from './LogoSliderDict'
 
-interface LogoSliderPropsElem {
-  src: string;
-  alt: string;
-  invert: boolean;
-}
-
 interface LogoSliderProps {
-  props: LogoSliderPropsElem[]
+  logos: string[]
 }
 
-const LogoSliderSegment: React.FC<LogoSliderProps> = ({ props }) => {
+const LogoSliderSegment = ({ logos }: LogoSliderProps) => {
   return (
     <>
       {    
-        props.map(elem => {
-          return <img src={elem.src} alt={elem.alt} className={(elem.invert === true ? 'invert' : 'noInvert')}/>
+        logos.map((elem: string) => {
+          return <img src={logosDict[elem].src} alt={logosDict[elem].alt} className={(logosDict[elem].invert === true ? 'invert' : 'noInvert')}/>
         })
       }
-      {/* {    
-        props.map(name => {
-          return <img src={logosDict[name].src} alt={logosDict[name].alt} className={(logosDict[name].invert === true ? 'invert' : 'noInvert')}/>
-        })
-      } */}
     </>
   )
 }
 
-// const LogoSliderSegment2: React.FC = ({props}: Array<string>) => {
-//   return (
-//     <>
-//       {    
-//         props.map(elem => {
-//           return <img src={elem.src} alt={elem.alt} className={(elem.invert === true ? 'invert' : 'noInvert')}/>
-//         })
-//       }
-//       {/* {    
-//         props.map(name => {
-//           return <img src={logosDict[name].src} alt={logosDict[name].alt} className={(logosDict[name].invert === true ? 'invert' : 'noInvert')}/>
-//         })
-//       } */}
-//     </>
-//   )
-// }
+const example = () => {
+  return (
+    <LogoSliderSegment logos={['javascript, react, html']}/>
+  )
+}
 
 export default LogoSliderSegment
