@@ -39,7 +39,7 @@ const NavBar = (props) => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [dimensions, navContext])
+  }, [dimensions])
 
   const toggleNavContext = () => {
     console.log('toggle nav context!!!')
