@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import ActionButton from '../components/ActionButton';
-import profilePicture from '../assets/IMG_8239.JPG';
+import profilePicture from '../assets/IMG_8239.jpg';
 import check from '../assets/checkmark.png';
 import LogosBannerNew from '../components/LogosBanner';
 import Footer from '../components/Footer';
@@ -9,12 +9,11 @@ import { PageContext } from '../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
-const AboutMe = (props) => {
+const AboutMe = () => {
   const [isMounted, setIsMounted] = useState(false);
   const pageContext = useContext(PageContext);
   
   useEffect(() => {
-    // pageContext[2] === hasHomeLoaded. set this to true on the first load so that the loading animation is only displayed once
     if (pageContext[2] === false) {
       setTimeout(() => {
         setIsMounted(true);
@@ -59,7 +58,7 @@ const AboutMe = (props) => {
         <div className="AboutSection">
           <h1>About Me</h1>
           <p>
-            Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the <b>University of Texas</b> as part of the 2020 ("Zoomer" 👨🏽‍💻) class. After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of <b>finance</b> and <b>technology</b> and decided to purse a career in the technical side of the business. 
+            Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the <b>University of Texas</b> as part of the 2020 ("Zoomer") class. After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of <b>finance</b> and <b>technology</b> and decided to purse a career in the technical side of the business. 
           </p>
           <p>
             I currently work at Visa supporting several enterprise software applications centered around real-time <b>fraud detection</b>, large-scale <b>financial breach</b> monitoring and payments <b>risk management</b>. I am also learning web development and exploring different areas of technology during my free time, particularly <b>blockchain</b>. I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
