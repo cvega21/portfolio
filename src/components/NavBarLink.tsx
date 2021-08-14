@@ -1,11 +1,24 @@
 import { useState, useEffect, useContext } from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faCode, faSignature } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faCode, faSignature, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { PageContext } from '../App';
 import { NavLinkContext } from './NavBar';
 
-const NavBarLink = (props) => {
+interface NavBarLinkProps {
+  to: string;
+  active: string;
+}
+
+interface TypedIconMapping {
+  home: IconDefinition;
+  aboutme: IconDefinition;
+  projects: IconDefinition;
+  articles: IconDefinition;
+  [key: string]: IconDefinition;
+}
+
+const NavBarLink = (props: NavBarLinkProps) => {
   let text = props.to;
   text === 'aboutme' ? text = 'about me' : void(0);
 
@@ -24,12 +37,13 @@ const NavBarLink = (props) => {
     }
   },[pageContext, linkTo])
   
-  const iconMapping = {
-    'home': faHome,
-    'aboutme': faUser,
-    'projects': faCode,
-    'articles': faSignature
+  const iconMapping: TypedIconMapping = {
+    home: faHome,
+    aboutme: faUser,
+    projects: faCode,
+    articles: faSignature
   }
+
 
   return (
   <li className={isActive + "LinkButtonContainer"}>
