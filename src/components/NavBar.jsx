@@ -8,6 +8,11 @@ import { NavContext } from '../App';
 
 export const NavLinkContext = React.createContext();
 
+// interface NavBarProps {
+//   active: string;
+// }
+
+// const NavBar = (props: NavBarProps) => {
 const NavBar = (props) => {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -37,6 +42,7 @@ const NavBar = (props) => {
   }, [dimensions, navContext])
 
   const toggleNavContext = () => {
+    console.log('toggle nav context!!!')
     navContext[3](!navContext[2]);
   }
 
@@ -47,7 +53,7 @@ const NavBar = (props) => {
           <div className="NavBarTitle">
             <div className="NavBarTitleToggle">
               <button onClick={toggleNavContext}>☰</button>
-              <h1 onClick={window.innerWidth <= 1200 ? toggleNavContext : undefined}>CHRISTIAN VEGA</h1>
+              <h1 onClick={window.innerWidth <= 1200 && toggleNavContext}>CHRISTIAN VEGA</h1>
             </div>
           </div>
           {
@@ -55,7 +61,7 @@ const NavBar = (props) => {
           <div className="NavBarCollapsible">
             <NavLinkContext.Provider value={navContext[3]}>
               <div className="NavBarTop">
-                <ActionButton link='contact' onChangeNav={props.onChangeNav}/>
+                <ActionButton link='contact'/>
                 <ul className="LinkContainer">
                     <NavBarLink to='home' active={props.active}/>
                     <NavBarLink to='aboutme' active={props.active}/>

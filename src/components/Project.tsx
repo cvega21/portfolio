@@ -7,27 +7,49 @@ import bootstrap from '../assets/bootstrap-stack.png';
 import typescript from '../assets/typescript.png';
 import nextjs from '../assets/nextjs.png';
 
+interface ProjectProps {
+  title: string;
+  description: string;
+  gif: Array<string>;
+  link: string;
+  stack: Array<string>;
+  time: string;
+}
 
-const Project = (props) => {
+interface TypedTechStackIcons {
+  react: string;
+  nodeJS: string;
+  mongo: string;
+  sass: string;
+  firebase: string;
+  bootstrap: string;
+  nextjs: string;
+  typescript: string;
+  [key: string]: string;
+}
 
-  const techStackIcons = {
-    'react': react,
-    'nodeJS': nodeJS,
-    'mongo': mongo,
-    'sass': sass,
-    'firebase': firebase,
-    'bootstrap': bootstrap,
-    'nextjs': nextjs,
-    'typescript': typescript
-  }
+const techStackIcons: TypedTechStackIcons = {
+  react: react,
+  nodeJS: nodeJS,
+  mongo: mongo,
+  sass: sass,
+  firebase: firebase,
+  bootstrap: bootstrap,
+  nextjs: nextjs,
+  typescript: typescript
+}
 
-  const currentTechStack = props.stack.map((item) => {
+const Project = (props: ProjectProps) => {
+
+
+  const currentTechStack = props.stack.map((item: string) => {    
     return <img src={techStackIcons[item]} alt={item} title={item} className={`techStackImage ${item}`} key={techStackIcons[item]}></img>
   })
   
   const hoursToDisplay = () => {
     if (parseInt(props.time)) {
-      return `${Math.round(props.time)} hours`
+      let propsTimeInt = parseInt(props.time);
+      return `${Math.round(propsTimeInt)} hours`
     } else {
       return 'untracked'
     }

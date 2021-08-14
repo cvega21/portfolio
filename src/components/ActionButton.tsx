@@ -4,7 +4,7 @@ import { PageContext, NavContext } from '../App';
 
 interface ActionButtonProps {
   link: string;
-  navigation: string;
+  navigation?: string;
 }
 
 const ActionButton = ({ link, navigation }: ActionButtonProps) => {
