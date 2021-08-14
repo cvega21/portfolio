@@ -5,9 +5,11 @@ import{ init, sendForm } from 'emailjs-com';
 import Footer from '../components/Footer'
 import '../styles/Contact.scss';
 require('dotenv').config();
-init(process.env.REACT_APP_EMAILJS_UID);
 
-const Contact = (props) => {
+const UID: string | undefined = process.env.REACT_APP_EMAILJS_UID;
+init(UID as string);
+
+const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [copied, setCopied] = useState(false);
@@ -18,13 +20,13 @@ const Contact = (props) => {
     window.scrollTo(0, 0);  
   }, [])
   
-  const sendEmail = async (e) => {
+  const sendEmail = async (e: React.MouseEvent) => {
     let form = document.getElementById('contact_form');
     e.preventDefault();
     if (email && message) {
       try {
         setEmailSent(true);
-        await sendForm('portolio_website', 'portfolio_message', form);
+        await sendForm('portolio_website', 'portfolio_message', form as HTMLFormElement);
       } catch (e) {
         console.error(e);
       } finally {
@@ -65,7 +67,7 @@ const Contact = (props) => {
         </div>
         <form id='contact_form'>
           <input className="EmailContainer" placeholder="e-mail" value={email} onChange={(e)=>setEmail(e.target.value)} name='user_email'></input>
-          <textarea className="MessageContainer" placeholder="message" type="text" value={message} onChange={(e)=>setMessage(e.target.value)} name='message'></textarea>
+          <textarea className="MessageContainer" placeholder="message" value={message} onChange={(e)=>setMessage(e.target.value)} name='message'></textarea>
         </form>
         {emailSent ? 
           <p>sent!</p> : 
