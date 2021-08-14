@@ -2,9 +2,9 @@ import { useRef, useEffect } from 'react';
 import ActionButton from '../components/ActionButton'
 import Typed from 'typed.js';
 
-const Home = (props) => {
-  const typedElement = useRef(null);
-  const typed = useRef(null);
+const Home = () => {
+  const typedElement: any = useRef(null);
+  const typed: any = useRef(null);
   
   useEffect(() => {
     const options = {
@@ -13,7 +13,7 @@ const Home = (props) => {
       backSpeed: 50
     };
     
-    typed.current = new Typed(typedElement.current, options);
+    typed.current = new Typed(typedElement.current as Element, options);
     return () => {
       typed.current.destroy();
     }
