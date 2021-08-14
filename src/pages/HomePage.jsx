@@ -5,13 +5,14 @@ import Typed from 'typed.js';
 const Home = (props) => {
   const typedElement = useRef(null);
   const typed = useRef(null);
-  const options = {
-    strings: [`^800I'm Christian.^800 Welcome to my portfolio website!`],
-    typeSpeed: 17,
-    backSpeed: 50
-  };
   
   useEffect(() => {
+    const options = {
+      strings: [`^800I'm Christian.^800 Welcome to my portfolio website!`],
+      typeSpeed: 17,
+      backSpeed: 50
+    };
+    
     typed.current = new Typed(typedElement.current, options);
     return () => {
       typed.current.destroy();

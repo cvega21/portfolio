@@ -1,5 +1,4 @@
 import { logosDict } from './LogoSliderDict'
-import React, { useState } from 'react'
 
 interface LogoSliderProps {
   logos: string[]
@@ -14,12 +13,6 @@ const LogoSliderSegment = ({ logos }: LogoSliderProps) => {
     <>
       {images}
     </>
-  )
-}
-
-const example = () => {
-  return (
-    <LogoSliderSegment logos={['javascript, react, html']}/>
   )
 }
 

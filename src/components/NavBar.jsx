@@ -9,7 +9,6 @@ import { NavContext } from '../App';
 export const NavLinkContext = React.createContext();
 
 const NavBar = (props) => {
-  const [navIsExpanded, setNavIsExpanded] = useState(false);
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
@@ -35,7 +34,7 @@ const NavBar = (props) => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [dimensions])
+  }, [dimensions, navContext])
 
   const toggleNavContext = () => {
     navContext[3](!navContext[2]);
@@ -48,7 +47,7 @@ const NavBar = (props) => {
           <div className="NavBarTitle">
             <div className="NavBarTitleToggle">
               <button onClick={toggleNavContext}>☰</button>
-              <h1 onClick={window.innerWidth <= 1200 && toggleNavContext}>CHRISTIAN VEGA</h1>
+              <h1 onClick={window.innerWidth <= 1200 ? toggleNavContext : undefined}>CHRISTIAN VEGA</h1>
             </div>
           </div>
           {

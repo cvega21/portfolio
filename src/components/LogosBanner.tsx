@@ -3,9 +3,9 @@ import LogoSliderSegment from './LogoSliderSegment';
 
 const LogosBanner = () => {
   useEffect(() => {
-    let topSliders = document.getElementsByClassName('logo-slider-segment');
-    let bottomSliders = document.getElementsByClassName('logo-slider-segment2');
-    let timer1;
+    let topSliders: HTMLCollectionOf<Element> = document.getElementsByClassName('logo-slider-segment');
+    let bottomSliders: HTMLCollectionOf<Element> = document.getElementsByClassName('logo-slider-segment2');
+    let timer1: NodeJS.Timeout;
 
     if (topSliders.length && bottomSliders.length) {
       try {

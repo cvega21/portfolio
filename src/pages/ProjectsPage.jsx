@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import ActionButton from '../components/ActionButton'
 import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
