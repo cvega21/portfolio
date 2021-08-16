@@ -12,7 +12,6 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 const AboutMe = () => {
   const [isMounted, setIsMounted] = useState(false);
   const pageContext = useContext(PageContext);
-  console.log(pageContext);
   const setHomeHasLoaded: React.Dispatch<React.SetStateAction<boolean>> = pageContext[3] as React.Dispatch<React.SetStateAction<boolean>>;
   
   useEffect(() => {

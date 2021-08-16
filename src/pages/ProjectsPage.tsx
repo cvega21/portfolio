@@ -31,7 +31,6 @@ interface ProjectsProps {
 }
 
 const Projects = (props: ProjectsProps) => {  
-  console.log(props);
   useEffect(() => {
     window.scrollTo(0, 0);  
     return () => {
