@@ -19,7 +19,7 @@ interface logoShape {
     invert: boolean;
 }   
 
-export const logosDict: Record<string, logoShape> = {
+export const LOGOS_DICT: Record<string, logoShape> = {
   'html': {
       src: html5,
       alt: 'HTML5',

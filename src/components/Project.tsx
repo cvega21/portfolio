@@ -28,7 +28,7 @@ interface TypedTechStackIcons {
   [key: string]: string;
 }
 
-const techStackIcons: TypedTechStackIcons = {
+const TECH_STACK_ICONS: TypedTechStackIcons = {
   react: react,
   nodeJS: nodeJS,
   mongo: mongo,
@@ -43,7 +43,7 @@ const Project = (props: ProjectProps) => {
 
 
   const currentTechStack = props.stack.map((item: string) => {    
-    return <img src={techStackIcons[item]} alt={item} title={item} className={`techStackImage ${item}`} key={techStackIcons[item]}></img>
+    return <img src={TECH_STACK_ICONS[item]} alt={item} title={item} className={`techStackImage ${item}`} key={TECH_STACK_ICONS[item]}></img>
   })
   
   const hoursToDisplay = () => {
