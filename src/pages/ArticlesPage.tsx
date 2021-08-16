@@ -5,7 +5,24 @@ import Footer from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
-const Articles = (props) => {
+interface ArticleType {
+  author: string;
+  categories: Array<string>;
+  content: string;
+  description: string;
+  enclosure: object;
+  guid: string;
+  link: string;
+  pubDate: string;
+  thumbnail: string;
+  title: string;
+}
+
+interface ArticlesProps {
+  articles: Array<ArticleType>;
+}
+
+const Articles = (props: ArticlesProps) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     return () => {
@@ -18,7 +35,7 @@ const Articles = (props) => {
       {props.articles.length 
         ? 
       <div className = "ArticlesContainer">
-        {props.articles.map((item) => { 
+        {props.articles.map((item: ArticleType) => { 
             return <Article 
                     title={item.title} 
                     date={item.pubDate}
