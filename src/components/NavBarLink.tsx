@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faCode, faSignature, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { PageContext } from '../App';
 import { NavLinkContext } from './NavBar';
+import { NavContext } from '../App';
+
 
 interface NavBarLinkProps {
   to: string;
@@ -21,12 +23,14 @@ interface TypedIconMapping {
 
 const NavBarLink = (props: NavBarLinkProps) => {
   const navLinkContext = useContext(NavLinkContext);
+  const navContext = useContext(NavContext);
   const pageContext = useContext(PageContext);
   const [isActive, setIsActive] = useState('');
   const setActiveNavPage: React.Dispatch<React.SetStateAction<string>> = pageContext[0] as React.Dispatch<React.SetStateAction<string>>;
+  const setNavIsExpanded: React.Dispatch<React.SetStateAction<boolean>> = navContext[3] as React.Dispatch<React.SetStateAction<boolean>>;
   const handleClick = () => {
     setActiveNavPage(linkTo);
-    window.innerWidth <= 1200 ? navLinkContext(false) : void (0);
+    window.innerWidth <= 1200 ? setNavIsExpanded(false) : void (0);
   }
 
   let text = props.to;

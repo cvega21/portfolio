@@ -6,14 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { NavContext } from '../App';
 
-export const NavLinkContext = React.createContext();
+export const NavLinkContext = React.createContext('');
 
-const NavBar = (props) => {
+const NavBar = (props: any) => {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
   })
   const navContext = useContext(NavContext);
+  const setNavIsExpanded: React.Dispatch<React.SetStateAction<boolean>> = navContext[3] as React.Dispatch<React.SetStateAction<boolean>>;
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,9 +25,9 @@ const NavBar = (props) => {
     }
 
     if (window.innerWidth > 1200 && !navContext[2]) {
-      navContext[3](true);
+      setNavIsExpanded(true);
     } else if (window.innerWidth <= 1200 && navContext[2]) {
-      navContext[3](false);
+      setNavIsExpanded(false);
     }
 
     window.addEventListener('resize', handleResize);
@@ -37,8 +38,7 @@ const NavBar = (props) => {
   }, [dimensions])
 
   const toggleNavContext = () => {
-    console.log('toggle nav context!!!')
-    navContext[3](!navContext[2]);
+    setNavIsExpanded(!navContext[2]);
   }
 
   return (
@@ -48,13 +48,18 @@ const NavBar = (props) => {
           <div className="NavBarTitle">
             <div className="NavBarTitleToggle">
               <button onClick={toggleNavContext}>☰</button>
-              <h1 onClick={window.innerWidth <= 1200 && toggleNavContext}>CHRISTIAN VEGA</h1>
+              <h1 onClick={() => 
+              {
+                if (window.innerWidth <= 1200) {}
+                toggleNavContext()
+              }
+              
+              }>CHRISTIAN VEGA</h1>
             </div>
           </div>
           {
             navContext[2] &&
           <div className="NavBarCollapsible">
-            <NavLinkContext.Provider value={navContext[3]}>
               <div className="NavBarTop">
                 <ActionButton link='contact'/>
                 <ul className="LinkContainer">
@@ -78,7 +83,6 @@ const NavBar = (props) => {
                   </a>
                 </div>
               </div>
-            </NavLinkContext.Provider>
           </div>
           }
         </div>
