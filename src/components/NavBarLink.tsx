@@ -18,18 +18,21 @@ interface TypedIconMapping {
   [key: string]: IconDefinition;
 }
 
+
 const NavBarLink = (props: NavBarLinkProps) => {
+  const navLinkContext = useContext(NavLinkContext);
+  const pageContext = useContext(PageContext);
+  const [isActive, setIsActive] = useState('');
+  const setActiveNavPage: React.Dispatch<React.SetStateAction<string>> = pageContext[0] as React.Dispatch<React.SetStateAction<string>>;
+  const handleClick = () => {
+    setActiveNavPage(linkTo);
+    window.innerWidth <= 1200 ? navLinkContext(false) : void (0);
+  }
+
   let text = props.to;
   text === 'aboutme' ? text = 'about me' : void(0);
 
   let linkTo = '/'.concat(props.to);
-  const [isActive, setIsActive] = useState('');
-  const pageContext = useContext(PageContext);
-  const navLinkContext = useContext(NavLinkContext);
-  const handleClick = () => {
-    pageContext[0](linkTo);
-    window.innerWidth <= 1200 ? navLinkContext(false) : void (0);
-  }
 
   useEffect(() => {
     pageContext[1] === linkTo ? setIsActive('active') : setIsActive('');

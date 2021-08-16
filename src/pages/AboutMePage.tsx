@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ActionButton from '../components/ActionButton';
 import profilePicture from '../assets/IMG_8239.jpg';
 import check from '../assets/checkmark.png';
@@ -12,12 +12,14 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 const AboutMe = () => {
   const [isMounted, setIsMounted] = useState(false);
   const pageContext = useContext(PageContext);
+  console.log(pageContext);
+  const setHomeHasLoaded: React.Dispatch<React.SetStateAction<boolean>> = pageContext[3] as React.Dispatch<React.SetStateAction<boolean>>;
   
   useEffect(() => {
     if (pageContext[2] === false) {
       setTimeout(() => {
         setIsMounted(true);
-        pageContext[3](true);
+        setHomeHasLoaded(true);
       }, 825);
     } else {
       setIsMounted(true);
@@ -25,7 +27,7 @@ const AboutMe = () => {
 
     return () => {
     }
-  }, [pageContext])
+  }, [setHomeHasLoaded])
 
   return (
     <div className="GenericContainer">

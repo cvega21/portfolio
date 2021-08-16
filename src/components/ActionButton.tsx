@@ -8,13 +8,15 @@ interface ActionButtonProps {
 }
 
 const ActionButton = ({ link, navigation }: ActionButtonProps) => {
+  const pageContext = useContext(PageContext);
+  const navContext = useContext(NavContext);
   let computedContainerClassName: string = 'ActionButtonContainer';
   let computedClassName: string = "ActionButton";
   let text: string = '';
   let linkTo: string = '/'.concat(link);
+  const setActiveNavPage: React.Dispatch<React.SetStateAction<string>> = pageContext[0] as React.Dispatch<React.SetStateAction<string>>;
+  const setNavIsExpanded: React.Dispatch<React.SetStateAction<boolean>> = navContext[3] as React.Dispatch<React.SetStateAction<boolean>>;
 
-  const changePage = useContext(PageContext);
-  const navContext = useContext(NavContext);
 
   if (link === 'contact') {
     computedContainerClassName = 'ActionButtonContactContainer';
@@ -39,8 +41,8 @@ const ActionButton = ({ link, navigation }: ActionButtonProps) => {
   } 
 
   const handleClick = () => {
-    changePage[0](linkTo);
-    window.innerWidth <= 1200 ? navContext[3](false) : void (0);
+    setActiveNavPage(linkTo);
+    window.innerWidth <= 1200 ? setNavIsExpanded(false) : void (0);
     return
   }
 

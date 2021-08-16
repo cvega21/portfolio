@@ -8,11 +8,6 @@ import { NavContext } from '../App';
 
 export const NavLinkContext = React.createContext();
 
-// interface NavBarProps {
-//   active: string;
-// }
-
-// const NavBar = (props: NavBarProps) => {
 const NavBar = (props) => {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,

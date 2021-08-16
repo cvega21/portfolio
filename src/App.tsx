@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
 import Home from './pages/HomePage';
 import AboutMe from './pages/AboutMePage';
-import Projects from './pages/ProjectsPage';
+import  Projects from './pages/ProjectsPage';
 import Articles from './pages/ArticlesPage';
 import Contact from './pages/ContactPage';
 import Resume from './pages/ResumePage';
@@ -38,14 +38,22 @@ firebase.analytics();
 
 var database = firebase.database();
 
+interface PageContextInterface {
+  [index: number]: string | boolean | React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface NavContextInterface {
+  [index: number]: string | boolean | React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 // export const ProjectContext = React.createContext();
-export const PageContext = React.createContext();
-export const NavContext = React.createContext();
+export const PageContext = React.createContext<PageContextInterface>([]);
+export const NavContext = React.createContext<NavContextInterface>([]);
 // export const ArticlesContext = React.createContext();
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
-  const [projectsData, setProjectsData] = useState(false);
+  const [projectsData, setProjectsData] = useState({projects: {placeholder: ''}, projectsMetadata: {placeholder: ''}});
   const [articles, setArticles] = useState([]);
   const [showNavBar, setShowNavBar] = useState(false); 
   const [homeHasLoaded, setHomeHasLoaded] = useState(false);
