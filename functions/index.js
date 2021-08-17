@@ -57,7 +57,7 @@ const getTogglProjectData = async (since, until, pageNum = 1) => {
             'page': pageNum
         }})
     console.log(`calling toggl... page = ${pageNum}, total records count = ${reportData.data.total_count}`)
-    console.log(reportData.data.data[0]);
+    // console.log(reportData.data.data[0]);
     await sleep(900);
     return reportData.data
 }
@@ -89,8 +89,10 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
     let totalData = [];
     console.log(`${dateSince}, ${dateUntil}`)
     
-    try {        
-        const totalPages = Math.ceil((await getTogglProjectData(dateSince, dateUntil)).total_count/50);  
+    try {
+        console.log('calculating total number of pages to fetch...')        
+        const totalPages = Math.ceil((await getTogglProjectData(dateSince, dateUntil)).total_count/50);
+        console.log(`fetching ${totalPages} pages`)        
 
         for (let i = 1; i <= totalPages; i++) {
             const page = await getTogglProjectData(dateSince, dateUntil, i);
@@ -101,16 +103,15 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         finalData = finalData.flat();
 
         finalData.forEach((record) => {
-            if (projectsTime.hasOwnProperty(record.description)) {
-                projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000))
-                projectsTime[record.description] = projectsTime[record.description].toFixed(1);
-            } else {
-                // it's not a project in the projectsTime object
+            let projectName = record.description;
+            let projectDuration = Number((record.dur/3600000).toFixed(1));
+
+            if (projectsTime.hasOwnProperty(projectName)) {
+                projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
             }
         })
 
         await setFirebaseProjectData(projectsTime);
-
         await database.ref(`/projectsMetadata/since`).set(dateSince);
         await database.ref(`/projectsMetadata/until`).set(dateUntil);
 
