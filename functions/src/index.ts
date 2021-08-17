@@ -15,6 +15,14 @@ const axiosClient = axios.create({
     }
 })
 
+interface projectsTimeInterface {
+    [key: string]: number
+}
+
+interface togglRecordInterface {
+    [key: string]: number | string | null | boolean | Array<string>
+}
+
 // TEST FUNCTIONS
 exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
     try {
@@ -60,7 +68,7 @@ const getTogglProjectData = async (since: string, until: string, pageNum = 1) =>
     return reportData.data
 }
 
-const setFirebaseProjectData = async (projectsArr) => {
+const setFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
     console.log(`setting new data in Firebase...`)
     console.log();
     for (let project in projectsArr) {
@@ -73,7 +81,7 @@ const setFirebaseProjectData = async (projectsArr) => {
 
 // PROJECTS DATA FOR PORTFOLIO
 exports.loadInitialProjectsData = functions.https.onRequest(async (request, response) => {    
-    let projectsTime = {
+    const projectsTime: projectsTimeInterface = {
         "Build Portfolio Website": 0,
         "Fitness Tracker App": 0,
         "EDM Machine": 0,
@@ -97,12 +105,13 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
             totalData.push(page.data);
         }
 
-        let finalData = await Promise.all(totalData);
+        let finalData: Array<togglRecordInterface> = await Promise.all(totalData);
         finalData = finalData.flat();
 
-        finalData.forEach((record) => {
-            let projectName = record.description;
-            let projectDuration = Number((record.dur/3600000).toFixed(1));
+        finalData.forEach((record: togglRecordInterface) => {
+            let projectName = record.description as string;
+            let durationInMs = record.dur as number
+            let projectDuration = Number((durationInMs/3600000).toFixed(1));
 
             if (projectsTime.hasOwnProperty(projectName)) {
                 projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
