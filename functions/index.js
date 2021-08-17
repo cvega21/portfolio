@@ -2,10 +2,10 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const axios = require('axios').default;
 const { DateTime } = require('luxon');
+const { report } = require('process');
 require('dotenv').config();
 admin.initializeApp();
 const database = admin.database();
-// #100DaysOfCode tag_id = 9306704
 const axiosClient = axios.create({
     baseURL: 'https://api.track.toggl.com',
     timeout: 1000,
@@ -29,27 +29,36 @@ exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
 
 exports.getWorkspaceTags = functions.https.onRequest(async (request, response) => {
     try {
-        const result = await axiosClient.get(`/api/v8/workspaces/${process.env.WORKSPACE_ID}/tags`)
-        response.send(result.data);
-        return result
+        const tags = await axiosClient.get(`/api/v8/workspaces/${process.env.WORKSPACE_ID}/tags`)
+        const projects = await axiosClient.get(`/api/v8/workspaces/${process.env.WORKSPACE_ID}/projects`)
+        // response.send(tags.data);
+        response.send(projects.data);
+        return projects
     } catch (err) {
         console.error(err);
     }
 })
 
 // COMMON FUNCTIONS
+
+const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // as Toggl's API has a per-call limit of 50 records, we have to loop through this function for however many total records we have
 const getTogglProjectData = async (since, until, pageNum = 1) => {
     const reportData = await axiosClient.get(`/reports/api/v2/details`, {
         params: {
             'user_agent': process.env.USER_AGENT,
             'workspace_id': process.env.WORKSPACE_ID,
-            'tag_ids': 9306704,
+            'project_ids': 153829557,
             'since': since,
             'until': until,
             'page': pageNum
         }})
     console.log(`calling toggl... page = ${pageNum}, total records count = ${reportData.data.total_count}`)
+    console.log(reportData.data.data[0]);
+    await sleep(900);
     return reportData.data
 }
 
@@ -239,7 +248,7 @@ exports.dailyDataTest = functions.https.onRequest(async (request, response) => {
             console.log('starting daily update...')
         }
     
-        const newData = await getTogglProjectData(dateToLoad);
+        const newData = await getTogglProjectData(dateToLoad, dateToLoad);
         newData.data.forEach((record) => {
             if (projectsTime.hasOwnProperty(record.description)) {
                 projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000))

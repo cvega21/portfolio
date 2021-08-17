@@ -11,7 +11,7 @@
   "engines": {
     "node": "14"
   },
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
