@@ -1,17 +1,16 @@
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+import * as functions from "firebase-functions";
+import * as admin from 'firebase-admin'
+import { DateTime } from 'luxon';
 const axios = require('axios').default;
-const { DateTime } = require('luxon');
-const { report } = require('process');
 require('dotenv').config();
+
 admin.initializeApp();
 const database = admin.database();
 const axiosClient = axios.create({
     baseURL: 'https://api.track.toggl.com',
     timeout: 1000,
-    accept: 'application/json',
     auth: {
-        username: process.env.TOGGL_API_KEY,
+        username: process.env.TOGGL_API_KEY as string,
         password: 'api_token'
     }
 })
@@ -27,12 +26,11 @@ exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
     }
 })
 
-exports.getWorkspaceTags = functions.https.onRequest(async (request, response) => {
+exports.getWorkspaceProjectsAndTags = functions.https.onRequest(async (request, response) => {
     try {
         const tags = await axiosClient.get(`/api/v8/workspaces/${process.env.WORKSPACE_ID}/tags`)
         const projects = await axiosClient.get(`/api/v8/workspaces/${process.env.WORKSPACE_ID}/projects`)
-        // response.send(tags.data);
-        response.send(projects.data);
+        response.send([projects.data,tags.data]);
         return projects
     } catch (err) {
         console.error(err);
@@ -41,12 +39,12 @@ exports.getWorkspaceTags = functions.https.onRequest(async (request, response) =
 
 // COMMON FUNCTIONS
 
-const sleep = (ms) => {
+const sleep = (ms: number) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // as Toggl's API has a per-call limit of 50 records, we have to loop through this function for however many total records we have
-const getTogglProjectData = async (since, until, pageNum = 1) => {
+const getTogglProjectData = async (since: string, until: string, pageNum = 1) => {
     const reportData = await axiosClient.get(`/reports/api/v2/details`, {
         params: {
             'user_agent': process.env.USER_AGENT,
