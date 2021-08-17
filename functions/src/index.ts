@@ -105,7 +105,7 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
             totalData.push(page.data);
         }
 
-        let finalData: Array<togglRecordInterface> = await Promise.all(totalData);
+        let finalData = await Promise.all(totalData);
         finalData = finalData.flat();
 
         finalData.forEach((record: togglRecordInterface) => {
@@ -140,7 +140,7 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
 exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
   .timeZone('America/Mexico_City')
   .onRun(async (context) => {
-    const projectsTime = {
+    const projectsTime: projectsTimeInterface = {
         "Build Portfolio Website": 0,
         "Fitness Tracker App": 0,
         "EDM Machine": 0,
@@ -161,12 +161,12 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
         }
     }
 
-    const setDate = async (date) => {
+    const setDate = async (date: string) => {
         await database.ref(`/projectsMetadata/until`).set(date);
         return null
     }
     
-    const getFirebaseProjectData = async (projectsArr) => {
+    const getFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
         console.log(`getting data from Firebase...`)
         for (let project in projectsArr) {
             const time = await database.ref(`/projects/${project}`).get();
@@ -188,11 +188,14 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
             console.log('starting daily update...')
         }
         const newData = await getTogglProjectData(dateToLoad, dateToLoad);
-        newData.data.forEach((record) => {
-            if (projectsTime.hasOwnProperty(record.description)) {
-                projectsTime[record.description] = parseFloat(projectsTime[record.description]) + parseFloat((record.dur/3600000))
-                projectsTime[record.description] = projectsTime[record.description].toFixed(1);
-            } 
+        newData.data.forEach((record: togglRecordInterface) => {
+            let projectName = record.description as string;
+            let durationInMs = record.dur as number
+            let projectDuration = Number((durationInMs/3600000).toFixed(1));
+
+            if (projectsTime.hasOwnProperty(projectName)) {
+                projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
+            }
         });
         setFirebaseProjectData(projectsTime);
         setDate(dateToLoad);
@@ -204,7 +207,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
 
 exports.dailyDataTest = functions.https.onRequest(async (request, response) => {  
     response.set('Access-Control-Allow-Origin', '*');
-    const projectsTime = {
+    const projectsTime: projectsTimeInterface  = {
         "Build Portfolio Website": 0,
         "Fitness Tracker App": 0,
         "EDM Machine": 0,
