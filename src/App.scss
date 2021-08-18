@@ -29,6 +29,7 @@ body {
   $banner-background-transparent: white;
   --banner-filter: grayscale(100%) invert(0);
   --banner-opacity: 0.35;
+  --logo-invert: invert(0);
   --accent-background-color: rgba(2,6,60,1);
   --flipcard-back: rgb(169, 160, 255);
   --font-color: #0A0908;
@@ -57,6 +58,7 @@ body {
   /* --banner-filter-opacity: 50%; */
   --banner-filter: grayscale(100%) invert(1);
   --banner-opacity: 0.4;
+  --logo-invert: grayscale(100%) invert(1);
   /* --accent-background-color: linear-gradient(180deg, rgb(0, 49, 19)  0%, rgba(32,32,32,1) 65%); */
   --accent-background-color: rgb(0, 26, 10);
   --flipcard-back: rgb(0, 114, 51);
