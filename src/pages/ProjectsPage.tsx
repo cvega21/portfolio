@@ -51,7 +51,7 @@ const Projects = (props: ProjectsProps) => {
           description='a mobile-first, API-integrated portfolio website built from scratch.' 
           gif={[portfolio, portfolioStatic]} 
           link='https://christianvega.me'
-          stack={['react','sass','firebase']}
+          stack={['typescript','react','sass','firebase']}
           time={props.projectsData.projects['Build Portfolio Website']}
           />
         <Project
