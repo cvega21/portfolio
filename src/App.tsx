@@ -77,7 +77,7 @@ function App() {
       let firebaseJSON = await firebaseReq.val();
       setProjectsData(firebaseJSON);
     }
-    if (!projectsData) {
+    if (!projectsData.projects.placeholder) {
       getProjects();
     }
   }, [projectsData])
