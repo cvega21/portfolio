@@ -149,7 +149,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
             return lastLoadedDT.toISODate();
         } else {
             console.log(`today's data is already loaded. last updated: ${lastLoadedDT.toISODate()}`)
-            return null
+            return ''
         }
     }
 
@@ -165,9 +165,9 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
     }
     
     try {
-        const dateToLoad = await getDateToLoad();
-        const projectsDict = await getFirebaseProjectData();
-        if (dateToLoad === null) {
+        const dateToLoad: string = await getDateToLoad();
+        const projectsDict: projectsTimeInterface = await getFirebaseProjectData();
+        if (dateToLoad === '') {
             console.log('no changes needed. exit function...')
             return null
         } else {
@@ -202,7 +202,7 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
             return today.toISODate();
         } else {
             console.log(`today's data is already loaded. last updated: ${lastLoadedDT.toISODate()}`)
-            return null
+            return ''
         }
     }
 
@@ -218,9 +218,9 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
     }
     
     try {
-        const dateToLoad = await getDateToLoad();
-        const projectsDict = await getFirebaseProjectData();
-        if (dateToLoad === null) {
+        const dateToLoad: string = await getDateToLoad();
+        const projectsDict: projectsTimeInterface = await getFirebaseProjectData();
+        if (dateToLoad === '') {
             console.log('no changes needed. exit function...')
             return void(0);
         } else {

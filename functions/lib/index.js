@@ -129,7 +129,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
         }
         else {
             console.log(`today's data is already loaded. last updated: ${lastLoadedDT.toISODate()}`);
-            return null;
+            return '';
         }
     };
     const setDate = async (date) => {
@@ -144,7 +144,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
     try {
         const dateToLoad = await getDateToLoad();
         const projectsDict = await getFirebaseProjectData();
-        if (dateToLoad === null) {
+        if (dateToLoad === '') {
             console.log('no changes needed. exit function...');
             return null;
         }
@@ -180,7 +180,7 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
         }
         else {
             console.log(`today's data is already loaded. last updated: ${lastLoadedDT.toISODate()}`);
-            return null;
+            return '';
         }
     };
     const setDate = async (date) => {
@@ -195,7 +195,7 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
     try {
         const dateToLoad = await getDateToLoad();
         const projectsDict = await getFirebaseProjectData();
-        if (dateToLoad === null) {
+        if (dateToLoad === '') {
             console.log('no changes needed. exit function...');
             return void (0);
         }
@@ -227,15 +227,5 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
         console.error(err);
         return void (0);
     }
-});
-exports.getFirebaseData = functions.https.onRequest(async (_request, response) => {
-    const getFirebaseProjectData = async () => {
-        console.log(`getting data from Firebase...`);
-        const time = await (await database.ref(`/projects/`).get()).val();
-        return time;
-    };
-    let projects = await getFirebaseProjectData();
-    response.send(projects);
-    return projects;
 });
 //# sourceMappingURL=index.js.map
