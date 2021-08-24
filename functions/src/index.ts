@@ -140,15 +140,7 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
 exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
   .timeZone('America/Mexico_City')
   .onRun(async (context) => {
-    const projectsTime: projectsTimeInterface = {
-        "Build Portfolio Website": 0,
-        "Fitness Tracker App": 0,
-        "EDM Machine": 0,
-        "Calculator Project": 0,
-        "Pomodoro Timer Project": 0
-    }
-
-    const getDate = async () => {
+    const getDateToLoad = async () => {
         const lastLoaded = await database.ref(`/projectsMetadata/until`).get();
         const lastLoadedDT = DateTime.fromISO(lastLoaded.val(), { zone: 'America/Mexico_City'});
         const today = DateTime.now().setZone('America/Mexico_City');
@@ -166,21 +158,15 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
         return null
     }
     
-    const getFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
+    const getFirebaseProjectData = async () => {
         console.log(`getting data from Firebase...`)
-        for (let project in projectsArr) {
-            const time = await database.ref(`/projects/${project}`).get();
-            if (time.exists()) {
-                projectsArr[project] = time.val();
-                console.log(`${project}: ${projectsArr[project]}`)
-            }
-        }
-        return null
+        const time = await (await database.ref(`/projects/`).get()).val();
+        return time        
     }
     
     try {
-        const dateToLoad = await getDate();
-        getFirebaseProjectData(projectsTime);
+        const dateToLoad = await getDateToLoad();
+        const projectsDict = await getFirebaseProjectData();
         if (dateToLoad === null) {
             console.log('no changes needed. exit function...')
             return null
@@ -193,11 +179,11 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
             let durationInMs = record.dur as number
             let projectDuration = Number((durationInMs/3600000).toFixed(1));
 
-            if (projectsTime.hasOwnProperty(projectName)) {
-                projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
+            if (projectsDict.hasOwnProperty(projectName)) {
+                projectsDict[projectName] = Number((projectsDict[projectName] + projectDuration).toFixed(1));
             }
         });
-        setFirebaseProjectData(projectsTime);
+        setFirebaseProjectData(projectsDict);
         setDate(dateToLoad);
     } catch (err) {
         console.error(err);
@@ -207,23 +193,15 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
 
 exports.dailyDataTest = functions.https.onRequest(async (_request, response) => {  
     response.set('Access-Control-Allow-Origin', '*');
-    const projectsTime: projectsTimeInterface  = {
-        "Build Portfolio Website": 0,
-        "Fitness Tracker App": 0,
-        "EDM Machine": 0,
-        "Calculator Project": 0,
-        "Pomodoro Timer Project": 0
-    }
-
-    const getDate = async () => {
-        const date = await database.ref(`/projectsMetadata/until`).get();
-        const luxonDate = DateTime.fromISO(date.val(), { zone: 'America/Mexico_City'});
+    const getDateToLoad = async () => {
+        const lastLoaded = await database.ref(`/projectsMetadata/until`).get();
+        const lastLoadedDT = DateTime.fromISO(lastLoaded.val(), { zone: 'America/Mexico_City'});
         const today = DateTime.now().setZone('America/Mexico_City');
-        if (date.exists() && luxonDate.startOf('day') < today.startOf('day')) {
-            console.log(`DB last updated at ${luxonDate.toISODate()}. loading data from ${today.toISODate()}.`)
-            return luxonDate.plus({ days: 1 }).toISODate();
+        if (lastLoaded.exists() && lastLoadedDT.startOf('day') < today.startOf('day')) {
+            console.log(`DB last updated at ${lastLoadedDT.toISODate()}. loading data from ${today.toISODate()}.`)
+            return today.toISODate();
         } else {
-            console.log(`today's data is already loaded. last updated: ${date.val()}`)
+            console.log(`today's data is already loaded. last updated: ${lastLoadedDT.toISODate()}`)
             return null
         }
     }
@@ -233,28 +211,18 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
         return null
     }
     
-    const getFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
+    const getFirebaseProjectData = async () => {
         console.log(`getting data from Firebase...`)
-        console.log();
-        for (let project in projectsArr) {
-            const time = await database.ref(`/projects/${project}`).get();
-            if (time.exists()) {
-                projectsArr[project] = time.val();
-                console.log(`${project}: ${projectsArr[project]}`)
-            }
-        }
-        console.log();
-        return null
+        const time = await (await database.ref(`/projects/`).get()).val();
+        return time        
     }
     
     try {
-        const dateToLoad = await getDate();
-        await getFirebaseProjectData(projectsTime);
-
+        const dateToLoad = await getDateToLoad();
+        const projectsDict = await getFirebaseProjectData();
         if (dateToLoad === null) {
-            console.log('no changes needed. exit function...');
-            response.send(projectsTime);
-            return void(0)
+            console.log('no changes needed. exit function...')
+            return void(0);
         } else {
             console.log('starting daily update...')
         }
@@ -265,20 +233,20 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
             let durationInMs = record.dur as number
             let projectDuration = Number((durationInMs/3600000).toFixed(1));
 
-            if (projectsTime.hasOwnProperty(projectName)) {
-                projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
+            if (projectsDict.hasOwnProperty(projectName)) {
+                projectsDict[projectName] = Number((projectsDict[projectName] + projectDuration).toFixed(1));
             }
-        });
+        })
 
         let apiResponse = {
-            projectsTime: projectsTime,
+            projectsTime: projectsDict,
             dates: {
                 since: dateToLoad,
                 until: dateToLoad
             }
         }
 
-        await setFirebaseProjectData(projectsTime);
+        await setFirebaseProjectData(projectsDict);
         await setDate(dateToLoad);
         response.send(apiResponse);
         return void(0);
