@@ -64,7 +64,7 @@ const getTogglProjectData = async (since: string, until: string, pageNum = 1) =>
         }})
     console.log(`calling toggl... page = ${pageNum}, total records count = ${reportData.data.total_count}`)
     // console.log(reportData.data.data[0]);
-    await sleep(900);
+    await sleep(1000);
     return reportData.data
 }
 
