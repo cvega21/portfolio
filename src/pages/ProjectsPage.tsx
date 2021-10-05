@@ -16,6 +16,7 @@ import portfolioStatic from '../assets/portfolioStatic.jpg';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
 interface ProjectType {
   [key: string]: string;
@@ -40,8 +41,9 @@ const Projects = (props: ProjectsProps) => {
   return (
     <div className="GenericContainer">
       <div className="togglBannerContainerSuper">
-        <a target="_blank" rel="noopener noreferrer" href="http://www.toggl.com" className="togglBannerContainer">
+        <a target="_blank" rel="noopener noreferrer" href="https://levelup.gitconnected.com/how-to-show-off-the-hours-you-worked-on-coding-projects-b616b042973d" className="togglBannerContainer">
           <p className='togglBanner'>⏳ = hours tracked on Toggl </p> 
+          <FontAwesomeIcon icon={faQuestionCircle}/>
         </a>
       </div>
         {props.projectsData ? 
