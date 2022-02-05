@@ -86,11 +86,12 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         "Fitness Tracker App": 0,
         "EDM Machine": 0,
         "Calculator Project": 0,
-        "Pomodoro Timer Project": 0
+        "Pomodoro Timer Project": 0,
+        "Building Ethereum Dapp": 0
     }
     
     // parameters for the toggl API call, must be in YYYY-MM-DD format; loads data up to today
-    let dateSince = '2021-01-01';
+    let dateSince = '2021-02-05';
     let dateUntil = DateTime.now().setZone('America/Mexico_City').toISODate();
     let totalData = [];
     console.log(`${dateSince}, ${dateUntil}`)

@@ -175,6 +175,7 @@
 
   .techStackImage.nextjs {
     padding: 0px 15px 3px 3px;
+    filter: var(--logo-invert);
     // margin: 0px 0px 0px 0px;
   }
 
@@ -182,6 +183,7 @@
     padding: 0px 15px 5px 10px;
     margin: 0px 0px 0px 0px;
     height: 30px;
+    
   }
 
   .techStackImage.nodeJS {

@@ -13,6 +13,8 @@ import soundboard from '../assets/soundboard.gif';
 import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolio from '../assets/portfolio.gif';
 import portfolioStatic from '../assets/portfolioStatic.jpg';
+import firechain from '../assets/firechain.gif';
+import firechainStatic from '../assets/firechainStatic.jpg';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
@@ -51,15 +53,15 @@ const Projects = (props: ProjectsProps) => {
         <Project 
           title="FIRECHAIN" 
           description='a web3 marketplace to trade real-life stuff as NFTs.' 
-          gif={[portfolio, portfolioStatic]} 
-          link='https://christianvega.me'
+          gif={[firechain]} 
+          link='https://firecha.in'
           stack={['typescript','nextjs','react','firebase', 'solidity', 'tailwind']}
           time={props.projectsData.projects['Building Ethereum Dapp']}
           />
         <Project 
           title="PORTFOLIO WEBSITE" 
           description='a mobile-first, API-integrated portfolio website built from scratch.' 
-          gif={[portfolio, portfolioStatic]} 
+          gif={[portfolio]} 
           link='https://christianvega.me'
           stack={['typescript','react','sass','firebase']}
           time={props.projectsData.projects['Build Portfolio Website']}
@@ -67,7 +69,7 @@ const Projects = (props: ProjectsProps) => {
         <Project
           title="WORKOUT TRACKER" 
           description='a small, responsive full-stack app to keep track of your workouts.' 
-          gif={[fitness,fitnessStatic]} 
+          gif={[fitness]} 
           link='https://github.com/cvega21/fitness-tracking'
           stack={['react', 'nodeJS', 'mongo', 'bootstrap']}
           time={props.projectsData.projects['Fitness Tracker App']}
@@ -75,7 +77,7 @@ const Projects = (props: ProjectsProps) => {
         <Project
           title="EDM SOUNDBOARD"
           description='an electronic dance music (EDM) inspired piano and soundboard.'
-          gif={[soundboard, soundboardStatic]}
+          gif={[soundboard]}
           link='https://github.com/cvega21/edm-soundboard'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['EDM Machine']}
@@ -83,7 +85,7 @@ const Projects = (props: ProjectsProps) => {
         <Project
           title="POMODORO TIMER"
           description='a simple time management tool built on React.'
-          gif={[timer, timerStatic]}
+          gif={[timer]}
           link='https://github.com/cvega21/pomodoro-timer'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['Pomodoro Timer Project']}
@@ -91,7 +93,7 @@ const Projects = (props: ProjectsProps) => {
         <Project 
           title="CALCULATOR"
           description="a nice looking, fully functioning calculator built on react."
-          gif={[calculator,calculatorStatic]}
+          gif={[calculator]}
           link='https://github.com/cvega21/calculator-js'
           stack={['react']}
           time={props.projectsData.projects['Calculator Project']}
@@ -99,7 +101,7 @@ const Projects = (props: ProjectsProps) => {
         <Project 
           title="QUOTE GENERATOR" 
           description='an iOS-inspired random quote generator.' 
-          gif={[quoteGenerator, quoteGeneratorStatic]} 
+          gif={[quoteGenerator]} 
           link='https://github.com/cvega21/random-quote-generator'
           stack={['react', 'bootstrap']}
           time={'untracked'}

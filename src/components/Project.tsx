@@ -66,7 +66,7 @@ const Project = (props: ProjectProps) => {
       <a target="_blank" rel="noopener noreferrer" href={props.link} className="ProjectImageLink">
         <div className="ProjectImageContainer">
           <img src={props.gif[0]} alt='portfolio'></img>
-          <img src={props.gif[1]} alt='portfolio' id="GifCover"></img>
+          {/* <img src={props.gif[1]} alt='portfolio' id="GifCover"></img> */}
         </div>
       </a>
       <a target="_blank" rel="noopener noreferrer" href={props.link} className="ProjectTextLink">
