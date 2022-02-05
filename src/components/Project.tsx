@@ -16,6 +16,7 @@ interface ProjectProps {
   link: string;
   stack: Array<string>;
   time: string;
+  type: string;
 }
 
 interface TypedTechStackIcons {
@@ -81,6 +82,7 @@ const Project = (props: ProjectProps) => {
           </div>
           <div className="TimeContainer">
             <p className="ProjectTime">⏳ {hoursToDisplay()}</p>
+            <p className='ProjectNote'><b>project type:</b> {props.type}</p>
           </div>
         </div>
       </div>

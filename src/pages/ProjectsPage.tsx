@@ -2,19 +2,13 @@ import React, { useEffect } from 'react';
 import ActionButton from '../components/ActionButton'
 import Project from '../components/Project'
 import calculator from '../assets/calculator.gif';
-import calculatorStatic from '../assets/calculatorStatic.jpg';
 import quoteGenerator from '../assets/quoteGenerator.gif';
-import quoteGeneratorStatic from '../assets/quoteGeneratorStatic.jpg';
 import fitness from '../assets/fitness.gif';
-import fitnessStatic from '../assets/fitnessStatic.jpg';
 import timer from '../assets/timer.gif';
-import timerStatic from '../assets/timerStatic.jpg';
 import soundboard from '../assets/soundboard.gif';
-import soundboardStatic from '../assets/soundboardStatic.jpg';
 import portfolio from '../assets/portfolio.gif';
-import portfolioStatic from '../assets/portfolioStatic.jpg';
 import firechain from '../assets/firechain.gif';
-import firechainStatic from '../assets/firechainStatic.jpg';
+import adamint from '../assets/adamint.gif';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
@@ -51,12 +45,22 @@ const Projects = (props: ProjectsProps) => {
         {props.projectsData ? 
       <div className="ProjectsGrid">
         <Project 
+          title="ADAMINT" 
+          description="the first NFT fractionalizer on the Cardano blockchain." 
+          gif={[adamint]} 
+          link='https://adamint-cvega21.vercel.app/'
+          stack={['typescript','nextjs','react', 'tailwind']}
+          time={props.projectsData.projects['Adamint']}
+          type='freelancer'
+          />
+        <Project 
           title="FIRECHAIN" 
           description='a web3 marketplace to trade real-life stuff as NFTs.' 
           gif={[firechain]} 
           link='https://firecha.in'
           stack={['typescript','nextjs','react','firebase', 'solidity', 'tailwind']}
           time={props.projectsData.projects['Building Ethereum Dapp']}
+          type='portfolio'
           />
         <Project 
           title="PORTFOLIO WEBSITE" 
@@ -65,6 +69,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://christianvega.me'
           stack={['typescript','react','sass','firebase']}
           time={props.projectsData.projects['Build Portfolio Website']}
+          type='portfolio'
           />
         <Project
           title="WORKOUT TRACKER" 
@@ -73,6 +78,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/fitness-tracking'
           stack={['react', 'nodeJS', 'mongo', 'bootstrap']}
           time={props.projectsData.projects['Fitness Tracker App']}
+          type='portfolio'
           />
         <Project
           title="EDM SOUNDBOARD"
@@ -81,6 +87,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/edm-soundboard'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['EDM Machine']}
+          type='portfolio'
           />
         <Project
           title="POMODORO TIMER"
@@ -89,6 +96,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/pomodoro-timer'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['Pomodoro Timer Project']}
+          type='portfolio'
           />
         <Project 
           title="CALCULATOR"
@@ -97,6 +105,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/calculator-js'
           stack={['react']}
           time={props.projectsData.projects['Calculator Project']}
+          type='portfolio'
           />
         <Project 
           title="QUOTE GENERATOR" 
@@ -105,6 +114,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/random-quote-generator'
           stack={['react', 'bootstrap']}
           time={'untracked'}
+          type='portfolio'
           />
       </div>  
         : <FontAwesomeIcon icon={faCircleNotch} className='loadingIcon'/>}
