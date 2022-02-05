@@ -1,6 +1,7 @@
 import { useContext} from 'react'
 import { Link } from "react-router-dom";
 import { PageContext, NavContext } from '../App';
+import resume from '../assets/resume.pdf'
 
 interface ActionButtonProps {
   link: string;
@@ -24,6 +25,7 @@ const ActionButton = ({ link, navigation }: ActionButtonProps) => {
     text = 'contact me';
   } else if (link === 'resume') {
     text = 'see my resume';
+    linkTo = resume
   } else if (link === 'aboutme') {
     text = 'About Me '
   }
@@ -47,7 +49,7 @@ const ActionButton = ({ link, navigation }: ActionButtonProps) => {
   }
 
   return (
-  <Link to={linkTo} className={computedContainerClassName}>
+  <Link to={linkTo} className={computedContainerClassName} target={`${link === 'resume' ? '_blank' : ''}`} rel='noreferrer'>
     <button className={computedClassName} onClick={handleClick}>{text}</button>
   </Link>
   )
