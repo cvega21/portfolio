@@ -60,7 +60,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://firecha.in'
           stack={['typescript','nextjs','react','firebase', 'solidity', 'tailwind']}
           time={props.projectsData.projects['Building Ethereum Dapp']}
-          type='portfolio'
+          type='web3 dapp'
           />
         <Project 
           title="PORTFOLIO WEBSITE" 
@@ -78,7 +78,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/fitness-tracking'
           stack={['react', 'nodeJS', 'mongo', 'bootstrap']}
           time={props.projectsData.projects['Fitness Tracker App']}
-          type='portfolio'
+          type='CRUD web app'
           />
         <Project
           title="EDM SOUNDBOARD"
@@ -87,7 +87,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/edm-soundboard'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['EDM Machine']}
-          type='portfolio'
+          type='single-feature'
           />
         <Project
           title="POMODORO TIMER"
@@ -96,7 +96,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/pomodoro-timer'
           stack={['react', 'bootstrap']}
           time={props.projectsData.projects['Pomodoro Timer Project']}
-          type='portfolio'
+          type='single-feature'
           />
         <Project 
           title="CALCULATOR"
@@ -105,7 +105,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/calculator-js'
           stack={['react']}
           time={props.projectsData.projects['Calculator Project']}
-          type='portfolio'
+          type='single-feature'
           />
         <Project 
           title="QUOTE GENERATOR" 
@@ -114,7 +114,7 @@ const Projects = (props: ProjectsProps) => {
           link='https://github.com/cvega21/random-quote-generator'
           stack={['react', 'bootstrap']}
           time={'untracked'}
-          type='portfolio'
+          type='single-feature'
           />
       </div>  
         : <FontAwesomeIcon icon={faCircleNotch} className='loadingIcon'/>}
