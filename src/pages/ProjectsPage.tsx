@@ -49,6 +49,14 @@ const Projects = (props: ProjectsProps) => {
         {props.projectsData ? 
       <div className="ProjectsGrid">
         <Project 
+          title="FIRECHAIN" 
+          description='a web3 marketplace to trade real-life stuff as NFTs.' 
+          gif={[portfolio, portfolioStatic]} 
+          link='https://christianvega.me'
+          stack={['typescript','nextjs','react','firebase', 'solidity', 'tailwind']}
+          time={props.projectsData.projects['Building Ethereum Dapp']}
+          />
+        <Project 
           title="PORTFOLIO WEBSITE" 
           description='a mobile-first, API-integrated portfolio website built from scratch.' 
           gif={[portfolio, portfolioStatic]} 

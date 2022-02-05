@@ -6,6 +6,8 @@ import sass from '../assets/sass.png';
 import bootstrap from '../assets/bootstrap-stack.png';
 import typescript from '../assets/typescript.png';
 import nextjs from '../assets/nextjs.png';
+import solidity from '../assets/solidity.png';
+import tailwind from '../assets/tailwind.png';
 
 interface ProjectProps {
   title: string;
@@ -25,6 +27,8 @@ interface TypedTechStackIcons {
   bootstrap: string;
   nextjs: string;
   typescript: string;
+  solidity: string;
+  tailwind: string;
   [key: string]: string;
 }
 
@@ -36,7 +40,9 @@ const TECH_STACK_ICONS: TypedTechStackIcons = {
   firebase: firebase,
   bootstrap: bootstrap,
   nextjs: nextjs,
-  typescript: typescript
+  typescript: typescript,
+  solidity: solidity,
+  tailwind: tailwind
 }
 
 const Project = (props: ProjectProps) => {

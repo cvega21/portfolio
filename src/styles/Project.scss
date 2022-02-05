@@ -173,6 +173,17 @@
     margin: 0px 0px 0px -5px;
   }
 
+  .techStackImage.nextjs {
+    padding: 0px 15px 3px 3px;
+    // margin: 0px 0px 0px 0px;
+  }
+
+  .techStackImage.solidity {
+    padding: 0px 15px 5px 10px;
+    margin: 0px 0px 0px 0px;
+    height: 30px;
+  }
+
   .techStackImage.nodeJS {
     filter: var(--logo-invert);
   }
