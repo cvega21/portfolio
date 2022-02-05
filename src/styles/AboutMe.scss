@@ -14,12 +14,13 @@
   color: white;
 
   >div>img {
-    width: 200px;
+    width: 250px;
+    height: 150px;
     min-width: 350px;
     min-height: 350px;
     border: solid var(--accent-background-color) 8px;
     margin: 0px 0px 0px 0px;
-    object-position: 10% 0px;
+    object-position: 25% 0px;
     border-radius: 250px;
     object-fit: cover;
     z-index: 2;
