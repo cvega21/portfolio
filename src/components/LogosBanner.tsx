@@ -33,20 +33,20 @@ const LogosBanner = () => {
           <div className="logo-slider">  
             <div className="fade-background fade-background-left"></div>
             <div className="logo-slider-segment">
-              <LogoSliderSegment logos={['html', 'css', 'javascript', 'react', 'mongo', 'firebase', 'mysql', 'python']}/>
+              <LogoSliderSegment logos={['html', 'css', 'tailwind', 'javascript', 'typescript', 'react', 'nextjs', 'firebase', 'python', 'solidity']}/>
             </div>
             <div className="logo-slider-segment">
-              <LogoSliderSegment logos={['html', 'css', 'javascript', 'react', 'mongo', 'firebase', 'mysql', 'python']}/>
+              <LogoSliderSegment logos={['html', 'css', 'tailwind', 'javascript', 'typescript', 'react', 'nextjs', 'firebase', 'python', 'solidity']}/>
             </div>
             <div className="fade-background fade-background-right"></div>
           </div>
           <div className="logo-slider">  
             <div className="fade-background fade-background-left"></div>
             <div className="logo-slider-segment2">
-            <LogoSliderSegment logos={['heroku', 'jenkins', 'jira', 'rhel', 'tomcat', 'bash']}/>
+            <LogoSliderSegment logos={['mysql', 'mongo', 'heroku', 'jenkins', 'jira', 'rhel', 'tomcat', 'bash']}/>
             </div>
             <div className="logo-slider-segment2">
-              <LogoSliderSegment logos={['heroku', 'jenkins', 'jira', 'rhel', 'tomcat', 'bash']}/>
+              <LogoSliderSegment logos={['mysql', 'mongo', 'heroku', 'jenkins', 'jira', 'rhel', 'tomcat', 'bash']}/>
             </div>
             <div className="fade-background fade-background-right"></div>
           </div>

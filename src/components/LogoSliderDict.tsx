@@ -12,6 +12,10 @@ import react from '../assets/react.png';
 import rhel from '../assets/rhel.png';
 import tomcat from '../assets/tomcat.png';
 import firebase from '../assets/firebase.png';
+import typescript from '../assets/typescript.png';
+import tailwind from '../assets/tailwind.png';
+import solidity from '../assets/solidity.png';
+import nextjs from '../assets/nextjs.png';
 
 interface logoShape {
     src: string;
@@ -89,5 +93,25 @@ export const LOGOS_DICT: Record<string, logoShape> = {
       src: bash,
       alt: "Bash",
       invert: true
-  }
+  },
+  'solidity': {
+      src: solidity,
+      alt: "solidity",
+      invert: true
+  },
+  'typescript': {
+      src: typescript,
+      alt: "typescript",
+      invert: false
+  },
+  'tailwind': {
+      src: tailwind,
+      alt: "tailwind",
+      invert: false
+  },
+  'nextjs': {
+      src: nextjs,
+      alt: "next.js",
+      invert: true
+  },
 }
