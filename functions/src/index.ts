@@ -87,7 +87,8 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         "EDM Machine": 0,
         "Calculator Project": 0,
         "Pomodoro Timer Project": 0,
-        "Building Ethereum Dapp": 0
+        "Building Ethereum Dapp": 0,
+        "Adamint": 0,
     }
     
     // parameters for the toggl API call, must be in YYYY-MM-DD format; loads data up to today
@@ -110,12 +111,18 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         finalData = finalData.flat();
 
         finalData.forEach((record: togglRecordInterface) => {
+            // projectName is to fetch records by Toggl record name (e.g. Building Portfolio Website)
             let projectName = record.description as string;
-            let durationInMs = record.dur as number
+            let durationInMs = record.dur as number;
+            // projectProject is to fetch records by Toggl project (e.g. Adamint)
+            let projectProject = record.project as string;
+            console.log(`projectProject: ${projectProject}`);
             let projectDuration = Number((durationInMs/3600000).toFixed(1));
 
             if (projectsTime.hasOwnProperty(projectName)) {
                 projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
+            } else if (projectsTime.hasOwnProperty(projectProject)) {
+                projectsTime[projectProject] = Number((projectsTime[projectProject] + projectDuration).toFixed(1));
             }
         })
 

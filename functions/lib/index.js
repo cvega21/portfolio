@@ -75,7 +75,8 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         "EDM Machine": 0,
         "Calculator Project": 0,
         "Pomodoro Timer Project": 0,
-        "Building Ethereum Dapp": 0
+        "Building Ethereum Dapp": 0,
+        "Adamint": 0,
     };
     // parameters for the toggl API call, must be in YYYY-MM-DD format; loads data up to today
     let dateSince = '2021-02-05';
@@ -93,11 +94,18 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         let finalData = await Promise.all(totalData);
         finalData = finalData.flat();
         finalData.forEach((record) => {
+            // projectName is to fetch records by Toggl record name (e.g. Building Portfolio Website)
             let projectName = record.description;
             let durationInMs = record.dur;
+            // projectProject is to fetch records by Toggl project (e.g. Adamint)
+            let projectProject = record.project;
+            console.log(`projectProject: ${projectProject}`);
             let projectDuration = Number((durationInMs / 3600000).toFixed(1));
             if (projectsTime.hasOwnProperty(projectName)) {
                 projectsTime[projectName] = Number((projectsTime[projectName] + projectDuration).toFixed(1));
+            }
+            else if (projectsTime.hasOwnProperty(projectProject)) {
+                projectsTime[projectProject] = Number((projectsTime[projectProject] + projectDuration).toFixed(1));
             }
         });
         await setFirebaseProjectData(projectsTime);
