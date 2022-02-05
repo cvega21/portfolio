@@ -8,6 +8,7 @@ import IndustryExperience from '../components/IndustryExperience';
 import { PageContext } from '../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 const AboutMe = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -50,9 +51,9 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="ProfileTextBio">
-              <h2>Systems Analyst at Visa</h2>
+              <h2>Product Reliability Engineer @ Visa</h2>
               <ActionButton link='resume'/> 
-              <h3>FinTech Enthusiast, Self-Taught Web Developer, House Music Fan </h3>
+              <h3>Full-Stack Web Developer, FinTech + Web3 Enthusiast, House Music Fan </h3>
             </div>
           </div>
         </div>
@@ -62,7 +63,13 @@ const AboutMe = () => {
             Born in Canada and raised in Mexico, I graduated with a BBA in Finance from the <b>University of Texas</b> as part of the 2020 ("Zoomer") class. After several internships in Investment Banking and Asset Management, I became fascinated by the intersection of <b>finance</b> and <b>technology</b> and decided to pursue a career in the technical side of the business. 
           </p>
           <p>
-            I currently work at Visa supporting several enterprise software applications centered around real-time <b>fraud detection</b>, large-scale <b>financial breach</b> monitoring and payments <b>risk management</b>. I am also learning web development and exploring different areas of technology during my free time, particularly <b>blockchain</b>. I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
+            My responsibilities at Visa involve maintaining a 99.9% SLA uptime for several enterprise software applications totaling <b>$80 million</b> in annual revenue centered around real-time fraud detection, large-scale financial breach monitoring and payments risk management.             
+          </p>
+          <p>
+            I also have an extensive portfolio of <Link to='/projects'>personal projects</Link>, including freelancing for startups, working with and creating REST APIs, building full-stack CRUD Apps, and exploring the new frontier of web3. 
+          </p>
+          <p>
+            In my free time, I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
           </p>
         </div>
         <LogosBannerNew/>
