@@ -66,7 +66,7 @@ const AboutMe = () => {
             My responsibilities at Visa involve maintaining a 99.9% SLA uptime for several enterprise software applications totaling <b>$80 million</b> in annual revenue centered around real-time fraud detection, large-scale financial breach monitoring and payments risk management.             
           </p>
           <p>
-            I also have an extensive portfolio of <Link to='/projects'>personal projects</Link>, including freelancing for startups, working with and creating REST APIs, building full-stack CRUD Apps, and exploring the new frontier of web3. 
+            I also have an extensive portfolio of <Link to='/projects'>personal projects</Link>, including freelancing for startups, building and deploying full-stack CRUD Apps, working with and creating REST APIs, and exploring the new frontier of web3. 
           </p>
           <p>
             In my free time, I enjoy fitness, reading, English soccer, tacos mañaneros, and a wide variety of electronic music.
