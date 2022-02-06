@@ -84,9 +84,13 @@ function App() {
 
   useEffect(() => {
     const getArticles = async () => {
-      let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
-      let responseJSON = await response.json();
-      setArticles(responseJSON['items'])
+      try {
+        let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
+        let responseJSON = await response.json();
+        setArticles(responseJSON['items'])
+      } catch (e) {
+        console.error('error. ', e)
+      }
     }
     if (!articles.length) {
       getArticles();
