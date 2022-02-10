@@ -48,7 +48,7 @@ const Projects = (props: ProjectsProps) => {
           title="ADAMINT" 
           description="the first NFT fractionalizer on the Cardano blockchain." 
           gif={[adamint]} 
-          link='https://adamint-cvega21.vercel.app/'
+          link='https://adamint.tech/'
           stack={['typescript','nextjs','react', 'tailwind']}
           time={props.projectsData.projects['Adamint']}
           type='freelancer'
