@@ -80,7 +80,8 @@ function App() {
     if (!projectsData.projects.placeholder) {
       getProjects();
     }
-  }, [projectsData])
+    console.log('hey')
+  }, [])
 
   useEffect(() => {
     const getArticles = async () => {
