@@ -80,7 +80,6 @@ function App() {
     if (!projectsData.projects.placeholder) {
       getProjects();
     }
-    console.log('hey')
   }, [])
 
   useEffect(() => {
