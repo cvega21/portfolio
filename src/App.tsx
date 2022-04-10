@@ -18,6 +18,7 @@ import './styles/Home.scss';
 import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
 import firebase from 'firebase'
+import { DateTime } from 'luxon';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -70,19 +71,53 @@ function App() {
     }
   }, [showNavBar, activeNavPage])
   
-  // get projects data and articles on website load
   useEffect(() => {
+    /**
+     * getProjects()
+     * fetches entire database and set cache expiration date
+     * only 2 keys on firebase root are {projects} and {projectsMetadata}
+     */
+
     const getProjects = async () => {
       let firebaseReq = await database.ref(`/`).once('value');
       let firebaseJSON = await firebaseReq.val();
+      console.log('calling firebase...')
+      
       setProjectsData(firebaseJSON);
+      setLocalCache(firebaseJSON);
     }
-    if (!projectsData.projects.placeholder) {
+    
+    const setLocalCache = ({ projects, projectsMetadata }: any) => {
+      let dtToday = DateTime.now().toFormat('MM-dd-yyyy');
+      localStorage.setItem('cacheLastUpdated', dtToday);
+      localStorage.setItem('projects', JSON.stringify(projects));
+      localStorage.setItem('projectsMetadata', JSON.stringify(projectsMetadata));
+    }
+
+    const cacheIsExpired = (cacheLastUpdated: string): Boolean => {
+      const dtCacheLastUpdated = DateTime.fromFormat(cacheLastUpdated, 'MM-dd-yyyy')
+      return DateTime.now().diff(dtCacheLastUpdated).days > 0
+    }
+
+    let cachedProjects = localStorage.getItem('projects');
+    let cachedProjectsMetadata = localStorage.getItem('projectsMetadata');
+    let cacheLastUpdated = localStorage.getItem('cacheLastUpdated');
+    
+    if (!cachedProjects || !cachedProjectsMetadata ) {
+      console.log('cache not found')
       getProjects();
+    } else if (cacheLastUpdated && cacheIsExpired(cacheLastUpdated)) {
+      console.log('cache was stale')
+      getProjects();
+    } 
+    else {
+      console.log('cache hit!')
+      setProjectsData({'projects': JSON.parse(cachedProjects), 'projectsMetadata': JSON.parse(cachedProjectsMetadata)})
     }
   }, [])
 
   useEffect(() => {
+    // get Medium article data on page load
     const getArticles = async () => {
       try {
         let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
