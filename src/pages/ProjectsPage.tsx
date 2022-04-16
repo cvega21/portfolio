@@ -13,19 +13,7 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
-
-interface ProjectType {
-  [key: string]: string;
-}
-
-interface ProjectData {
-  projects: ProjectType;
-  projectsMetadata: ProjectType;
-}
-
-interface ProjectsProps {
-  projectsData: ProjectData;
-}
+import { ProjectsProps } from '../types'
 
 const Projects = (props: ProjectsProps) => {  
   useEffect(() => {

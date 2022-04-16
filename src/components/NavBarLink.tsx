@@ -1,28 +1,12 @@
 import { useState, useEffect, useContext } from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faCode, faSignature, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faCode, faSignature } from '@fortawesome/free-solid-svg-icons';
 import { PageContext } from '../App';
-import { NavLinkContext } from './NavBar';
 import { NavContext } from '../App';
-
-
-interface NavBarLinkProps {
-  to: string;
-  active: string;
-}
-
-interface TypedIconMapping {
-  home: IconDefinition;
-  aboutme: IconDefinition;
-  projects: IconDefinition;
-  articles: IconDefinition;
-  [key: string]: IconDefinition;
-}
-
+import { NavBarLinkProps, TypedIconMapping } from '../types'
 
 const NavBarLink = (props: NavBarLinkProps) => {
-  const navLinkContext = useContext(NavLinkContext);
   const navContext = useContext(NavContext);
   const pageContext = useContext(PageContext);
   const [isActive, setIsActive] = useState('');

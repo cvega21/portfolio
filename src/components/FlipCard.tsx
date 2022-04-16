@@ -1,13 +1,6 @@
 import { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-
-
-interface FlipCardProps {
-  icon: IconDefinition;
-  title: string;
-  description: string; 
-}
+import { FlipCardProps } from '../types'
 
 const FlipCard: FunctionComponent<FlipCardProps> = ({icon, title, description}: FlipCardProps) => {
   return (

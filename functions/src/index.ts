@@ -1,6 +1,7 @@
 import * as functions from "firebase-functions";
 import * as admin from 'firebase-admin'
 import { DateTime } from 'luxon';
+import { IProjectsTime, ITogglRecord } from './types';
 const axios = require('axios').default;
 require('dotenv').config();
 
@@ -14,14 +15,6 @@ const axiosClient = axios.create({
         password: 'api_token'
     }
 })
-
-interface projectsTimeInterface {
-    [key: string]: number
-}
-
-interface togglRecordInterface {
-    [key: string]: number | string | null | boolean | Array<string>
-}
 
 // TEST FUNCTIONS
 exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
@@ -68,7 +61,7 @@ const getTogglProjectData = async (since: string, until: string, pageNum = 1) =>
     return reportData.data
 }
 
-const setFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
+const setFirebaseProjectData = async (projectsArr: IProjectsTime) => {
     console.log(`setting new data in Firebase...`)
     console.log();
     for (let project in projectsArr) {
@@ -81,7 +74,7 @@ const setFirebaseProjectData = async (projectsArr: projectsTimeInterface) => {
 
 // PROJECTS DATA FOR PORTFOLIO
 exports.loadInitialProjectsData = functions.https.onRequest(async (request, response) => {    
-    const projectsTime: projectsTimeInterface = {
+    const projectsTime: IProjectsTime = {
         "Build Portfolio Website": 0,
         "Fitness Tracker App": 0,
         "EDM Machine": 0,
@@ -110,7 +103,7 @@ exports.loadInitialProjectsData = functions.https.onRequest(async (request, resp
         let finalData = await Promise.all(totalData);
         finalData = finalData.flat();
 
-        finalData.forEach((record: togglRecordInterface) => {
+        finalData.forEach((record: ITogglRecord) => {
             // projectName is to fetch records by Toggl record name (e.g. Building Portfolio Website)
             let projectName = record.description as string;
             let durationInMs = record.dur as number;
@@ -174,7 +167,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
     
     try {
         const dateToLoad: string = await getDateToLoad();
-        const projectsDict: projectsTimeInterface = await getFirebaseProjectData();
+        const projectsDict: IProjectsTime = await getFirebaseProjectData();
         if (dateToLoad === '') {
             console.log('no changes needed. exit function...')
             return null
@@ -182,7 +175,7 @@ exports.getDailyData = functions.pubsub.schedule('0 4 * * *')
             console.log('starting daily update...')
         }
         const newData = await getTogglProjectData(dateToLoad, dateToLoad);
-        newData.data.forEach((record: togglRecordInterface) => {
+        newData.data.forEach((record: ITogglRecord) => {
             let projectName = record.description as string;
             let durationInMs = record.dur as number
             let projectDuration = Number((durationInMs/3600000).toFixed(1));
@@ -227,7 +220,7 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
     
     try {
         const dateToLoad: string = await getDateToLoad();
-        const projectsDict: projectsTimeInterface = await getFirebaseProjectData();
+        const projectsDict: IProjectsTime = await getFirebaseProjectData();
         if (dateToLoad === '') {
             console.log('no changes needed. exit function...')
             return void(0);
@@ -236,7 +229,7 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
         }
     
         const newData = await getTogglProjectData(dateToLoad, dateToLoad);
-        newData.data.forEach((record: togglRecordInterface) => {
+        newData.data.forEach((record: ITogglRecord) => {
             let projectName = record.description as string;
             let durationInMs = record.dur as number
             let projectDuration = Number((durationInMs/3600000).toFixed(1));

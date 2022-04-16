@@ -16,14 +16,9 @@ import typescript from '../assets/typescript.png';
 import tailwind from '../assets/tailwind.png';
 import solidity from '../assets/solidity.png';
 import nextjs from '../assets/nextjs.png';
+import { LogoShape } from '../types'
 
-interface logoShape {
-    src: string;
-    alt: string;
-    invert: boolean;
-}   
-
-export const LOGOS_DICT: Record<string, logoShape> = {
+export const LOGOS_DICT: Record<string, LogoShape> = {
   'html': {
       src: html5,
       alt: 'HTML5',

@@ -1,8 +1,5 @@
 import { LOGOS_DICT } from './LogoSliderDict'
-
-interface LogoSliderProps {
-  logos: string[]
-}
+import { LogoSliderProps } from '../types'
 
 const LogoSliderSegment = ({ logos }: LogoSliderProps) => {
   const images = logos.map((elem: string) => 

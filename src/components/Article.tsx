@@ -1,13 +1,6 @@
 import { FunctionComponent } from 'react';
 import { DateTime } from 'luxon';
-
-export interface IArticle {
-  title: string;
-  date: string;
-  image: string;
-  key: string;
-  link: string;
-}
+import { IArticle } from '../types'
 
 const Article: FunctionComponent<IArticle> = (props) => {
   let parsedDate: DateTime = DateTime.fromISO(props.date.slice(0,10));

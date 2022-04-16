@@ -19,7 +19,7 @@ import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
 import firebase from 'firebase'
 import { DateTime } from 'luxon';
-import { ArticleType } from '../src/pages/ArticlesPage'
+import { ArticleType, IPageContext, INavContext } from '../src/types'
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -40,17 +40,9 @@ firebase.analytics();
 
 var database = firebase.database();
 
-interface PageContextInterface {
-  [index: number]: string | boolean | React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-interface NavContextInterface {
-  [index: number]: string | boolean | React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 // export const ProjectContext = React.createContext();
-export const PageContext = React.createContext<PageContextInterface>([]);
-export const NavContext = React.createContext<NavContextInterface>([]);
+export const PageContext = React.createContext<IPageContext>([]);
+export const NavContext = React.createContext<INavContext>([]);
 // export const ArticlesContext = React.createContext();
 
 function App() {

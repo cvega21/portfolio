@@ -4,23 +4,7 @@ import Article from '../components/Article'
 import Footer from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
-
-export interface ArticleType {
-  author: string;
-  categories: Array<string>;
-  content: string;
-  description: string;
-  enclosure: object;
-  guid: string;
-  link: string;
-  pubDate: string;
-  thumbnail: string;
-  title: string;
-}
-
-interface ArticlesProps {
-  articles: Array<ArticleType>;
-}
+import { ArticlesProps, ArticleType } from '../types'
 
 const Articles = (props: ArticlesProps) => {
   useEffect(() => {

@@ -2,11 +2,7 @@ import { useContext} from 'react'
 import { Link } from "react-router-dom";
 import { PageContext, NavContext } from '../App';
 import resume from '../assets/resume.pdf'
-
-interface ActionButtonProps {
-  link: string;
-  navigation?: string;
-}
+import { ActionButtonProps } from '../types'
 
 const ActionButton = ({ link, navigation }: ActionButtonProps) => {
   const pageContext = useContext(PageContext);

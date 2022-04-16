@@ -8,30 +8,7 @@ import typescript from '../assets/typescript.png';
 import nextjs from '../assets/nextjs.png';
 import solidity from '../assets/solidity.png';
 import tailwind from '../assets/tailwind.png';
-
-interface ProjectProps {
-  title: string;
-  description: string;
-  gif: Array<string>;
-  link: string;
-  stack: Array<string>;
-  time: string;
-  type: string;
-}
-
-interface TypedTechStackIcons {
-  react: string;
-  nodeJS: string;
-  mongo: string;
-  sass: string;
-  firebase: string;
-  bootstrap: string;
-  nextjs: string;
-  typescript: string;
-  solidity: string;
-  tailwind: string;
-  [key: string]: string;
-}
+import { ProjectProps, TypedTechStackIcons } from '../types'
 
 const TECH_STACK_ICONS: TypedTechStackIcons = {
   react: react,
