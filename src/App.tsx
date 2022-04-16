@@ -19,6 +19,7 @@ import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
 import firebase from 'firebase'
 import { DateTime } from 'luxon';
+import { ArticleType } from '../src/pages/ArticlesPage'
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -55,7 +56,7 @@ export const NavContext = React.createContext<NavContextInterface>([]);
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
   const [projectsData, setProjectsData] = useState({projects: {placeholder: ''}, projectsMetadata: {placeholder: ''}});
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<ArticleType[]>([]);
   const [showNavBar, setShowNavBar] = useState(false); 
   const [homeHasLoaded, setHomeHasLoaded] = useState(false);
   const [navIsExpanded, setNavIsExpanded] = useState(false);
@@ -127,7 +128,7 @@ function App() {
         console.error('error. ', e)
       }
     }
-    if (!articles.length) {
+    if (!articles?.length) {
       getArticles();
     }
   }, [articles])

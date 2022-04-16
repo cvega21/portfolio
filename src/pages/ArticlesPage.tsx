@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
-interface ArticleType {
+export interface ArticleType {
   author: string;
   categories: Array<string>;
   content: string;
@@ -32,10 +32,10 @@ const Articles = (props: ArticlesProps) => {
   return (
     <div className = "GenericContainer">
       <h1>Articles</h1>
-      {props.articles.length 
+      {props.articles?.length 
         ? 
       <div className = "ArticlesContainer">
-        {props.articles.map((item: ArticleType) => { 
+        {props.articles?.map((item: ArticleType) => { 
             return <Article 
                     title={item.title} 
                     date={item.pubDate}
