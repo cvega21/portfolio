@@ -1,7 +1,7 @@
 import './App.scss';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
-import { useToggl } from './hooks'
+import { useToggl, useMedium } from './hooks'
 import Home from './pages/HomePage';
 import AboutMe from './pages/AboutMePage';
 import  Projects from './pages/ProjectsPage';
@@ -19,7 +19,6 @@ import './styles/Home.scss';
 import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
 import firebase from 'firebase'
-import { DateTime } from 'luxon';
 import { ArticleType, IPageContext, INavContext } from '../src/types'
 
 // Your web app's Firebase configuration
@@ -46,12 +45,11 @@ export const NavContext = React.createContext<INavContext>([]);
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
-  const [articles, setArticles] = useState<ArticleType[]>([]);
   const [showNavBar, setShowNavBar] = useState(false); 
   const [homeHasLoaded, setHomeHasLoaded] = useState(false);
   const [navIsExpanded, setNavIsExpanded] = useState(false);
   const projectsData = useToggl(database)
-  // const articles = useArticles()
+  const articles = useMedium('christianvegaaa');
 
   // changes active window in nav bar
   useEffect(() => {
@@ -63,22 +61,6 @@ function App() {
     return () => {
     }
   }, [showNavBar, activeNavPage])
-  
-  useEffect(() => {
-    // get Medium article data on page load
-    const getArticles = async () => {
-      try {
-        let response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@christianvegaaa');
-        let responseJSON = await response.json();
-        setArticles(responseJSON['items'])
-      } catch (e) {
-        console.error('error. ', e)
-      }
-    }
-    if (!articles?.length) {
-      getArticles();
-    }
-  }, [articles])
 
   return (
     <BrowserRouter>
