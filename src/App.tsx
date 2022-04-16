@@ -1,6 +1,7 @@
 import './App.scss';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
+import { useToggl } from './hooks'
 import Home from './pages/HomePage';
 import AboutMe from './pages/AboutMePage';
 import  Projects from './pages/ProjectsPage';
@@ -40,18 +41,17 @@ firebase.analytics();
 
 var database = firebase.database();
 
-// export const ProjectContext = React.createContext();
 export const PageContext = React.createContext<IPageContext>([]);
 export const NavContext = React.createContext<INavContext>([]);
-// export const ArticlesContext = React.createContext();
 
 function App() {
   const [activeNavPage, setActiveNavPage] = useState('');
-  const [projectsData, setProjectsData] = useState({projects: {placeholder: ''}, projectsMetadata: {placeholder: ''}});
   const [articles, setArticles] = useState<ArticleType[]>([]);
   const [showNavBar, setShowNavBar] = useState(false); 
   const [homeHasLoaded, setHomeHasLoaded] = useState(false);
   const [navIsExpanded, setNavIsExpanded] = useState(false);
+  const projectsData = useToggl(database)
+  // const articles = useArticles()
 
   // changes active window in nav bar
   useEffect(() => {
@@ -64,51 +64,6 @@ function App() {
     }
   }, [showNavBar, activeNavPage])
   
-  useEffect(() => {
-    /**
-     * getProjects()
-     * fetches entire database and set cache expiration date
-     * only 2 keys on firebase root are {projects} and {projectsMetadata}
-     */
-
-    const getProjects = async () => {
-      let firebaseReq = await database.ref(`/`).once('value');
-      let firebaseJSON = await firebaseReq.val();
-      console.log('calling firebase...')
-      
-      setProjectsData(firebaseJSON);
-      setLocalCache(firebaseJSON);
-    }
-    
-    const setLocalCache = ({ projects, projectsMetadata }: any) => {
-      let dtToday = DateTime.now().toFormat('MM-dd-yyyy');
-      localStorage.setItem('cacheLastUpdated', dtToday);
-      localStorage.setItem('projects', JSON.stringify(projects));
-      localStorage.setItem('projectsMetadata', JSON.stringify(projectsMetadata));
-    }
-
-    const cacheIsExpired = (cacheLastUpdated: string): Boolean => {
-      const dtCacheLastUpdated = DateTime.fromFormat(cacheLastUpdated, 'MM-dd-yyyy')
-      return DateTime.now().diff(dtCacheLastUpdated).days > 0
-    }
-
-    let cachedProjects = localStorage.getItem('projects');
-    let cachedProjectsMetadata = localStorage.getItem('projectsMetadata');
-    let cacheLastUpdated = localStorage.getItem('cacheLastUpdated');
-    
-    if (!cachedProjects || !cachedProjectsMetadata ) {
-      console.log('cache not found')
-      getProjects();
-    } else if (cacheLastUpdated && cacheIsExpired(cacheLastUpdated)) {
-      console.log('cache was stale')
-      getProjects();
-    } 
-    else {
-      console.log('cache hit!')
-      setProjectsData({'projects': JSON.parse(cachedProjects), 'projectsMetadata': JSON.parse(cachedProjectsMetadata)})
-    }
-  }, [])
-
   useEffect(() => {
     // get Medium article data on page load
     const getArticles = async () => {
