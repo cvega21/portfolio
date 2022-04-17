@@ -2,7 +2,7 @@ import * as functions from "firebase-functions";
 import * as admin from 'firebase-admin'
 import { DateTime } from 'luxon';
 import { IProjectsTime, ITogglRecord } from './types';
-const axios = require('axios').default;
+import axios from 'axios'
 require('dotenv').config();
 
 admin.initializeApp();
@@ -24,6 +24,7 @@ exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
         return result
     } catch (err) {
         console.error(err);
+        return err
     }
 })
 
@@ -35,6 +36,7 @@ exports.getWorkspaceProjectsAndTags = functions.https.onRequest(async (request, 
         return projects
     } catch (err) {
         console.error(err);
+        return err
     }
 })
 
