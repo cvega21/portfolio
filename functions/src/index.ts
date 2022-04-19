@@ -3,6 +3,11 @@ import * as admin from 'firebase-admin'
 import { DateTime } from 'luxon';
 import { IProjectsTime, ITogglRecord } from './types';
 import axios from 'axios'
+import express from 'express';
+import { ApolloServer } from 'apollo-server-express';
+import { typeDefs, mocks } from './graphql'
+// const { ApolloServer, gql } = require("apollo-server-express");
+
 require('dotenv').config();
 
 admin.initializeApp();
@@ -15,6 +20,23 @@ const axiosClient = axios.create({
         password: 'api_token'
     }
 })
+
+// GRAPHQL ENDPOINT
+const app = express();
+const server = new ApolloServer({
+    typeDefs,
+    mocks
+})
+server.start().then(() => {
+    server.applyMiddleware({ app, path: '/', cors: true })
+})
+
+exports.graphql = functions.https.onRequest(app)
+
+database.ref(`/projects/`).on('value', snapshot => {
+    return snapshot.val()
+})
+
 
 // TEST FUNCTIONS
 exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
@@ -258,3 +280,4 @@ exports.dailyDataTest = functions.https.onRequest(async (_request, response) => 
         return void(0);
     }
 })
+

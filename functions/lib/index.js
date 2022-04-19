@@ -1,13 +1,39 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
+const functions = __importStar(require("firebase-functions"));
+const admin = __importStar(require("firebase-admin"));
 const luxon_1 = require("luxon");
-const axios = require('axios').default;
+const axios_1 = __importDefault(require("axios"));
+const express_1 = __importDefault(require("express"));
+const apollo_server_express_1 = require("apollo-server-express");
+const graphql_1 = require("./graphql");
+// const { ApolloServer, gql } = require("apollo-server-express");
 require('dotenv').config();
 admin.initializeApp();
 const database = admin.database();
-const axiosClient = axios.create({
+const axiosClient = axios_1.default.create({
     baseURL: 'https://api.track.toggl.com',
     timeout: 1000,
     auth: {
@@ -15,6 +41,16 @@ const axiosClient = axios.create({
         password: 'api_token'
     }
 });
+// GRAPHQL ENDPOINT
+const app = express_1.default();
+const server = new apollo_server_express_1.ApolloServer({
+    typeDefs: graphql_1.typeDefs,
+    resolvers: graphql_1.resolvers
+});
+server.start().then(() => {
+    server.applyMiddleware({ app, path: '/', cors: true });
+});
+exports.graphql = functions.https.onRequest(app);
 // TEST FUNCTIONS
 exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
     try {
@@ -24,6 +60,7 @@ exports.togglAuthTest = functions.https.onRequest(async (request, response) => {
     }
     catch (err) {
         console.error(err);
+        return err;
     }
 });
 exports.getWorkspaceProjectsAndTags = functions.https.onRequest(async (request, response) => {
@@ -35,6 +72,7 @@ exports.getWorkspaceProjectsAndTags = functions.https.onRequest(async (request, 
     }
     catch (err) {
         console.error(err);
+        return err;
     }
 });
 // COMMON FUNCTIONS
