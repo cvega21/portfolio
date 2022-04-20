@@ -1,16 +1,14 @@
-export const mocks = {
-  Query: () => ({
-    getProjectsData: [...new Array(6)],
-  }),
-  Project: () => ({
-    title: () => 'Fake Project',
-    description: () => 'Very good project',
-    type: () => 'Freelance',
-    hours: () => 5,
-    imgSrc: () => '../../src/assets/adamint.gif',
-    techStack: () => [{
-      name: 'javascript', 
-      imgSrc: '../../src/assets/javascript.png'
-    }]
-  }),
+// const { RESTDataSource } = require('apollo-datasource-rest');
+import { RESTDataSource } from 'apollo-datasource-rest'
+
+export class RealtimeDB extends RESTDataSource {
+  constructor () {
+    super()
+    this.baseURL = 'https://portfolio-75ffa-default-rtdb.firebaseio.com/'
+
+  }
+
+  getProjectsData() {
+    return this.get('projectsGraphQL.json');
+  }
 }

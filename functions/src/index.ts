@@ -5,7 +5,7 @@ import { IProjectsTime, ITogglRecord } from './types';
 import axios from 'axios'
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { typeDefs, mocks } from './graphql'
+import { typeDefs, resolvers, RealtimeDB } from './graphql'
 // const { ApolloServer, gql } = require("apollo-server-express");
 
 require('dotenv').config();
@@ -25,17 +25,16 @@ const axiosClient = axios.create({
 const app = express();
 const server = new ApolloServer({
     typeDefs,
-    mocks
+    resolvers,
+    dataSources: () => ({ 
+        RealtimeDB: new RealtimeDB()
+    })
 })
 server.start().then(() => {
     server.applyMiddleware({ app, path: '/', cors: true })
 })
 
 exports.graphql = functions.https.onRequest(app)
-
-database.ref(`/projects/`).on('value', snapshot => {
-    return snapshot.val()
-})
 
 
 // TEST FUNCTIONS
