@@ -8,7 +8,7 @@ export class RealtimeDB extends RESTDataSource {
 
   }
 
-  getProjectsData() {
+  portfolioProjects() {
     return this.get('projectsGraphQL.json');
   }
 }
