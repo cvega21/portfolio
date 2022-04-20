@@ -14,8 +14,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { ProjectsProps } from '../types'
+import { useQuery } from '@apollo/client';
+import { PROJECTS } from '../graphql/queries'
 
-const Projects = (props: ProjectsProps) => {  
+
+const Projects = (props: ProjectsProps) => { 
+  const { loading, error, data } = useQuery(PROJECTS)
+  console.log(loading);
+  console.log(data);
+  console.log(error);
+
   useEffect(() => {
     window.scrollTo(0, 0);  
     return () => {

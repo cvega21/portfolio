@@ -19,7 +19,7 @@ import './styles/Home.scss';
 import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
 import firebase from 'firebase'
-import { ArticleType, IPageContext, INavContext } from '../src/types'
+import { IPageContext, INavContext } from '../src/types'
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
