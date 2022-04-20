@@ -20,11 +20,12 @@
   background: var(--nav-background-color);
   position: relative;
   animation: fadedown 1s;
+  border: solid 1px darkgray;
+  border-radius: 3px;
 }
   
   .ProjectContainer:nth-child(even) {
     flex-direction: row-reverse;
-    color: red;
     height: 700px;
   }
   
