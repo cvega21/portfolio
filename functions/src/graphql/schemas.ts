@@ -2,20 +2,24 @@ const { gql } = require("apollo-server-express");
 
 export const typeDefs = gql`
   type Project {
-    title: String!
-    togglName: String!
+    id: Int!
+    description: String!
+    gif: String!
     hours: Float
-    # type: String!
-    # imgSrc: String!
-    # techStack: [TechTool!]!
+    link: String!
+    techStack: [TechTool!]!
+    title: String!
+    togglName: String
+    type: String!
   }
 
-  # type TechTool {
-  #   # name: String!
-  #   # imgSrc: String!
-  # }
+  type TechTool {
+    name: String!
+    id: Int!
+  }
 
   type Query {
-    portfolioProjects: [Project!]!
+    getPortfolioProjects: [Project!]!
+    getTechTools: [TechTool!]!
   }
 `;
