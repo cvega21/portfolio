@@ -20,14 +20,14 @@ const TECH_STACK_ICONS: TypedTechStackIcons = {
   nextjs: nextjs,
   typescript: typescript,
   solidity: solidity,
-  tailwind: tailwind
+  tailwindCSS: tailwind
 }
 
 const Project = (props: ProjectProps) => {
 
 
-  const currentTechStack = props.stack.map((item: string) => {    
-    return <img src={TECH_STACK_ICONS[item]} alt={item} title={item} className={`techStackImage ${item}`} key={TECH_STACK_ICONS[item]}></img>
+  const currentTechStack = props.stack.map((item: any) => {    
+    return <img src={TECH_STACK_ICONS[item.name]} alt={item.name} title={item.name} className={`techStackImage ${item.name}`} key={TECH_STACK_ICONS[item.name]}></img>
   })
   
   const hoursToDisplay = () => {
@@ -43,7 +43,7 @@ const Project = (props: ProjectProps) => {
     <div className="ProjectContainer">
       <a target="_blank" rel="noopener noreferrer" href={props.link} className="ProjectImageLink">
         <div className="ProjectImageContainer">
-          <img src={props.gif[0]} alt='portfolio'></img>
+          <img src={props.gif} alt='portfolio'></img>
           {/* <img src={props.gif[1]} alt='portfolio' id="GifCover"></img> */}
         </div>
       </a>

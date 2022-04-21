@@ -28,7 +28,8 @@ export interface NavBarLinkProps {
 export interface ProjectProps {
   title: string;
   description: string;
-  gif: Array<string>;
+  gif: string;
+  key: number;
   link: string;
   stack: Array<string>;
   time: string;
@@ -56,7 +57,7 @@ export interface TypedTechStackIcons {
   nextjs: string;
   typescript: string;
   solidity: string;
-  tailwind: string;
+  tailwindCSS: string;
   [key: string]: string;
 }
 
