@@ -5,7 +5,7 @@ import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 
 const client = new ApolloClient({
   // options go here
-  uri: 'http://localhost:5000/portfolio-75ffa/us-central1/graphql',
+  uri: 'https://us-central1-portfolio-75ffa.cloudfunctions.net/graphql',
   cache: new InMemoryCache(),
 });
 
