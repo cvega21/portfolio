@@ -8,7 +8,15 @@ import typescript from '../assets/typescript.png';
 import nextjs from '../assets/nextjs.png';
 import solidity from '../assets/solidity.png';
 import tailwind from '../assets/tailwind.png';
-import { ProjectProps, TypedTechStackIcons } from '../types'
+import calculator from '../assets/calculator.gif';
+import quoteGenerator from '../assets/quoteGenerator.gif';
+import fitness from '../assets/fitness.gif';
+import timer from '../assets/timer.gif';
+import soundboard from '../assets/soundboard.gif';
+import portfolio from '../assets/portfolio.gif';
+import firechain from '../assets/firechain.gif';
+import adamint from '../assets/adamint.gif';
+import { ProjectProps, TypedTechStackIcons } from '../types';
 
 const TECH_STACK_ICONS: TypedTechStackIcons = {
   react: react,
@@ -23,10 +31,20 @@ const TECH_STACK_ICONS: TypedTechStackIcons = {
   tailwindCSS: tailwind
 }
 
+const GIF_SOURCES: any = {
+  'ADAMINT': adamint,
+  'FIRECHAIN': firechain,
+  'PORTFOLIO WEBSITE': portfolio,
+  'WORKOUT TRACKER': fitness,
+  'EDM SOUNDBOARD': soundboard,
+  'POMODORO TIMER': timer,
+  'CALCULATOR': calculator,
+  'QUOTE GENERATOR': quoteGenerator,
+}
+
 const Project = (props: ProjectProps) => {
 
-
-  const currentTechStack = props.stack.map((item: any) => {    
+  const currentTechStack = props.stack.map((item: any) => {
     return <img src={TECH_STACK_ICONS[item.name]} alt={item.name} title={item.name} className={`techStackImage ${item.name}`} key={TECH_STACK_ICONS[item.name]}></img>
   })
   
@@ -43,8 +61,7 @@ const Project = (props: ProjectProps) => {
     <div className="ProjectContainer">
       <a target="_blank" rel="noopener noreferrer" href={props.link} className="ProjectImageLink">
         <div className="ProjectImageContainer">
-          <img src={props.gif} alt='portfolio'></img>
-          {/* <img src={props.gif[1]} alt='portfolio' id="GifCover"></img> */}
+          <img src={GIF_SOURCES[props.title]} alt={props.title}></img>
         </div>
       </a>
       <a target="_blank" rel="noopener noreferrer" href={props.link} className="ProjectTextLink">
