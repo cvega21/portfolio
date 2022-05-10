@@ -16,7 +16,7 @@ import soundboard from '../assets/soundboard.gif';
 import portfolio from '../assets/portfolio.gif';
 import firechain from '../assets/firechain.gif';
 import adamint from '../assets/adamint.gif';
-import { ProjectProps, TypedTechStackIcons } from '../types';
+import { TypedTechStackIcons, ProjectGQL, TechStack } from '../types';
 
 const TECH_STACK_ICONS: TypedTechStackIcons = {
   react: react,
@@ -42,16 +42,17 @@ const GIF_SOURCES: any = {
   'QUOTE GENERATOR': quoteGenerator,
 }
 
-const Project = (props: ProjectProps) => {
+const Project = (props: ProjectGQL) => {
 
-  const currentTechStack = props.stack.map((item: any) => {
+  const currentTechStack = props.techStack.map((item: TechStack) => {
     return <img src={TECH_STACK_ICONS[item.name]} alt={item.name} title={item.name} className={`techStackImage ${item.name}`} key={TECH_STACK_ICONS[item.name]}></img>
   })
   
   const hoursToDisplay = () => {
-    if (parseInt(props.time)) {
-      let propsTimeInt = parseInt(props.time);
-      return `${Math.round(propsTimeInt)} hours`
+    if (props.hours !== null) {
+      let propsTimeInt = Math.ceil(props.hours);
+      
+      return `${propsTimeInt} hours`
     } else {
       return 'untracked'
     }

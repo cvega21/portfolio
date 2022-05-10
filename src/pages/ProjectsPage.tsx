@@ -5,18 +5,11 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
-import { ProjectsProps } from '../types'
-import { useQuery } from '@apollo/client';
-import { PROJECTS } from '../graphql/queries'
+import { ProjectGQL, ProjectsProps } from '../types'
 
 
 const Projects = (props: ProjectsProps) => { 
-  const { loading, error, data } = useQuery(PROJECTS)
-  let sortedPortfolioProjects;
-
-  if (data) {
-    sortedPortfolioProjects = [...data.getPortfolioProjects].sort((projectA, projectB) => projectA.id - projectB.id);
-  }
+  const { loading, error, projectsData } = props
 
   useEffect(() => {
     window.scrollTo(0, 0);  
@@ -38,25 +31,27 @@ const Projects = (props: ProjectsProps) => {
           error 
           ? 
             <>error loading! please refresh :c</> :
-          data && sortedPortfolioProjects 
+          projectsData && projectsData?.length
           ?
           <div className="ProjectsGrid">
-            {sortedPortfolioProjects.map((project: any) => {
+            {projectsData.map((project: ProjectGQL) => {
               return (
                 <Project
                   title={project.title.toUpperCase()}
                   description={project.description}
                   gif={project.gif}
+                  id={project.id} 
                   key={project.id} 
                   link={project.link}
-                  stack={project.techStack}
-                  time={project.hours}
+                  techStack={project.techStack}
+                  hours={project.hours}
                   type={project.type}
+                  __typename={project.__typename}
                 />
               )
             })}
           </div>
-          : <>you found a bug! please e-mail me at christianvegaaa@gmail.com with a screenshot :D</>
+          : <>you found a bug! please e-mail me at christianvegaaa@gmail.com with a screenshot and your eth address for a bounty 🤝</>
           } 
       <div className="ActionButtonCluster">
         <ActionButton link="about-me" navigation="left" />

@@ -1,5 +1,5 @@
+import { ApolloError } from '@apollo/client';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-
 // App-Level
 export interface IPageContext {
   [index: number]: string | boolean | React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,15 +25,20 @@ export interface NavBarLinkProps {
   to: string;
   active: string;
 }
-export interface ProjectProps {
-  title: string;
+export interface ProjectGQL {
   description: string;
   gif: string;
-  key: number;
+  hours: number | null;
+  id: number;
   link: string;
-  stack: Array<string>;
-  time: string;
+  techStack: Array<TechStack>;
+  title: string;
   type: string;
+  __typename: string;
+}
+export interface TechStack {
+  __typename: string;
+  name: string
 }
 export interface LogoShape {
   src: string;
@@ -66,7 +71,9 @@ export interface ArticlesProps {
   articles: Array<ArticleType>;
 }
 export interface ProjectsProps {
-  projectsData: ProjectData;
+  projectsData: Array<ProjectGQL>;
+  loading: boolean;
+  error: ApolloError | undefined;
 }
 export interface IArticle {
   title: string;
@@ -86,12 +93,5 @@ export interface ArticleType {
   pubDate: string;
   thumbnail: string;
   title: string;
-}
-export interface ProjectType {
-  [key: string]: string;
-}
-export interface ProjectData {
-  projects: ProjectType;
-  projectsMetadata: ProjectType;
 }
 

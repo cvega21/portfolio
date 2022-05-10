@@ -18,27 +18,7 @@ import './styles/ActionButton.scss';
 import './styles/Home.scss';
 import './styles/NightModeButton.scss';
 import './styles/AboutMe.scss';
-import firebase from 'firebase'
-import { IPageContext, INavContext } from '../src/types'
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var FIREBASE_CONFIG = {
-  apiKey: "AIzaSyDUUrS6OUn2LJFC6oxRGMUJ4vYwaOIS8R8",
-  authDomain: "portfolio-75ffa.firebaseapp.com",
-  projectId: "portfolio-75ffa",
-  storageBucket: "portfolio-75ffa.appspot.com",
-  messagingSenderId: "171226664150",
-  appId: "1:171226664150:web:f635186022f77c6456cd77",
-  databaseURL: "https://portfolio-75ffa-default-rtdb.firebaseio.com/",
-  measurementId: "G-01YFKWBCBW"
-};
-
-// Initialize Firebase
-firebase.initializeApp(FIREBASE_CONFIG);
-firebase.analytics();
-
-var database = firebase.database();
+import { IPageContext, INavContext, ProjectsProps } from '../src/types'
 
 export const PageContext = React.createContext<IPageContext>([]);
 export const NavContext = React.createContext<INavContext>([]);
@@ -48,10 +28,10 @@ function App() {
   const [showNavBar, setShowNavBar] = useState(false); 
   const [homeHasLoaded, setHomeHasLoaded] = useState(false);
   const [navIsExpanded, setNavIsExpanded] = useState(false);
-  const projectsData = useToggl(database)
+  const {loading, error, projectsData}: ProjectsProps = useToggl()
   const articles = useMedium('christianvegaaa');
+  
 
-  // changes active window in nav bar
   useEffect(() => {
     setActiveNavPage(window.location.pathname);
     if (!showNavBar && window.location.pathname !== '/home') {
@@ -83,7 +63,7 @@ function App() {
                 <AboutMe/>
               </Route >
               <Route path="/projects">
-                <Projects projectsData={projectsData}/>
+                <Projects projectsData={projectsData} loading={loading} error={error}/>
               </Route>
               <Route path="/articles">
                 <Articles articles={articles}/>
