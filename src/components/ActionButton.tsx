@@ -24,6 +24,8 @@ const ActionButton = ({ link, navigation }: ActionButtonProps) => {
     linkTo = resume
   } else if (link === 'aboutme') {
     text = 'About Me '
+    computedContainerClassName = 'ActionButtonContainer-Large';
+    computedClassName = 'ActionButton-Large';
   }
   else if (link) {
     let textArray: Array<string> = link.split('-');

@@ -313,29 +313,6 @@ nav {
     }
   }
 
-  .HeyThere {
-    flex-direction: column!important;
-    margin: 0px 0px 10px 0px!important;
-
-    h1 {
-      margin: 0px!important;
-      font-size: 120px!important;
-      min-width: 90vw!important;
-    }
-
-    .WavingHand {
-      font-size: 70px!important;
-    }
-  }
-
-  .TypingContainer {
-    min-height: 95px!important;
-    padding-bottom: 10px;
-
-    span {
-      font-size: 2.05em!important;
-    }
-  }
   
   .HomeContainer {
     min-height: 80vh!important;
@@ -479,26 +456,6 @@ nav {
 
   
   @media (max-width: 500px) {
-    .HeyThere {
-      flex-direction: column!important;
-      margin: 0px 0px 10px 0px!important;
-  
-      h1 {
-        margin: 0px!important;
-        font-size: 75px!important;
-      }
-  
-      .WavingHand {
-        font-size: 70px!important;
-      }
-    }
-  
-    .TypingContainer {
-  
-      span {
-        font-size: 1.55em!important;
-      }
-    }
     .ProfileContainer {
       >div>img {
         margin: 25px!important;

@@ -3,6 +3,13 @@
   text-decoration: none;
   max-width: 500px;
   width: 80%;
+  
+  &-Large{
+    @extend .ActionButtonContainer;
+    width: 100%!important;
+    max-width: none!important;
+    // padding: 15px 30px;
+  }
 }
   
 .ActionButtonContactContainer {
@@ -22,7 +29,15 @@
   font-weight: 500;
   padding: 10px 15px 10px 15px;
   min-width: auto;
-  width: 100%;
+  width: 100%; 
+  
+  &-Large{
+    @extend .ActionButton;
+    font-size: x-large;
+    width: 100%!important;
+    max-width: none!important;
+    // padding: 15px 30px;
+  }
 }
   
 .ActionButton.Contact {
